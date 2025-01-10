@@ -6,7 +6,7 @@
             "id": "b4f3293b-a994-4e89-a0d8-2ec6419a521f",
             "actions": [
                 {
-                    "name": "Walk",
+                    "name": "Move",
                     "type": "Value",
                     "id": "d9e9ff95-e0ad-4b74-99fe-300465c955d7",
                     "expectedControlType": "Vector2",
@@ -25,17 +25,26 @@
                 },
                 {
                     "name": "Jump",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "f123b83f-b96c-4128-a899-dceb2e0739a8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "5c47d046-1226-4844-964d-35357e48f5ea",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Interact",
+                    "name": "Crouch",
                     "type": "Button",
-                    "id": "5c47d046-1226-4844-964d-35357e48f5ea",
+                    "id": "65566190-9d3e-4f55-bfe7-fac9ac6cacfb",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -48,7 +57,7 @@
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Pause",
@@ -57,7 +66,7 @@
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Boost",
@@ -77,7 +86,7 @@
                     "interactions": "",
                     "processors": "StickDeadzone",
                     "groups": ";Gamepad",
-                    "action": "Walk",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -88,7 +97,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Walk",
+                    "action": "Move",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -99,7 +108,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Mouse & Keyboard",
-                    "action": "Walk",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -110,7 +119,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Mouse & Keyboard",
-                    "action": "Walk",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -121,7 +130,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Mouse & Keyboard",
-                    "action": "Walk",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -132,7 +141,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Mouse & Keyboard",
-                    "action": "Walk",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -265,6 +274,28 @@
                     "processors": "",
                     "groups": ";Mouse & Keyboard",
                     "action": "Boost",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dd14a6ba-63d4-4fb3-95f4-52d199b9f5a9",
+                    "path": "<Keyboard>/leftCtrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Mouse & Keyboard",
+                    "action": "Crouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b144eddd-2680-45b5-97a2-c9d8d3756fa6",
+                    "path": "<Gamepad>/leftStickPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Crouch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -25,9 +25,9 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         m_Camera.Look(m_Input.lookVector);
-        m_FloatCapsule.Jump(m_Input.jumpTrigger);
+        m_FloatCapsule.Jump(m_Input.jumpTrigger, m_Input.isJumping);
     }
     private void FixedUpdate() {    
-        m_Movement.Move(m_Input.moveDirection, m_Input.run);
+        m_Movement.Move(m_Input.moveDirection, m_Input.isBoosting);
     }
 }

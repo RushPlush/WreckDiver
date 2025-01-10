@@ -1,5 +1,6 @@
+using System;
 using UnityEngine;
-[RequireComponent(typeof(Camera))]
+//[RequireComponent(typeof(Camera))] //As in it needs a child with it
 public class PlayerCamera : MonoBehaviour
 {
     [SerializeField] private Vector2 mouseSensitivity = new Vector2(0.5f, 5f);
@@ -12,7 +13,16 @@ public class PlayerCamera : MonoBehaviour
     private float yRot;
     
     private void Awake() {
-        cam = GetComponentInChildren<Camera>();
+        try
+        {
+            cam = GetComponentInChildren<Camera>();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e + " camera in child not found");
+            throw;
+        }
+        
     }
     private void Start()
     {

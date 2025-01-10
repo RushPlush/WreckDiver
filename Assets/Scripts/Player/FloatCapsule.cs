@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.Serialization;
+
 [RequireComponent(typeof(Rigidbody))]
 public class FloatCapsule : MonoBehaviour
 {
@@ -23,15 +25,18 @@ public class FloatCapsule : MonoBehaviour
     [SerializeField][Tooltip("The amount of time wherein it will execute a jump when it becomes possible")] 
     private float bufferTime = 0.2f;
     private  float bufferTimer;
-    [SerializeField] private float jumpForce = 200f;
+    [SerializeField] private float jumpForce = 20f;
+    [SerializeField][Tooltip("The amount of force you get per frame when holding down the jump button. only works whilst the player has a positive y velocity")] 
+    private float sustainJumpForce = 3f;
+    
 
     [SerializeField][Tooltip("The delay wherein the player can't jump again. This prevents the player from being able to get multiple jumps in a row before leaving the grounded state. (Jumping higher than they're supposed to)")]
     private float jumpDelay = 0.3f;
     private  float jumpTimer;
-    public bool jumpAble = true;
+    [FormerlySerializedAs("jumpAble")] public bool canJump = true;
     
-    [Header("Ground Check")]
-    public bool grounded = true;
+    [FormerlySerializedAs("grounded")] [Header("Ground Check")]
+    public bool isGrounded = true;
 
     [Header("Coyote Time")][Tooltip("Coyote Time refers to the ability to jump after falling over a ledge, this helps make timing jumps more forgiving")]
     public bool coyoteTime = true;
@@ -57,44 +62,50 @@ public class FloatCapsule : MonoBehaviour
     private void GroundCast()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, -transform.up, out hit, rayLenght, groundLayer)){
+        if (Physics.Raycast(transform.position, -transform.up, out hit, rayLenght, groundLayer))
+        {
             float groundedDistanceLeniency = -0.45f;
             if (hit.distance <= rideHeight + groundedDistanceLeniency)
             {
-                grounded = true;
+                isGrounded = true;
             }
             else
             {
-                grounded = false;
+                isGrounded = false;
             }
-            
+
             Vector3 vel = rb.linearVelocity;
             Vector3 rayDir = transform.TransformDirection(-transform.up);
-            
+
             float rayDirVel = Vector3.Dot(rayDir, vel);
-            if (!grounded) return;
-            
+            if (!isGrounded) return;
+
             float x = hit.distance - rideHeight;
 
             springForce = (x * rideSpringStrenght) - (rayDirVel * rideSpringDampner);
 
+            if (!canJump)
+            {
+                springForce = 0; // Here to avoid the spring from stopping the jump. resulting in inconsistent jumps.
+                print("Deactivates spring force temporarily");
+            }
             rb.AddForce(rayDir * springForce);
         }
         else
         {
-            grounded = false;
+            isGrounded = false;
         }
     }
     void FakeGravity()
     {
-        if (!grounded)
+        if (!isGrounded)
         {
             rb.AddForce(Vector3.down * extraGravity, ForceMode.Acceleration);
         }
     }
     private void CoyoteTime()
     {
-        if (grounded)
+        if (isGrounded)
         {
             //doubleJumpAble = false;
             coyoteTime = true;
@@ -105,19 +116,19 @@ public class FloatCapsule : MonoBehaviour
             coyoteTime = false;
         }
     }
-    public void Jump(bool jumpValue)
+    public void Jump(bool jumpTriggered, bool jumpValue)
     {
-        if (jumpValue && coyoteTime && jumpAble | buffer && coyoteTime && jumpAble)
+        if (jumpTriggered && coyoteTime && canJump || buffer && coyoteTime && canJump)
         {
             rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
             coyoteTime = false;
-            jumpAble = false; 
+            canJump = false; 
             jumpTimer = Time.timeSinceLevelLoad + jumpDelay;
         }
-        else if(jumpValue)
+        else if(jumpTriggered)
         {
             buffer = true;
-            bufferTimer += bufferTime + Time.timeSinceLevelLoad;
+            bufferTimer = bufferTime + Time.timeSinceLevelLoad;
         }
         if (buffer)
         {
@@ -128,7 +139,12 @@ public class FloatCapsule : MonoBehaviour
         }
         if (Time.timeSinceLevelLoad >= jumpTimer)
         {
-            jumpAble = true;
+            canJump = true;
+        }
+        // todo add a max amount of time that force can be added, otherwise it makes a very flat topped jump. 
+        if (jumpValue && rb.linearVelocity.y > 0)
+        {
+            rb.AddForce(transform.up * sustainJumpForce, ForceMode.Force);
         }
     }
 }

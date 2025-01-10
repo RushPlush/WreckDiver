@@ -1,21 +1,48 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Input : MonoBehaviour
 {
     public Vector2 moveDirection { get; private set; }
-    public void OnMove(InputValue value) => moveDirection = value.Get<Vector2>();
-    public Vector2 lookVector { get; private set; }
-    public void OnLook(InputValue value) => lookVector = value.Get<Vector2>();
-    public float jump { get; private set; }
-    public void OnJump(InputValue value) => jump = value.Get<float>();
-    public bool jumpTrigger { get; private set; }
-    public bool run { get; private set; }
-    private void Update() {
-        jumpTrigger = Keyboard.current.spaceKey.wasPressedThisFrame;
-        run = Keyboard.current.shiftKey.isPressed;
+    public void OnMove(InputValue value)
+    {
+        moveDirection = value.Get<Vector2>();
+        Console.WriteLine(moveDirection + " = move direction" );
     }
 
+    public Vector2 lookVector { get; private set; }
+    public void OnLook(InputValue value) => lookVector = value.Get<Vector2>();
+    public bool isJumping { get; private set; }
+    private bool previousJumpValue = false;
+    public bool jumpTrigger { get; private set; }
+    public void OnJump(InputValue value)
+    {
+        isJumping = value.isPressed;
+        if (!previousJumpValue) // to make sure it's an impulse. single frame. 
+        {
+            jumpTrigger = isJumping;
+        }
+        previousJumpValue = isJumping;
+    }
+    public bool isCrouching { get; private set; }
+    public void OnCrouch(InputValue value) => isCrouching = value.isPressed;
+    public bool isBoosting { get; private set; }
+    public void OnBoost(InputValue value) => isBoosting = value.isPressed;
+    public bool isPausing { get; private set; }
+    public void OnPause(InputValue value) => isPausing = value.isPressed; // might have to do a state check here as well, but it is set as initial state check. 
+    public bool isOpeningInventory { get; private set; }
+    public void OnOpenInventory(InputValue value) => isOpeningInventory = value.isPressed;
     
-
+    //for on pause, and on open inventory, we might want to swap over to a different action map, off of player and into either a dedicated inventory/pause action map, or into a more general UI navigation action map. 
+    //this would also enable us to have menus without pausing the game.
+    private void LateUpdate()
+    {
+        previousJumpValue = isJumping;
+        //isOpeningInventory = false;
+        jumpTrigger = false;
+        //isBoosting  = false;
+        //isPausing   = false;
+        //isCrouching = false;
+    }
 }
