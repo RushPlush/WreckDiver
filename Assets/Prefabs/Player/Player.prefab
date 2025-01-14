@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 2194380454566155379}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -245,13 +245,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   rideHeight: 1.5
-  rideSpringDampner: 5
-  rideSpringStrenght: 7
+  rideSpringDampener: 10
+  rideSpringStrength: 5
   extraGravity: 20
-  buffer: 0
   bufferTime: 0.2
   jumpForce: 5
   sustainJumpForce: 4
+  sustainJumpTime: 0.3
   jumpDelay: 0.3
   canJump: 1
   isGrounded: 0
