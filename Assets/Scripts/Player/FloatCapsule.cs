@@ -50,8 +50,6 @@ public class FloatCapsule : MonoBehaviour
     }
     private void Start()
     {
-        rayLenght = rayLenght + 1;
-        rideHeight = rideHeight + 1;
     }
     private void Update()
     {
@@ -120,20 +118,6 @@ public class FloatCapsule : MonoBehaviour
     }
     public void Jump(bool jumpTriggered, bool jumpValue) // todo refactor into try jump and do jump
     {
-        if (jumpTriggered && coyoteTime && canJump || buffer && coyoteTime && canJump)
-        {
-            rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
-            coyoteTime = false;
-            canJump = false;
-            canSustain = true;
-            sustainJumpTimer = 0;
-            jumpTimer = Time.timeSinceLevelLoad + jumpDelay;
-        }
-        else if(jumpTriggered)
-        {
-            buffer = true;
-            bufferTimer = bufferTime + Time.timeSinceLevelLoad;
-        }
         if (buffer)
         {
             if (Time.timeSinceLevelLoad >= bufferTimer)
@@ -145,7 +129,10 @@ public class FloatCapsule : MonoBehaviour
         {
             sustainJumpTimer += Time.deltaTime;
             canSustain = jumpValue; // catches if the user lets go of the jump key
-            
+            if (sustainJumpTimer > sustainJumpTime)
+            {
+                canSustain = false;
+            }
         }
         if (Time.timeSinceLevelLoad >= jumpTimer)
         {
@@ -156,6 +143,28 @@ public class FloatCapsule : MonoBehaviour
         if (jumpValue && rb.linearVelocity.y > 0 && canSustain && sustainJumpTimer <= sustainJumpTime)
         {
             rb.AddForce(transform.up * sustainJumpForce, ForceMode.Force);
+        }
+
+        if (!canJump) return;
+        if (jumpTriggered && coyoteTime || buffer && coyoteTime)
+        {
+            var velocity = rb.linearVelocity;
+            if (velocity.y < 0)
+            {
+                rb.linearVelocity = new Vector3(velocity.x, 0, velocity.z); // to help avoid inconsistent jump height based on timing. (If the player jumps the frame they land, whilst they still have downwards momentum)
+            }
+            //todo make a call to breath to deplete 
+            rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+            coyoteTime = false;
+            canJump = false;
+            canSustain = true;
+            sustainJumpTimer = 0;
+            jumpTimer = Time.timeSinceLevelLoad + jumpDelay;
+        }
+        else if(jumpTriggered)
+        {
+            buffer = true;
+            bufferTimer = bufferTime + Time.timeSinceLevelLoad;
         }
     }
 }
