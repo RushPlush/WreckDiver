@@ -326,8 +326,8 @@ Shader "PolyToots/ASE_OceanDisplace"
 			float _MaskStrength;
 			float _NormalPower;
 			float _CausticsScale;
-			float _Distort;
 			float _Depth;
+			float _Distort;
 			float _EdgePower;
 			float _Smoothness;
 			#ifdef ASE_TRANSMISSION
@@ -667,19 +667,18 @@ Shader "PolyToots/ASE_OceanDisplace"
 				float2 uv108 = 0;
 				float voroi108 = voronoi108( coords108, time108, id108, uv108, 0, voronoiSmoothId108 );
 				float smoothstepResult273 = smoothstep( 0.38 , 1.25 , voroi108);
+				float _depthMask259 = ( 1.0 - saturate( ( 0.0 + (-1.0 + (_Depth - 0.0) * (1.0 - -1.0) / (1.0 - 0.0)) ) ) );
 				float ase_depthLinearEye = LinearEyeDepth( ScreenPos.z / ScreenPos.w, _ZBufferParams );
 				float depthLinearEye28_g121 = LinearEyeDepth( SHADERGRAPH_SAMPLE_SCENE_DEPTH( ase_positionSSNorm.xy ), _ZBufferParams );
 				float2 temp_output_20_0_g121 = ( (normals123).xy * ( _Distort / max( ase_depthLinearEye , 0.1 ) ) * saturate( ( depthLinearEye28_g121 - ase_depthLinearEye ) ) );
 				float depthLinearEye2_g121 = LinearEyeDepth( SHADERGRAPH_SAMPLE_SCENE_DEPTH( ( float4( temp_output_20_0_g121, 0.0 , 0.0 ) + ase_positionSSNorm ).xy ), _ZBufferParams );
 				float2 temp_output_32_0_g121 = (( float4( ( temp_output_20_0_g121 * saturate( ( depthLinearEye2_g121 - ase_depthLinearEye ) ) ), 0.0 , 0.0 ) + ase_positionSSNorm )).xy;
 				float2 temp_output_410_38 = temp_output_32_0_g121;
-				float2 _refractUV168 = temp_output_410_38;
-				float depthLinearEye238 = LinearEyeDepth( SHADERGRAPH_SAMPLE_SCENE_DEPTH( float4( _refractUV168, 0.0 , 0.0 ).xy ), _ZBufferParams );
-				float temp_output_239_0 = ( depthLinearEye238 - ase_depthLinearEye );
-				float _depthMask259 = ( 1.0 - saturate( ( temp_output_239_0 + (-1.0 + (_Depth - 0.0) * (1.0 - -1.0) / (1.0 - 0.0)) ) ) );
 				float4 fetchOpaqueVal149 = float4( SHADERGRAPH_SAMPLE_SCENE_COLOR( temp_output_410_38.xy ), 1.0 );
 				float4 _distortion189 = fetchOpaqueVal149;
-				float _edgeFoam295 = ( 1.0 - saturate( ( temp_output_239_0 * 12.0 ) ) );
+				float2 _refractUV168 = temp_output_410_38;
+				float depthLinearEye238 = LinearEyeDepth( SHADERGRAPH_SAMPLE_SCENE_DEPTH( float4( _refractUV168, 0.0 , 0.0 ).xy ), _ZBufferParams );
+				float _edgeFoam295 = ( 1.0 - saturate( ( ( depthLinearEye238 - ase_depthLinearEye ) * 12.0 ) ) );
 				float4 emission121 = ( ( ( ( saturate( smoothstepResult273 ) * _CausticsColour ) * _depthMask259 ) + saturate( ( _distortion189 * _depthMask259 ) ) ) + ( _edgeFoam295 * _EdgePower ) );
 				
 
@@ -1035,8 +1034,8 @@ Shader "PolyToots/ASE_OceanDisplace"
 			float _MaskStrength;
 			float _NormalPower;
 			float _CausticsScale;
-			float _Distort;
 			float _Depth;
+			float _Distort;
 			float _EdgePower;
 			float _Smoothness;
 			#ifdef ASE_TRANSMISSION
@@ -1368,8 +1367,8 @@ Shader "PolyToots/ASE_OceanDisplace"
 			float _MaskStrength;
 			float _NormalPower;
 			float _CausticsScale;
-			float _Distort;
 			float _Depth;
+			float _Distort;
 			float _EdgePower;
 			float _Smoothness;
 			#ifdef ASE_TRANSMISSION
@@ -1676,8 +1675,8 @@ Shader "PolyToots/ASE_OceanDisplace"
 			float _MaskStrength;
 			float _NormalPower;
 			float _CausticsScale;
-			float _Distort;
 			float _Depth;
+			float _Distort;
 			float _EdgePower;
 			float _Smoothness;
 			#ifdef ASE_TRANSMISSION
@@ -1978,6 +1977,7 @@ Shader "PolyToots/ASE_OceanDisplace"
 				float2 uv108 = 0;
 				float voroi108 = voronoi108( coords108, time108, id108, uv108, 0, voronoiSmoothId108 );
 				float smoothstepResult273 = smoothstep( 0.38 , 1.25 , voroi108);
+				float _depthMask259 = ( 1.0 - saturate( ( 0.0 + (-1.0 + (_Depth - 0.0) * (1.0 - -1.0) / (1.0 - 0.0)) ) ) );
 				float3 ase_normalWS = input.ase_texcoord5.xyz;
 				float lerpResult392 = lerp( 0.0 , _NormalPower , ase_normalWS.y);
 				float3 unpack66 = UnpackNormalScale( tex3D( _Normals_3D, _3duvs127 ), lerpResult392 );
@@ -1989,13 +1989,11 @@ Shader "PolyToots/ASE_OceanDisplace"
 				float depthLinearEye2_g121 = LinearEyeDepth( SHADERGRAPH_SAMPLE_SCENE_DEPTH( ( float4( temp_output_20_0_g121, 0.0 , 0.0 ) + ase_positionSSNorm ).xy ), _ZBufferParams );
 				float2 temp_output_32_0_g121 = (( float4( ( temp_output_20_0_g121 * saturate( ( depthLinearEye2_g121 - ase_depthLinearEye ) ) ), 0.0 , 0.0 ) + ase_positionSSNorm )).xy;
 				float2 temp_output_410_38 = temp_output_32_0_g121;
-				float2 _refractUV168 = temp_output_410_38;
-				float depthLinearEye238 = LinearEyeDepth( SHADERGRAPH_SAMPLE_SCENE_DEPTH( float4( _refractUV168, 0.0 , 0.0 ).xy ), _ZBufferParams );
-				float temp_output_239_0 = ( depthLinearEye238 - ase_depthLinearEye );
-				float _depthMask259 = ( 1.0 - saturate( ( temp_output_239_0 + (-1.0 + (_Depth - 0.0) * (1.0 - -1.0) / (1.0 - 0.0)) ) ) );
 				float4 fetchOpaqueVal149 = float4( SHADERGRAPH_SAMPLE_SCENE_COLOR( temp_output_410_38.xy ), 1.0 );
 				float4 _distortion189 = fetchOpaqueVal149;
-				float _edgeFoam295 = ( 1.0 - saturate( ( temp_output_239_0 * 12.0 ) ) );
+				float2 _refractUV168 = temp_output_410_38;
+				float depthLinearEye238 = LinearEyeDepth( SHADERGRAPH_SAMPLE_SCENE_DEPTH( float4( _refractUV168, 0.0 , 0.0 ).xy ), _ZBufferParams );
+				float _edgeFoam295 = ( 1.0 - saturate( ( ( depthLinearEye238 - ase_depthLinearEye ) * 12.0 ) ) );
 				float4 emission121 = ( ( ( ( saturate( smoothstepResult273 ) * _CausticsColour ) * _depthMask259 ) + saturate( ( _distortion189 * _depthMask259 ) ) ) + ( _edgeFoam295 * _EdgePower ) );
 				
 
@@ -2102,8 +2100,8 @@ Shader "PolyToots/ASE_OceanDisplace"
 			float _MaskStrength;
 			float _NormalPower;
 			float _CausticsScale;
-			float _Distort;
 			float _Depth;
+			float _Distort;
 			float _EdgePower;
 			float _Smoothness;
 			#ifdef ASE_TRANSMISSION
@@ -2411,8 +2409,8 @@ Shader "PolyToots/ASE_OceanDisplace"
 			float _MaskStrength;
 			float _NormalPower;
 			float _CausticsScale;
-			float _Distort;
 			float _Depth;
+			float _Distort;
 			float _EdgePower;
 			float _Smoothness;
 			#ifdef ASE_TRANSMISSION
@@ -2819,8 +2817,8 @@ Shader "PolyToots/ASE_OceanDisplace"
 			float _MaskStrength;
 			float _NormalPower;
 			float _CausticsScale;
-			float _Distort;
 			float _Depth;
+			float _Distort;
 			float _EdgePower;
 			float _Smoothness;
 			#ifdef ASE_TRANSMISSION
@@ -3160,19 +3158,18 @@ Shader "PolyToots/ASE_OceanDisplace"
 				float2 uv108 = 0;
 				float voroi108 = voronoi108( coords108, time108, id108, uv108, 0, voronoiSmoothId108 );
 				float smoothstepResult273 = smoothstep( 0.38 , 1.25 , voroi108);
+				float _depthMask259 = ( 1.0 - saturate( ( 0.0 + (-1.0 + (_Depth - 0.0) * (1.0 - -1.0) / (1.0 - 0.0)) ) ) );
 				float ase_depthLinearEye = LinearEyeDepth( ScreenPos.z / ScreenPos.w, _ZBufferParams );
 				float depthLinearEye28_g121 = LinearEyeDepth( SHADERGRAPH_SAMPLE_SCENE_DEPTH( ase_positionSSNorm.xy ), _ZBufferParams );
 				float2 temp_output_20_0_g121 = ( (normals123).xy * ( _Distort / max( ase_depthLinearEye , 0.1 ) ) * saturate( ( depthLinearEye28_g121 - ase_depthLinearEye ) ) );
 				float depthLinearEye2_g121 = LinearEyeDepth( SHADERGRAPH_SAMPLE_SCENE_DEPTH( ( float4( temp_output_20_0_g121, 0.0 , 0.0 ) + ase_positionSSNorm ).xy ), _ZBufferParams );
 				float2 temp_output_32_0_g121 = (( float4( ( temp_output_20_0_g121 * saturate( ( depthLinearEye2_g121 - ase_depthLinearEye ) ) ), 0.0 , 0.0 ) + ase_positionSSNorm )).xy;
 				float2 temp_output_410_38 = temp_output_32_0_g121;
-				float2 _refractUV168 = temp_output_410_38;
-				float depthLinearEye238 = LinearEyeDepth( SHADERGRAPH_SAMPLE_SCENE_DEPTH( float4( _refractUV168, 0.0 , 0.0 ).xy ), _ZBufferParams );
-				float temp_output_239_0 = ( depthLinearEye238 - ase_depthLinearEye );
-				float _depthMask259 = ( 1.0 - saturate( ( temp_output_239_0 + (-1.0 + (_Depth - 0.0) * (1.0 - -1.0) / (1.0 - 0.0)) ) ) );
 				float4 fetchOpaqueVal149 = float4( SHADERGRAPH_SAMPLE_SCENE_COLOR( temp_output_410_38.xy ), 1.0 );
 				float4 _distortion189 = fetchOpaqueVal149;
-				float _edgeFoam295 = ( 1.0 - saturate( ( temp_output_239_0 * 12.0 ) ) );
+				float2 _refractUV168 = temp_output_410_38;
+				float depthLinearEye238 = LinearEyeDepth( SHADERGRAPH_SAMPLE_SCENE_DEPTH( float4( _refractUV168, 0.0 , 0.0 ).xy ), _ZBufferParams );
+				float _edgeFoam295 = ( 1.0 - saturate( ( ( depthLinearEye238 - ase_depthLinearEye ) * 12.0 ) ) );
 				float4 emission121 = ( ( ( ( saturate( smoothstepResult273 ) * _CausticsColour ) * _depthMask259 ) + saturate( ( _distortion189 * _depthMask259 ) ) ) + ( _edgeFoam295 * _EdgePower ) );
 				
 
@@ -3377,8 +3374,8 @@ Shader "PolyToots/ASE_OceanDisplace"
 			float _MaskStrength;
 			float _NormalPower;
 			float _CausticsScale;
-			float _Distort;
 			float _Depth;
+			float _Distort;
 			float _EdgePower;
 			float _Smoothness;
 			#ifdef ASE_TRANSMISSION
@@ -3662,8 +3659,8 @@ Shader "PolyToots/ASE_OceanDisplace"
 			float _MaskStrength;
 			float _NormalPower;
 			float _CausticsScale;
-			float _Distort;
 			float _Depth;
+			float _Distort;
 			float _EdgePower;
 			float _Smoothness;
 			#ifdef ASE_TRANSMISSION
@@ -3957,8 +3954,8 @@ Shader "PolyToots/ASE_OceanDisplace"
 			float _MaskStrength;
 			float _NormalPower;
 			float _CausticsScale;
-			float _Distort;
 			float _Depth;
+			float _Distort;
 			float _EdgePower;
 			float _Smoothness;
 			#ifdef ASE_TRANSMISSION
@@ -4165,11 +4162,9 @@ Node;AmplifyShaderEditor.FunctionNode;410;-4323.582,-924.8124;Inherit;False;Dept
 Node;AmplifyShaderEditor.RegisterLocalVarNode;168;-3772.578,-685.3839;Inherit;False;_refractUV;-1;True;1;0;FLOAT2;0,0;False;1;FLOAT2;0
 Node;AmplifyShaderEditor.GetLocalVarNode;235;-3913.736,-2546.544;Inherit;False;168;_refractUV;1;0;OBJECT;;False;1;FLOAT2;0
 Node;AmplifyShaderEditor.SurfaceDepthNode;240;-3749.11,-2419.818;Inherit;False;0;1;0;FLOAT3;0,0,0;False;1;FLOAT;0
-Node;AmplifyShaderEditor.ScreenDepthNode;238;-3709.781,-2543.492;Inherit;False;0;1;0;FLOAT4;0,0,0,0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.RangedFloatNode;251;-3720.196,-2245.465;Inherit;False;Property;_Depth;Depth;6;0;Create;True;0;0;0;False;0;False;1;0.557;0;1;0;1;FLOAT;0
 Node;AmplifyShaderEditor.RegisterLocalVarNode;130;-2966.677,-1346.457;Inherit;False;_Time;-1;True;1;0;FLOAT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.TFHCRemapNode;334;-3419.126,-2248.128;Inherit;False;5;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;1;False;3;FLOAT;-1;False;4;FLOAT;1;False;1;FLOAT;0
-Node;AmplifyShaderEditor.SimpleSubtractOpNode;239;-3450.438,-2484.329;Inherit;False;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.FunctionNode;409;-1701.586,-2437.264;Inherit;False;Reconstruct World Position From Depth;-1;;122;e7094bcbcc80eb140b2a3dbe6a861de8;0;0;1;FLOAT4;0
 Node;AmplifyShaderEditor.SimpleAddOpNode;255;-3217.707,-2265.362;Inherit;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.GetLocalVarNode;131;-1465.374,-2316.141;Inherit;False;130;_Time;1;0;OBJECT;;False;1;FLOAT;0
@@ -4185,7 +4180,6 @@ Node;AmplifyShaderEditor.ScreenColorNode;149;-3858.542,-937.5869;Inherit;False;G
 Node;AmplifyShaderEditor.RegisterLocalVarNode;189;-3574.268,-937.0414;Inherit;False;_distortion;-1;True;1;0;COLOR;0,0,0,0;False;1;COLOR;0
 Node;AmplifyShaderEditor.SaturateNode;298;-2866.194,-2479.848;Inherit;False;1;0;FLOAT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.SmoothstepOpNode;273;-789.8936,-2422.108;Inherit;False;3;0;FLOAT;0;False;1;FLOAT;0.38;False;2;FLOAT;1.25;False;1;FLOAT;0
-Node;AmplifyShaderEditor.RegisterLocalVarNode;259;-2495.558,-2273.792;Inherit;False;_depthMask;-1;True;1;0;FLOAT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.GetLocalVarNode;265;518.7541,-2103.694;Inherit;False;259;_depthMask;1;0;OBJECT;;False;1;FLOAT;0
 Node;AmplifyShaderEditor.GetLocalVarNode;263;520.2737,-2229.927;Inherit;False;189;_distortion;1;0;OBJECT;;False;1;COLOR;0
 Node;AmplifyShaderEditor.ColorNode;341;-737.241,-2252.204;Inherit;False;Property;_CausticsColour;Caustics Colour;12;1;[HDR];Create;True;0;0;0;False;0;False;2,2,2,0;1.207273,1.741101,1.620283,0;True;True;0;6;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4;FLOAT3;5
@@ -4208,6 +4202,9 @@ Node;AmplifyShaderEditor.GetLocalVarNode;190;-400,-96;Inherit;True;121;emission;
 Node;AmplifyShaderEditor.GetLocalVarNode;134;-416,192;Inherit;True;133;vertexOffset;1;0;OBJECT;;False;1;COLOR;0
 Node;AmplifyShaderEditor.FunctionNode;437;-160,-464;Inherit;False;Alpha Split;-1;;124;07dab7960105b86429ac8eebd729ed6d;0;1;2;COLOR;0,0,0,0;False;2;FLOAT3;0;FLOAT;6
 Node;AmplifyShaderEditor.RangedFloatNode;68;-480,96;Inherit;False;Property;_Smoothness;Smoothness;5;0;Create;True;0;0;0;False;0;False;0.9;0.672;0;1;0;1;FLOAT;0
+Node;AmplifyShaderEditor.ScreenDepthNode;238;-3709.781,-2543.492;Inherit;False;0;1;0;FLOAT4;0,0,0,0;False;1;FLOAT;0
+Node;AmplifyShaderEditor.SimpleSubtractOpNode;239;-3450.438,-2484.329;Inherit;False;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
+Node;AmplifyShaderEditor.RegisterLocalVarNode;259;-2495.558,-2273.792;Inherit;False;_depthMask;-1;True;1;0;FLOAT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;451;163.1833,-101.2293;Float;False;False;-1;3;UnityEditor.ShaderGraphLitGUI;0;1;New Amplify Shader;94348b07e5e8bab40bd6c8a1e3df54cd;True;ExtraPrePass;0;0;ExtraPrePass;5;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;True;0;False;;False;False;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;1;False;;True;3;False;;True;True;0;False;;0;False;;True;4;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;UniversalMaterialType=Lit;True;5;True;12;all;0;False;True;1;1;False;;0;False;;0;1;False;;0;False;;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;True;True;True;True;True;0;False;;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;1;False;;True;3;False;;True;True;0;False;;0;False;;True;0;False;False;0;;0;0;Standard;0;False;0
 Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;453;163.1833,-101.2293;Float;False;False;-1;3;UnityEditor.ShaderGraphLitGUI;0;1;New Amplify Shader;94348b07e5e8bab40bd6c8a1e3df54cd;True;ShadowCaster;0;2;ShadowCaster;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;True;0;False;;False;False;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;1;False;;True;3;False;;True;True;0;False;;0;False;;True;4;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;UniversalMaterialType=Lit;True;5;True;12;all;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;False;False;True;False;False;False;False;0;False;;False;False;False;False;False;False;False;False;False;True;1;False;;True;3;False;;False;True;1;LightMode=ShadowCaster;False;False;0;;0;0;Standard;0;False;0
 Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;454;163.1833,-101.2293;Float;False;False;-1;3;UnityEditor.ShaderGraphLitGUI;0;1;New Amplify Shader;94348b07e5e8bab40bd6c8a1e3df54cd;True;DepthOnly;0;3;DepthOnly;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;True;0;False;;False;False;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;1;False;;True;3;False;;True;True;0;False;;0;False;;True;4;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;UniversalMaterialType=Lit;True;5;True;12;all;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;False;False;True;True;False;False;False;0;False;;False;False;False;False;False;False;False;False;False;True;1;False;;False;False;True;1;LightMode=DepthOnly;False;False;0;;0;0;Standard;0;False;0
@@ -4263,12 +4260,8 @@ WireConnection;123;0;66;0
 WireConnection;410;35;152;0
 WireConnection;410;37;148;0
 WireConnection;168;0;410;38
-WireConnection;238;0;235;0
 WireConnection;130;0;74;0
 WireConnection;334;0;251;0
-WireConnection;239;0;238;0
-WireConnection;239;1;240;0
-WireConnection;255;0;239;0
 WireConnection;255;1;334;0
 WireConnection;143;0;131;0
 WireConnection;17;0;409;0
@@ -4283,7 +4276,6 @@ WireConnection;149;0;410;38
 WireConnection;189;0;149;0
 WireConnection;298;0;296;0
 WireConnection;273;0;108;0
-WireConnection;259;0;253;0
 WireConnection;299;0;298;0
 WireConnection;117;0;273;0
 WireConnection;264;0;263;0
@@ -4302,6 +4294,10 @@ WireConnection;301;0;262;0
 WireConnection;301;1;303;0
 WireConnection;121;0;301;0
 WireConnection;437;2;138;0
+WireConnection;238;0;235;0
+WireConnection;239;0;238;0
+WireConnection;239;1;240;0
+WireConnection;259;0;253;0
 WireConnection;452;0;437;0
 WireConnection;452;1;132;0
 WireConnection;452;2;190;0
@@ -4309,4 +4305,4 @@ WireConnection;452;4;68;0
 WireConnection;452;6;437;6
 WireConnection;452;8;134;0
 ASEEND*/
-//CHKSM=3ABF0D9006D799BA567436CF1D07C1CD3F0EE643
+//CHKSM=C8EB14678E5678CAD9092DD5CBBBAAD500E04791
