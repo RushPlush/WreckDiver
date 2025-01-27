@@ -986,7 +986,7 @@ namespace AmplifyShaderEditor
 				m_undoHelper.Clear();
 				m_undoHelper = null;
 			}
-			ASEMaterialInspector.Instance = null;
+			MaterialInspector.Instance = null;
 		}
 
 		public static void ResetMainSkin()
@@ -3194,7 +3194,7 @@ namespace AmplifyShaderEditor
 					}
 				}
 			}
-			
+
 			if ( drawColorSwatchMI != null )
 			{
 				drawColorSwatchMI.Invoke( obj, new object[] { position, color, showAlpha, hdr } );
