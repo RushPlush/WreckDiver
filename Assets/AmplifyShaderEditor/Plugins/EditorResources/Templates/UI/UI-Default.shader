@@ -91,7 +91,7 @@ Shader /*ase_name*/"Hidden/Templates/UI-Default"/*end*/
             float _UIMaskSoftnessY;
 
             /*ase_globals*/
-            
+
             v2f vert(appdata_t v /*ase_vert_input*/)
             {
                 v2f OUT;
@@ -147,5 +147,5 @@ Shader /*ase_name*/"Hidden/Templates/UI-Default"/*end*/
         ENDCG
         }
     }
-    CustomEditor "ASEMaterialInspector"
+    CustomEditor "AmplifyShaderEditor.MaterialInspector"
 }

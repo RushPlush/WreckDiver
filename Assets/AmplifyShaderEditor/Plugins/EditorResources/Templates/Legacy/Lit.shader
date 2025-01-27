@@ -2298,5 +2298,5 @@ Shader /*ase_name*/ "Hidden/Legacy/Lit" /*end*/
 		}
 		/*ase_pass_end*/
 	}
-	CustomEditor "ASEMaterialInspector"
+	CustomEditor "AmplifyShaderEditor.MaterialInspector"
 }
