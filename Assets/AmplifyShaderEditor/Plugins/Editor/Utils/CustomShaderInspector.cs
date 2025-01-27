@@ -5,9 +5,10 @@ using System;
 using System.Reflection;
 using System.Globalization;
 using UnityEngine;
+using UnityEditor;
 using AmplifyShaderEditor;
 
-namespace UnityEditor
+namespace AmplifyShaderEditor
 {
 	[CustomEditor( typeof( Shader ) )]
 	internal class CustomShaderInspector : Editor
@@ -22,7 +23,7 @@ namespace UnityEditor
 			#if UNITY_2020_2_OR_NEWER
 			public static GUIContent toggleStripLineDirective = EditorGUIUtility.TrTextContent( "Strip #line directives", "Strip #line directives from preprocessor output" );
 			#endif
-			#endif				
+			#endif
 			public static GUIContent showSurface = EditorGUIUtilityEx.TextContent( "Show generated code|Show generated code of a surface shader" );
 
 			public static GUIContent showFF = EditorGUIUtilityEx.TextContent( "Show generated code|Show generated code of a fixed function shader" );
@@ -174,7 +175,7 @@ namespace UnityEditor
 				GUI.DrawTexture( r, resultRender, ScaleMode.StretchToFill, false );
 			}
 		}
-		
+
 		void OnDestroy()
 		{
 			CleanUp();
@@ -188,7 +189,7 @@ namespace UnityEditor
 				GameObject.DestroyImmediate( m_SrpCompatibilityCheckMaterial );
 			}
 		}
-		
+
 		void CleanUp()
 		{
 			if( m_previewRenderUtility != null )
@@ -232,7 +233,7 @@ namespace UnityEditor
 
 			m_allowOpenInCanvas = IOUtils.IsASEShader( s );
 		}
-		
+
 		private static string GetPropertyType( Shader s, int index )
 		{
 			UnityEditor.ShaderUtil.ShaderPropertyType propertyType = UnityEditor.ShaderUtil.GetPropertyType( s, index );
@@ -909,6 +910,24 @@ namespace UnityEditor
 			}
 		}
 
+		public static Gradient GradientField( Rect position, Gradient gradient )
+		{
+			return EditorGUI.GradientField( position, gradient );
+		}
+	}
+
+	internal static class EditorGUILayoutEx
+	{
+		public static System.Type Type = typeof( EditorGUILayout );
+		public static Gradient GradientField( Gradient value, params GUILayoutOption[] options )
+		{
+			return EditorGUILayout.GradientField( value, options );
+		}
+
+		public static Gradient GradientField( string label, Gradient value, params GUILayoutOption[] options )
+		{
+			return EditorGUILayout.GradientField( label, value, options );
+		}
 	}
 
 	public static class ShaderInspectorPlatformsPopupEx
