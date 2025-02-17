@@ -20,9 +20,8 @@ public class Helmet : MonoBehaviour
         playerTrans = transform.parent;
         input       = playerTrans.GetComponent<Input>();
         cameraTrans = playerTrans.GetChild(0);
-        lookPoint   = cameraTrans.GetChild(0);
+        lookPoint   = transform.GetChild(0);
         offset      = transform.localPosition; 
-        transform.SetParent(null, true);
     }
 
     // Update is called once per frame
@@ -49,8 +48,5 @@ public class Helmet : MonoBehaviour
             transform.rotation = Quaternion.RotateTowards(transform.rotation, cameraTrans.rotation, springForce *
                 (angle - innerDeadZoneSize)/4 * Time.deltaTime);
         }
-        // todo make it spring to the the middle when the camera stops moving, and when the player is moving
-        
-        transform.localPosition = playerTrans.localPosition + offset;
     }
 }

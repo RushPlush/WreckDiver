@@ -29,6 +29,7 @@ public class PlayerCamera : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
+
     public void Look(Vector2 input)
     {
         xRot += input.x * mouseSensitivity.x * multiplier;

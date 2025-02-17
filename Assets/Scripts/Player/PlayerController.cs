@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
         m_Camera = GetComponent<PlayerCamera>();
         m_Movement = GetComponent<Movement>();
         m_Input = GetComponent<Input>();
-        m_Interactor = transform.GetChild(0).GetComponentInChildren<Interactor>(); //This is a hacky way to get the Interactor component, it should be done in a better way
+        m_Interactor = GetComponent<Interactor>(); //This is a hacky way to get the Interactor component, it should be done in a better way
         if(m_Interactor == null)
         {
             Debug.LogError("Interactor not found, make sure camera is the first child of the player, and that the Interactor is a child of the camera");
@@ -31,6 +31,9 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
+        if (Cursor.lockState != CursorLockMode.Locked)
+            return;
+
         m_Camera.Look(m_Input.lookVector);
         m_FloatCapsule.Jump(m_Input.jumpTrigger, m_Input.isJumping);
         if(m_Input.interactTrigger)

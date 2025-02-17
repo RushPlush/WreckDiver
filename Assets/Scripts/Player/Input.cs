@@ -44,6 +44,18 @@ public class Input : MonoBehaviour
         previousInteractValue = isInteracting;
     }
 
+    public void OnEscape(InputValue value)
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    public void OnClick(InputValue value)
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
     //for on pause, and on open inventory, we might want to swap over to a different action map, off of player and into either a dedicated inventory/pause action map, or into a more general UI navigation action map. 
     //this would also enable us to have menus without pausing the game.
     private void LateUpdate()
