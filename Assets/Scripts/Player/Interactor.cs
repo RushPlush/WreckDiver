@@ -43,6 +43,7 @@ namespace Player
         private void OnTriggerExit(Collider other)
         {
             // find the index of the collider in the list
+            if(interactableColliders.Count == 0) return;
             var index = interactableColliders.FindIndex(collider => collider == other);
             interactionIndex = -1;
             interactables.Remove(interactables[index]);
