@@ -8,7 +8,7 @@ public class Input : MonoBehaviour
     public void OnMove(InputValue value)
     {
         moveDirection = value.Get<Vector2>();
-        Console.WriteLine(moveDirection + " = move direction" );
+        //Console.WriteLine(moveDirection + " = move direction" );
     }
 
     public Vector2 lookVector { get; private set; }
@@ -48,12 +48,12 @@ public class Input : MonoBehaviour
     public void OnAnyKeyboard(InputValue value)
     {
         usingKeyboard = true;
-        print("Keyboard input detected");
+        //print("Keyboard input detected");
     }
     public void OnAnyController(InputValue value)
     {
         usingKeyboard = false;
-        print("Gamepad input detected");
+        //print("Gamepad input detected");
     }
 
     //for on pause, and on open inventory, we might want to swap over to a different action map, off of player and into either a dedicated inventory/pause action map, or into a more general UI navigation action map. 
