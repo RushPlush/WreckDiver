@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fa7366427842eea48bffb8276d814f47
+guid: c8e92405b9d62ea4d95e41beb4a6efa8
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,43 +7,33 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Cable
-    second: {fileID: 2100000, guid: 11d352e262d381e499b8524289a2707c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Glass
-    second: {fileID: 2100000, guid: 65e9fef76403f77469ed2059bc44613b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: Mainbox
-    second: {fileID: 2100000, guid: baeb693e46e5b8d4782bc06d58e3748c, type: 2}
+    second: {fileID: 2100000, guid: 90112b523864da740a27f5f43dad4158, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Plug_plate
-    second: {fileID: 2100000, guid: 3ade0aea9e60b124a906bb838f59cb78, type: 2}
+    second: {fileID: 2100000, guid: f9dd782c81b050f42a78f5ae7446e4e3, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: aiStandardSurface3
-    second: {fileID: 2100000, guid: 09f762a685c118b4aadbbda223869d75, type: 2}
+      name: Rubber
+    second: {fileID: 2100000, guid: 122f1bff9e6b25e40bc49750d109c5b4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TagPlate
+    second: {fileID: 2100000, guid: afe4cddf5c8da764ebf4c4f6204945c0, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: copper
-    second: {fileID: 2100000, guid: e1255c383d4a62545885b7b4c9319cda, type: 2}
+    second: {fileID: 2100000, guid: 1569bb0f918571c459a60804c3cd5683, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: inisde_plug
-    second: {fileID: 2100000, guid: 3ff89ff5d3acc37429ebbac2cf0fadc0, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: standardSurface1
-    second: {fileID: 2100000, guid: 725db3518c0c0544fbe81f1ae768b135, type: 2}
+    second: {fileID: 2100000, guid: ef67f33acb1225b45977acb630022cfe, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

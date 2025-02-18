@@ -1,9 +1,49 @@
 fileFormatVersion: 2
-guid: b3957be2bd9b9644b8719f63a899ea65
+guid: 377d7db4675d4394ab28aee1ec38af0a
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cable
+    second: {fileID: 2100000, guid: 0fdaec6cfe3b61c4ba5b09735ff5cb38, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CopperRings
+    second: {fileID: 2100000, guid: 9af26ceb7b00b8141806c2bae8826a46, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FuseboxDails
+    second: {fileID: 2100000, guid: cad534fbb0ea28b45ab5506f5e594246, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FuseboxGlass
+    second: {fileID: 2100000, guid: 19fc6f64cfff97d48b749c2eba6ae4db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FuseboxInsideSurfaces
+    second: {fileID: 2100000, guid: 8378f2aca0bfac045bbc5d376ffa4a1a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fusebox_Main
+    second: {fileID: 2100000, guid: 66de0bce2db4d8e4e95c7dc201beafae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plate
+    second: {fileID: 2100000, guid: deedc692254719a4bac5ba8aa6f372ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: initialShadingGroup
+    second: {fileID: 2100000, guid: 47694d138421acb48999b3478f05181d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
