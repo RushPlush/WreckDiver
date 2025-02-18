@@ -20,8 +20,9 @@ public class Helmet : MonoBehaviour
         playerTrans = transform.parent;
         input       = playerTrans.GetComponent<Input>();
         cameraTrans = playerTrans.GetChild(0);
-        lookPoint   = transform.GetChild(0);
+        lookPoint   = cameraTrans.GetChild(0);
         offset      = transform.localPosition; 
+        transform.SetParent(null, true);
     }
 
     // Update is called once per frame
@@ -35,8 +36,11 @@ public class Helmet : MonoBehaviour
         float angle = Mathf.Abs(Quaternion.Angle(cameraTrans.rotation, transform.rotation));
         if (angle > deadZoneSize || input.moveDirection.magnitude > movementMagnitudeDeadZone) 
         {
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, cameraTrans.rotation, springForce *
-                (angle - innerDeadZoneSize) * Time.deltaTime); // todo something to bias it in the direction the camera is going, since it's lagging behind were it's trending, do some A B testing to see if it's better
+            //transform.rotation = Quaternion.RotateTowards(transform.rotation, cameraTrans.rotation, springForce *
+            //    (angle - innerDeadZoneSize) * Time.deltaTime); // todo something to bias it in the direction the camera is going, since it's lagging behind were it's trending, do some A B testing to see if it's better
+            
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(lookPoint.position - transform.position, transform.up), springForce *
+                (angle - innerDeadZoneSize) * Time.deltaTime);
         }
 
         if (angle < innerDeadZoneSize)
@@ -48,5 +52,7 @@ public class Helmet : MonoBehaviour
             transform.rotation = Quaternion.RotateTowards(transform.rotation, cameraTrans.rotation, springForce *
                 (angle - innerDeadZoneSize)/4 * Time.deltaTime);
         }
+        
+        transform.localPosition = playerTrans.localPosition + offset;
     }
 }
