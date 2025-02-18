@@ -8,7 +8,7 @@ public class Input : MonoBehaviour
     public void OnMove(InputValue value)
     {
         moveDirection = value.Get<Vector2>();
-        Console.WriteLine(moveDirection + " = move direction" );
+        //Console.WriteLine(moveDirection + " = move direction" );
     }
 
     public Vector2 lookVector { get; private set; }
@@ -42,6 +42,18 @@ public class Input : MonoBehaviour
         if(!previousInteractValue)
             interactTrigger = isInteracting;
         previousInteractValue = isInteracting;
+    }
+    public bool usingKeyboard { get; private set; }
+    
+    public void OnAnyKeyboard(InputValue value)
+    {
+        usingKeyboard = true;
+        //print("Keyboard input detected");
+    }
+    public void OnAnyController(InputValue value)
+    {
+        usingKeyboard = false;
+        //print("Gamepad input detected");
     }
 
     public void OnEscape(InputValue value)
