@@ -25,6 +25,10 @@ public class PlayerController : MonoBehaviour
         {
             Debug.LogError("Interactor not found, make sure camera is the first child of the player, and that the Interactor is a child of the camera");
         }
+        if(m_LookPoint == null)
+        {
+            Debug.LogError("LookPoint not found, make sure camera is the first child of the player, and that the LookPoint is a child of the camera");
+        }
     }
     private void Start()
     {
@@ -34,6 +38,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         m_Camera.Look(m_Input.lookVector);
+        m_LookPoint.UpdatePosition(m_Input.lookVector, m_Input.usingKeyboard);
         m_FloatCapsule.Jump(m_Input.jumpTrigger, m_Input.isJumping);
         if(m_Input.interactTrigger)
         {
