@@ -58,14 +58,16 @@ public class Input : MonoBehaviour
 
     public void OnEscape(InputValue value)
     {
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-    }
-
-    public void OnClick(InputValue value)
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        if (Cursor.lockState == CursorLockMode.Locked)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
     }
 
     //for on pause, and on open inventory, we might want to swap over to a different action map, off of player and into either a dedicated inventory/pause action map, or into a more general UI navigation action map. 

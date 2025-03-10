@@ -8342,8 +8342,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlockedStatePosition: {x: -3, y: -5, z: 0}
-  unlockedStateRotation: {x: 0, y: -0.70710677, z: 0, w: 0.70710677}
-  unlockedStateScale: {x: 0, y: 0, z: 0}
+  unlockedStateRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
+  unlockedStateScale: {x: 1, y: 1, z: 1}
   animationSpeed: 1
   lockedStatePosition: {x: 0, y: 0, z: 0}
   lockedStateRotation: {x: 0, y: 0, z: 0, w: 0}
@@ -9994,6 +9994,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 6652169825300635630, guid: 38482b3265f79b040bcbbd810707b734, type: 3}
+      propertyPath: unlockable
+      value: 
+      objectReference: {fileID: 1781495268}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

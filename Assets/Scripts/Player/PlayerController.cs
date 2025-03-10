@@ -37,6 +37,9 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
+        if (Cursor.lockState != CursorLockMode.Locked)
+            return;
+
         m_Camera.Look(m_Input.lookVector);
         m_LookPoint.UpdatePosition(m_Input.lookVector, m_Input.usingKeyboard);
         m_FloatCapsule.Jump(m_Input.jumpTrigger, m_Input.isJumping);
