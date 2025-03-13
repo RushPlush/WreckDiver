@@ -84,6 +84,10 @@ namespace Player
                 dots.Add(Vector3.Dot(hit.point - raySource.position, raySource.forward));
                 //print(dots[i]);
             }
+            if (Physics.Raycast(raySource.position, transform.forward, out hit, maxInteractionDistance, raycastLayers))
+            {
+                
+            }
             if(dots.Count == 0) return;
             int closestIndex = -1;
             int dotIndex = -1;
