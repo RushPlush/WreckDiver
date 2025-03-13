@@ -8,21 +8,13 @@ public class Lockwheel : MonoBehaviour
     [SerializeField] private float anglePerFace = -36;
     [SerializeField] private float speedModifier = 1;
     [SerializeField] private float rotationTime = 0;
-    /// <summary>
-    /// The material of the lockwheel when it is highlighted
-    /// </summary>
-    [SerializeField] private Material highlightMaterial;
-    /// <summary>
-    /// The default material of the lockwheel
-    /// </summary>
-    [SerializeField] private Material defaultMaterial;
+    private Outline outline;
 
-    private Renderer renderer;
-
-    void Start()
+    void Awake()
     {
-        renderer = GetComponent<Renderer>();
-        renderer.materials[0] = defaultMaterial;
+        outline = GetComponent<Outline>();
+        outline.enabled = false;
+        outline.OutlineColor = Color.HSVToRGB(60/360f, 1f, 1f);
         transform.localRotation = Quaternion.Euler(0, anglePerFace * codeFace, 90);
     }
 
@@ -55,12 +47,12 @@ public class Lockwheel : MonoBehaviour
 
     public void Highlight()
     {
-        renderer.materials[0] = highlightMaterial;
+        outline.enabled = true;
     }
 
     public void Unhighlight()
     {
-        renderer.materials[0] = defaultMaterial;
+        outline.enabled = false;
     }
 
     public void SetCodeFace(int face)

@@ -6,6 +6,7 @@ public class Codelock : MonoBehaviour
     [SerializeField] private int[] code;
     [SerializeField] private int[] hardCode;
     [SerializeField] private MonoBehaviour unlockable;
+    [SerializeField] private int highlighted = -1;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -51,6 +52,15 @@ public class Codelock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        foreach (var lockwheel in lockwheels)
+        {
+            lockwheel.Unhighlight();
+        }
+        if (highlighted >= 0)
+        {
+            lockwheels[highlighted].Highlight();
+        }
+
         // check if code face matches code for all lockwheels
         for (int i = 0; i < lockwheels.Length; i++)
         {
