@@ -33,14 +33,26 @@ public class Input : MonoBehaviour
     public void OnPause(InputValue value) => isPausing = value.isPressed; // might have to do a state check here as well, but it is set as initial state check. 
     public bool isOpeningInventory { get; private set; }
     public void OnOpenInventory(InputValue value) => isOpeningInventory = value.isPressed;
-    
+    public bool isInteracting { get; private set; }
+    public bool interactTrigger { get; private set; }
+    private bool previousInteractValue = false;
+    public void OnInteract(InputValue value)
+    {
+        isInteracting = value.isPressed;
+        if(!previousInteractValue)
+            interactTrigger = isInteracting;
+        previousInteractValue = isInteracting;
+    }
+
     //for on pause, and on open inventory, we might want to swap over to a different action map, off of player and into either a dedicated inventory/pause action map, or into a more general UI navigation action map. 
     //this would also enable us to have menus without pausing the game.
     private void LateUpdate()
     {
-        previousJumpValue = isJumping;
+        //previousJumpValue = isJumping;
+        //previousInteractValue = isInteracting;
         //isOpeningInventory = false;
         jumpTrigger = false;
+        interactTrigger = false;
         //isBoosting  = false;
         //isPausing   = false;
         //isCrouching = false;
