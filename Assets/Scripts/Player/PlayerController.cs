@@ -1,3 +1,4 @@
+using Player;
 using UnityEngine;
 
 [RequireComponent(typeof(FloatCapsule))]
@@ -9,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private Movement m_Movement;
     private PlayerCamera m_Camera;
     private FloatCapsule m_FloatCapsule;
+    private Interactor m_Interactor;
 
     private void Awake()
     {
@@ -16,6 +18,11 @@ public class PlayerController : MonoBehaviour
         m_Camera = GetComponent<PlayerCamera>();
         m_Movement = GetComponent<Movement>();
         m_Input = GetComponent<Input>();
+        m_Interactor = transform.GetChild(0).GetComponentInChildren<Interactor>(); //This is a hacky way to get the Interactor component, it should be done in a better way
+        if(m_Interactor == null)
+        {
+            Debug.LogError("Interactor not found, make sure camera is the first child of the player, and that the Interactor is a child of the camera");
+        }
     }
     private void Start()
     {
@@ -26,6 +33,10 @@ public class PlayerController : MonoBehaviour
     {
         m_Camera.Look(m_Input.lookVector);
         m_FloatCapsule.Jump(m_Input.jumpTrigger, m_Input.isJumping);
+        if(m_Input.interactTrigger)
+        {
+            m_Interactor.Interact();
+        }
     }
     private void FixedUpdate() {    
         m_Movement.Move(m_Input.moveDirection, m_Input.isBoosting);
