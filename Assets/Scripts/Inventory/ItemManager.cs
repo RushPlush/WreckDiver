@@ -2,17 +2,19 @@ using UnityEngine;
 
 public class ItemManager : MonoBehaviour
 {
-    private InventorySystem inventorySystem;
+    public InventorySystem inventorySystem{ get; private set; }
     public Item heldItem { get; private set; } = null;
     [SerializeField] private GameObject itemHolder;
-    private MeshFilter itemHolderMeshFilter;
+    private GameObject heldItemInstance;
+    //private MeshFilter itemHolderMeshFilter;
     
     public bool isHoldingItem { get; private set; }
     private int currentItemIndex = -1;
     private void Awake()
     {
         inventorySystem = GetComponent<InventorySystem>();
-        itemHolderMeshFilter = itemHolder.GetComponent<MeshFilter>();
+        heldItemInstance = itemHolder.transform.GetChild(0).gameObject;
+        //itemHolderMeshFilter = itemHolder.GetComponent<MeshFilter>();
     }
     
     void ChangeItem(int iteration)
@@ -32,13 +34,15 @@ public class ItemManager : MonoBehaviour
             currentItemIndex = -1;
             heldItem = null;
             isHoldingItem = false;
-            itemHolderMeshFilter.mesh = null;
+            heldItemInstance = new GameObject();
+            //itemHolderMeshFilter.mesh = null;
             return;
         }
         else
         {
             heldItem = inventorySystem.GetItems()[currentItemIndex].Item;
-            itemHolderMeshFilter.mesh = heldItem.Mesh;
+            //itemHolderMeshFilter.mesh = heldItem.Mesh;
+            heldItemInstance = heldItem.Prefab;
             isHoldingItem = true;
         }
     }
