@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private FloatCapsule m_FloatCapsule;
     private Interactor m_Interactor;
     private LookPoint m_LookPoint;
+    private ItemManager m_ItemManager;
 
     private void Awake()
     {
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
         m_Camera = GetComponent<PlayerCamera>();
         m_Movement = GetComponent<Movement>();
         m_Input = GetComponent<Input>();
+        m_ItemManager = GetComponent<ItemManager>();
         m_Interactor = transform.GetChild(0).GetComponentInChildren<Interactor>(); //This is a hacky way to get the Interactor component, it should be done in a better way
         m_LookPoint = transform.GetChild(0).GetComponentInChildren<LookPoint>(); //This is a hacky way to get the LookPoint component, it should be done in a better way
         if(m_Interactor == null)
@@ -43,6 +45,19 @@ public class PlayerController : MonoBehaviour
         if(m_Input.interactTrigger)
         {
             m_Interactor.Interact();
+        }
+        m_ItemManager.ChangeItem(m_Input.itemChange);
+        if(m_Input.isUsingPrimary)
+        {
+            m_ItemManager.PrimaryUse();
+        }
+        if(m_Input.isUsingSecondary)
+        {
+            m_ItemManager.SecondaryUse();
+        }
+        if(m_Input.isUsingTertiary)
+        {
+            m_ItemManager.TertiaryUse();
         }
     }
     private void FixedUpdate() {    

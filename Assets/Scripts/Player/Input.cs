@@ -43,6 +43,28 @@ public class Input : MonoBehaviour
             interactTrigger = isInteracting;
         previousInteractValue = isInteracting;
     }
+    public bool isUsingPrimary { get; private set; }
+    public void OnItemPrimary(InputValue value)
+    {
+        isUsingPrimary = value.isPressed;
+    }
+    public bool isUsingSecondary { get; private set; }
+    
+    public void OnItemSecondary(InputValue value)
+    {
+        isUsingSecondary = value.isPressed;
+    }
+    public bool isUsingTertiary { get; private set; }
+    public void OnItemTertiary(InputValue value)
+    {
+        isUsingTertiary = value.isPressed;
+    }
+    public int itemChange { get; private set; }
+    public void OnItemChange(InputValue value)
+    {
+        itemChange = value.Get<int>();
+    }
+    
     public bool usingKeyboard { get; private set; }
     
     public void OnAnyKeyboard(InputValue value)

@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Inventory;
 using UnityEngine;
 
@@ -11,22 +12,23 @@ public class HarpoonBehaviour : MonoBehaviour, IItem {
 
     private void Awake()
     {
-        itemManager = GetComponent<ItemManager>();
-    }
-
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // in scene, find player by tag, get item manager
+        var foundObjects = FindObjectsByType<ItemManager>(FindObjectsSortMode.None);
+        if (foundObjects.Length == 0)
+        {
+            Debug.LogError("No ItemManager found in scene");
+            return;
+        }
+        for (int i = 0; i < foundObjects.Count(); i++)
+        {
+            if (foundObjects[i].gameObject.CompareTag("Player"))
+                itemManager = foundObjects[i];
+        }
     }
 
     public void PrimaryUse() // Shoot
     {
+        
         throw new System.NotImplementedException();
     }
 

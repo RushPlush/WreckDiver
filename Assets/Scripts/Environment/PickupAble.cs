@@ -21,6 +21,7 @@ public class PickupAble : MonoBehaviour, IInteractable
 
     public void Interact(GameObject player)
     {
+        print(gameObject.name + " Interacted with player");
         player.GetComponent<ItemManager>().inventorySystem.AddItem(item, quantity);
         Destroy(this.gameObject);
     }

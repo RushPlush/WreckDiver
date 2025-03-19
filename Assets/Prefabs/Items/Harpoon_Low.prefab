@@ -2245,6 +2245,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4658219679020382632}
+  - component: {fileID: 436467095906926607}
   m_Layer: 0
   m_Name: Harpoon_Low
   m_TagString: Untagged
@@ -2294,6 +2295,20 @@ Transform:
   - {fileID: 973845962063275104}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &436467095906926607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8651926029126355869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12d5bc94aa82e1e439008c347ad82e56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  harpoon: {fileID: 8301924901511962824, guid: 797b7a3cc9e04e64c900a238121e5903, type: 3}
+  harpoonItem: {fileID: 11400000, guid: be4bae4de6cf5d24d804e0d0ebf3b34e, type: 2}
 --- !u!1 &9202561765140549857
 GameObject:
   m_ObjectHideFlags: 0

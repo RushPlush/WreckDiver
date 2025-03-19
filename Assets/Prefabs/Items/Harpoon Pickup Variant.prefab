@@ -1,0 +1,128 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1772269520724729538
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4658219679020382632, guid: ff53e775ae32d07498bfd8a48de6b4f1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 28.29096
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658219679020382632, guid: ff53e775ae32d07498bfd8a48de6b4f1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.92508435
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658219679020382632, guid: ff53e775ae32d07498bfd8a48de6b4f1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 17.373423
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658219679020382632, guid: ff53e775ae32d07498bfd8a48de6b4f1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658219679020382632, guid: ff53e775ae32d07498bfd8a48de6b4f1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658219679020382632, guid: ff53e775ae32d07498bfd8a48de6b4f1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658219679020382632, guid: ff53e775ae32d07498bfd8a48de6b4f1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658219679020382632, guid: ff53e775ae32d07498bfd8a48de6b4f1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658219679020382632, guid: ff53e775ae32d07498bfd8a48de6b4f1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658219679020382632, guid: ff53e775ae32d07498bfd8a48de6b4f1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8651926029126355869, guid: ff53e775ae32d07498bfd8a48de6b4f1, type: 3}
+      propertyPath: m_Name
+      value: Harpoon Pickup Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8651926029126355869, guid: ff53e775ae32d07498bfd8a48de6b4f1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2063646490734313719}
+    - targetCorrespondingSourceObject: {fileID: 8651926029126355869, guid: ff53e775ae32d07498bfd8a48de6b4f1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 957645977881301520}
+    - targetCorrespondingSourceObject: {fileID: 8651926029126355869, guid: ff53e775ae32d07498bfd8a48de6b4f1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1355195872889106206}
+  m_SourcePrefab: {fileID: 100100000, guid: ff53e775ae32d07498bfd8a48de6b4f1, type: 3}
+--- !u!1 &6956246538746385759 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8651926029126355869, guid: ff53e775ae32d07498bfd8a48de6b4f1, type: 3}
+  m_PrefabInstance: {fileID: 1772269520724729538}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2063646490734313719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6956246538746385759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac0578a330172224583f777477ddda29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 86affa8bc0546d446bab5fce3bcc803a, type: 2}
+  quantity: 1
+--- !u!114 &957645977881301520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6956246538746385759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!136 &1355195872889106206
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6956246538746385759}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.11
+  m_Height: 1.06
+  m_Direction: 2
+  m_Center: {x: 0, y: -0.12, z: 0.07}

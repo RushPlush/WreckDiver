@@ -1,3 +1,4 @@
+using Inventory;
 using UnityEngine;
 
 public class ItemManager : MonoBehaviour
@@ -17,7 +18,7 @@ public class ItemManager : MonoBehaviour
         //itemHolderMeshFilter = itemHolder.GetComponent<MeshFilter>();
     }
     
-    void ChangeItem(int iteration)
+    public void ChangeItem(int iteration)
     {
         var count = inventorySystem.GetItems().Count;
         currentItemIndex += iteration;
@@ -52,5 +53,20 @@ public class ItemManager : MonoBehaviour
         if(!isHoldingItem) return;
         if(heldItem == null) return;
         inventorySystem.RemoveItem(heldItem);
+    }
+    public void PrimaryUse()
+    {
+        if(heldItem.ItemBehaviour != null)
+            heldItem.ItemBehaviour.PrimaryUse();
+    }
+    public void SecondaryUse()
+    {
+        if(heldItem.ItemBehaviour != null)
+            heldItem.ItemBehaviour.SecondaryUse();
+    }
+    public void TertiaryUse()
+    {
+        if(heldItem.ItemBehaviour != null)
+            heldItem.ItemBehaviour.TertiaryUse();
     }
 }

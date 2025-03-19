@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Player
@@ -64,6 +66,16 @@ namespace Player
         private void FixedUpdate()
         {
             //interactionIndex = -1;
+            for (int i = interactables.Count() - 1; i >= 0; i--)
+            {
+                if(interactableTransforms[i].IsDestroyed())
+                {
+                    interactables.RemoveAt(i);
+                    interactableTransforms.RemoveAt(i);
+                    interactableColliders.RemoveAt(i);
+                }
+            }
+            
             if(interactables.Count == 0) return;
             RaycastHit hit;
             dots.Clear();
