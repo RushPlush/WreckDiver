@@ -45,6 +45,7 @@ public class ItemManager : MonoBehaviour
             //itemHolderMeshFilter.mesh = heldItem.Mesh;
             heldItemInstance = heldItem.Prefab;
             isHoldingItem = true;
+            print("Holding: " + heldItem.Name);
         }
     }
 
@@ -56,8 +57,7 @@ public class ItemManager : MonoBehaviour
     }
     public void PrimaryUse()
     {
-        if(heldItem.ItemBehaviour != null)
-            heldItem.ItemBehaviour.PrimaryUse();
+        heldItem.ItemBehaviour?.PrimaryUse();
     }
     public void SecondaryUse()
     {
