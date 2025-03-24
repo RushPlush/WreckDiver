@@ -15,7 +15,22 @@ guid: bdbffab92fe18c745a2279c5596163bf
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Frame
+    second: {fileID: 2100000, guid: 6bd293df5418cc24ba04e01402fcb151, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Painting
+    second: {fileID: 2100000, guid: c8f1db91c63d26e4084500dc60205d4c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Paper
+    second: {fileID: 2100000, guid: 97beef3c50588754e9e6c9b567c3361c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

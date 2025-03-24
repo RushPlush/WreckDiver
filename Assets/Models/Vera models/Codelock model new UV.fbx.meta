@@ -15,7 +15,37 @@ guid: 6d82b3ed4d02ed24bb3d14b27538c639
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Inbetween
+    second: {fileID: 2100000, guid: 81bc0da0603de8243a58e4c9ce00d792, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: aiStandardSurface4
+    second: {fileID: 2100000, guid: fc402b3946d3eac4a93ae8286b675d4d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gear_frame
+    second: {fileID: 2100000, guid: ae03d51979618d346a8fc76045dd426d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: new_gear_texture
+    second: {fileID: 2100000, guid: 0fdf2ec0dacf57a4c8abe01b0c3af2ed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: point
+    second: {fileID: 2100000, guid: da1edad4c35bcb6428e94b0b8d5d8701, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: steel
+    second: {fileID: 2100000, guid: 095cccf96d99be14b9f84d72ef8b9a63, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

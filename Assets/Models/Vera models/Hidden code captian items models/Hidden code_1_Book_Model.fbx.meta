@@ -15,7 +15,32 @@ guid: d03e0d4a35c2fda41b6e96455530ab30
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Book_paper2
+    second: {fileID: 2100000, guid: 30c0e79f08bfae24185275126713dfd0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Paper
+    second: {fileID: 2100000, guid: 97beef3c50588754e9e6c9b567c3361c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: book_cover
+    second: {fileID: 2100000, guid: 1f99e463717cbcb41916cc2b7e72f19f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bookmark
+    second: {fileID: 2100000, guid: 6ded7e0e95eed7b44abc9309722ddbaa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tall
+    second: {fileID: 2100000, guid: 04645fef3f90802459fb888df38874ad, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

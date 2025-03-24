@@ -15,7 +15,22 @@ guid: f8c5e3fa48f3c38438ffaeabc66f6a35
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bottle_cap
+    second: {fileID: 2100000, guid: 22949d3a11da6a94da444c322cbe1573, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass_bottle
+    second: {fileID: 2100000, guid: 4892ac62c78bec24ab49aef01028c4c2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Paper
+    second: {fileID: 2100000, guid: 97beef3c50588754e9e6c9b567c3361c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

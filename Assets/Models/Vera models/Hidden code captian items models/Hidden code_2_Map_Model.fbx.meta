@@ -15,7 +15,37 @@ guid: ed6ba6d35c466c943b712fc028bfdc3a
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blue_pin
+    second: {fileID: 2100000, guid: df7f1f5d8d880bf4aa53a7b22ea68be5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Green_pin
+    second: {fileID: 2100000, guid: 3d209dbfa59681e4bbb245a96016a3ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Map1
+    second: {fileID: 2100000, guid: 8e7e692704870464aa654706501aa5d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Paper
+    second: {fileID: 2100000, guid: 97beef3c50588754e9e6c9b567c3361c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pin_needle
+    second: {fileID: 2100000, guid: 117564aa8d127264da2a33884d0a8c5b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Red_pin
+    second: {fileID: 2100000, guid: ef97c2959880ef040aea3624a1c5edb2, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
