@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e49b329fddeea714bb3781916870e248, type: 2}
+  - {fileID: 2100000, guid: da8268520969ee540b5bb41f7a6dbe52, type: 2}
   - {fileID: 2100000, guid: ae03d51979618d346a8fc76045dd426d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -103,7 +103,7 @@ MonoBehaviour:
   codeFace: 0
   prevCodeFace: 0
   anglePerFace: -36
-  speedModifier: 1
+  speedModifier: 0.25
   rotationTime: 0
 --- !u!1 &140556075934414423
 GameObject:
@@ -288,7 +288,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e49b329fddeea714bb3781916870e248, type: 2}
+  - {fileID: 2100000, guid: da8268520969ee540b5bb41f7a6dbe52, type: 2}
   - {fileID: 2100000, guid: ae03d51979618d346a8fc76045dd426d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -326,7 +326,7 @@ MonoBehaviour:
   codeFace: 0
   prevCodeFace: 0
   anglePerFace: -36
-  speedModifier: 1
+  speedModifier: 0.25
   rotationTime: 0
 --- !u!1 &3643943805554795227
 GameObject:
@@ -393,7 +393,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e49b329fddeea714bb3781916870e248, type: 2}
+  - {fileID: 2100000, guid: da8268520969ee540b5bb41f7a6dbe52, type: 2}
   - {fileID: 2100000, guid: ae03d51979618d346a8fc76045dd426d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -431,7 +431,7 @@ MonoBehaviour:
   codeFace: 0
   prevCodeFace: 0
   anglePerFace: -36
-  speedModifier: 1
+  speedModifier: 0.25
   rotationTime: 0
 --- !u!1 &3927280726816882816
 GameObject:
@@ -874,7 +874,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e49b329fddeea714bb3781916870e248, type: 2}
+  - {fileID: 2100000, guid: da8268520969ee540b5bb41f7a6dbe52, type: 2}
   - {fileID: 2100000, guid: ae03d51979618d346a8fc76045dd426d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -912,5 +912,5 @@ MonoBehaviour:
   codeFace: 0
   prevCodeFace: 0
   anglePerFace: -36
-  speedModifier: 1
+  speedModifier: 0.25
   rotationTime: 0
