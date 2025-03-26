@@ -15,7 +15,52 @@ guid: e53358dcab540b948993a1fe7ba3365e
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ball_green
+    second: {fileID: 2100000, guid: 1b42b8ef7d4f4774cbd72077dc783ff3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ball_red
+    second: {fileID: 2100000, guid: 33acf08fd73def448843220d2f173dee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: 88a0f264e63c7d947a49dafadd8c85e6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: aiStandardSurface2
+    second: {fileID: 2100000, guid: 048d2652126344a4d90a349feff9c577, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: compass
+    second: {fileID: 2100000, guid: 34da06ca2a629214bb4b1915c275367d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: compass_center_ball
+    second: {fileID: 2100000, guid: 946cb6ea615090c4cb425b36b94000ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: copper
+    second: {fileID: 2100000, guid: e8da9e0eb9da0fd49b370bb08c4864bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: copper_2_inner_compass
+    second: {fileID: 2100000, guid: b6df6689e6183f949933943410957e2e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wood
+    second: {fileID: 2100000, guid: 430458ae2caffd64ca4586ece7ee29fd, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
