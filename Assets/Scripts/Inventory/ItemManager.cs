@@ -1,4 +1,5 @@
 using Inventory;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class ItemManager : MonoBehaviour
@@ -7,10 +8,13 @@ public class ItemManager : MonoBehaviour
     public Item heldItem { get; private set; } = null;
     [SerializeField] private GameObject itemHolder;
     private GameObject heldItemInstance;
+    [CanBeNull] private IItem heldItemBehaviour;
     //private MeshFilter itemHolderMeshFilter;
     
     public bool isHoldingItem { get; private set; }
     private int currentItemIndex = -1;
+    
+    public int harpoonsLoaded = 0; // todo save elsewhere, needed for between swaps 
     private void Awake()
     {
         inventorySystem = GetComponent<InventorySystem>();
@@ -20,8 +24,10 @@ public class ItemManager : MonoBehaviour
     
     public void ChangeItem(int iteration)
     {
+        //print(iteration);
         var count = inventorySystem.GetItems().Count;
         currentItemIndex += iteration;
+        Destroy(heldItemInstance);
         if (currentItemIndex < 0)
         {
             currentItemIndex = count - 1;
@@ -35,7 +41,8 @@ public class ItemManager : MonoBehaviour
             currentItemIndex = -1;
             heldItem = null;
             isHoldingItem = false;
-            heldItemInstance = new GameObject();
+            //Destroy(heldItemInstance);
+            heldItemInstance = null;
             //itemHolderMeshFilter.mesh = null;
             return;
         }
@@ -43,7 +50,9 @@ public class ItemManager : MonoBehaviour
         {
             heldItem = inventorySystem.GetItems()[currentItemIndex].Item;
             //itemHolderMeshFilter.mesh = heldItem.Mesh;
-            heldItemInstance = heldItem.Prefab;
+            if(heldItem.Prefab !=null)
+                heldItemInstance = Instantiate(heldItem.Prefab, itemHolder.transform);
+            heldItemBehaviour = heldItemInstance.GetComponent<IItem>();
             isHoldingItem = true;
             print("Holding: " + heldItem.Name);
         }
@@ -57,16 +66,15 @@ public class ItemManager : MonoBehaviour
     }
     public void PrimaryUse()
     {
-        heldItem.ItemBehaviour?.PrimaryUse();
+        // if(!heldItem.HasBehaviour) return;
+        heldItemBehaviour?.PrimaryUse();
     }
     public void SecondaryUse()
     {
-        if(heldItem.ItemBehaviour != null)
-            heldItem.ItemBehaviour.SecondaryUse();
+        heldItemBehaviour?.SecondaryUse();
     }
     public void TertiaryUse()
     {
-        if(heldItem.ItemBehaviour != null)
-            heldItem.ItemBehaviour.TertiaryUse();
+        heldItemBehaviour?.TertiaryUse();
     }
 }

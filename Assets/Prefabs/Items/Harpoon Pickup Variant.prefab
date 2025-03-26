@@ -8,17 +8,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 286088080829639730, guid: ff53e775ae32d07498bfd8a48de6b4f1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.02441597
+      objectReference: {fileID: 0}
+    - target: {fileID: 286088080829639730, guid: ff53e775ae32d07498bfd8a48de6b4f1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.04257584
+      objectReference: {fileID: 0}
+    - target: {fileID: 286088080829639730, guid: ff53e775ae32d07498bfd8a48de6b4f1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.1683246
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375909469046064048, guid: ff53e775ae32d07498bfd8a48de6b4f1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4658219679020382632, guid: ff53e775ae32d07498bfd8a48de6b4f1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 28.29096
+      value: 32.321014
       objectReference: {fileID: 0}
     - target: {fileID: 4658219679020382632, guid: ff53e775ae32d07498bfd8a48de6b4f1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.92508435
+      value: 1.6286561
       objectReference: {fileID: 0}
     - target: {fileID: 4658219679020382632, guid: ff53e775ae32d07498bfd8a48de6b4f1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 17.373423
+      value: 16.95573
       objectReference: {fileID: 0}
     - target: {fileID: 4658219679020382632, guid: ff53e775ae32d07498bfd8a48de6b4f1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -48,9 +64,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5381644479771891081, guid: ff53e775ae32d07498bfd8a48de6b4f1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8651926029126355869, guid: ff53e775ae32d07498bfd8a48de6b4f1, type: 3}
       propertyPath: m_Name
       value: Harpoon Pickup Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8651926029126355869, guid: ff53e775ae32d07498bfd8a48de6b4f1, type: 3}
+      propertyPath: m_Layer
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

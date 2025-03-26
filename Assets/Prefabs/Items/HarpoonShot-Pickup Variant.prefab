@@ -22,15 +22,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8275237696678795673, guid: 797b7a3cc9e04e64c900a238121e5903, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 28.211473
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8275237696678795673, guid: 797b7a3cc9e04e64c900a238121e5903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.66519576
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8275237696678795673, guid: 797b7a3cc9e04e64c900a238121e5903, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 17.833889
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8275237696678795673, guid: 797b7a3cc9e04e64c900a238121e5903, type: 3}
       propertyPath: m_LocalRotation.w
@@ -64,29 +64,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: HarpoonShot-Pickup Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8301924901511962824, guid: 797b7a3cc9e04e64c900a238121e5903, type: 3}
+      propertyPath: m_Layer
+      value: 30
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -1049033148363940382, guid: 797b7a3cc9e04e64c900a238121e5903, type: 3}
+    - {fileID: 6202150551631455001, guid: 797b7a3cc9e04e64c900a238121e5903, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8301924901511962824, guid: 797b7a3cc9e04e64c900a238121e5903, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8310366576566046821}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 797b7a3cc9e04e64c900a238121e5903, type: 3}
---- !u!1 &6228603601574745012 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8301924901511962824, guid: 797b7a3cc9e04e64c900a238121e5903, type: 3}
-  m_PrefabInstance: {fileID: 2685884049326863228}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8310366576566046821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6228603601574745012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7c98e9fd9607294a9ba4ae48d1faf9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10

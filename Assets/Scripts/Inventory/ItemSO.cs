@@ -11,5 +11,6 @@ public class Item : ScriptableObject
     public GameObject Prefab;
     public Sprite     Icon;
     public int        Value;
+    public bool       HasBehaviour;
     [CanBeNull]public IItem      ItemBehaviour;
 }
