@@ -64,17 +64,17 @@ public class ItemManager : MonoBehaviour
         if(heldItem == null) return;
         inventorySystem.RemoveItem(heldItem);
     }
-    public void PrimaryUse()
+    public void PrimaryUse(bool isPressed)
     {
         // if(!heldItem.HasBehaviour) return;
-        heldItemBehaviour?.PrimaryUse();
+        heldItemBehaviour?.PrimaryUse(isPressed);
     }
-    public void SecondaryUse()
+    public void SecondaryUse(bool isPressed)
     {
-        heldItemBehaviour?.SecondaryUse();
+        heldItemBehaviour?.SecondaryUse(isPressed);
     }
-    public void TertiaryUse()
+    public void TertiaryUse(bool isPressed)
     {
-        heldItemBehaviour?.TertiaryUse();
+        heldItemBehaviour?.TertiaryUse(isPressed);
     }
 }

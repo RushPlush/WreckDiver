@@ -3,17 +3,29 @@ using UnityEngine;
 
 public class Harpoon : MonoBehaviour
 {
-    
+    private int indexValue;
     private bool isHarpoonActive = false;
     [SerializeField] private LayerMask afterImpactLayer;
     [SerializeField] private float speed = 10f;
     Rigidbody rb;
+    HarpoonBehaviour harpoonBehaviour;
+    Pullable pullable;
+    bool Destroyed = false;
 
     private void Awake()
     {
         rb=GetComponent<Rigidbody>();
     }
 
+    public void SetHarpoonBehaviour(HarpoonBehaviour harpoonBehaviour)
+    {
+        this.harpoonBehaviour = harpoonBehaviour;
+    }
+
+    public void SetIndexValue(int index)
+    {
+        indexValue = index;
+    }
     public void Shoot()
     {
         isHarpoonActive = true;
@@ -51,6 +63,23 @@ public class Harpoon : MonoBehaviour
         rb.isKinematic = true;
         rb.collisionDetectionMode = CollisionDetectionMode.Discrete;
         rb.interpolation = RigidbodyInterpolation.None;
+        MonoBehaviour[] allScripts = transform.parent.GetComponents<MonoBehaviour>();
+        if(allScripts.Length == 0) return;
+        for (int i = 0; i < allScripts.Length; i++)
+        {
+            if (allScripts[i] is not Pullable) continue;
+            pullable = (Pullable)allScripts[i];
+            harpoonBehaviour.SetPullable(indexValue, pullable);
+        }
     }
     //todo 
+    private void OnDestroy()
+    {
+        print(gameObject.name + " Destroyed");
+        Destroyed = true;
+        if(harpoonBehaviour != null)
+            harpoonBehaviour.DestroyHarpoon(indexValue);
+        if(pullable != null)
+            pullable.Release();
+    }
 }

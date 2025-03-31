@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PickupAble : MonoBehaviour, IInteractable
@@ -12,7 +13,20 @@ public class PickupAble : MonoBehaviour, IInteractable
         m_Outline = GetComponent<Outline>();
         m_Outline.enabled = false;
     }
-    
+
+    public bool destroyed { get; private set; }
+
+    bool IInteractable.destroyed
+    {
+        get => destroyed;
+        set => destroyed = value;
+    }
+
+    private void OnDestroy()
+    {
+        destroyed = true;
+    }
+
     IInteractable.InteractionType IInteractable.interactionType
     {
         get => interactionType1;

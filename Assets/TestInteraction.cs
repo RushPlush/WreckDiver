@@ -11,6 +11,14 @@ public class TestInteraction : MonoBehaviour, IInteractable
         m_Outline.enabled = false;
     }
 
+    public bool destroyed { get; private set; }
+
+    bool IInteractable.destroyed
+    {
+        get => destroyed;
+        set => destroyed = value;
+    }
+
     IInteractable.InteractionType IInteractable.interactionType
     {
         get => interactionType;

@@ -60,16 +60,19 @@ namespace Player
             
             //interactableSize = interactables.Count;
         }
+        
         List<float> dots = new List<float>();
         List<Vector3> hitPoints = new List<Vector3>();
         List<float> distances = new List<float>();
         private void FixedUpdate()
         {
-            //interactionIndex = -1;
+            
+            interactionIndex = -1;
             for (int i = interactables.Count() - 1; i >= 0; i--)
             {
-                if(interactableTransforms[i].IsDestroyed())
+                if(interactables[i].destroyed)
                 {
+                    print("destroyed");
                     interactables.RemoveAt(i);
                     interactableTransforms.RemoveAt(i);
                     interactableColliders.RemoveAt(i);
@@ -143,6 +146,7 @@ namespace Player
         public void Interact()
         {
             if(interactionIndex == -1) return;
+            if(interactables.Count == 0) return;
             var interactable    = interactables[interactionIndex];
             var interactionType = interactable.interactionType;
             switch (interactionType)

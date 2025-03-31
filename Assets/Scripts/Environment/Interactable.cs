@@ -15,6 +15,7 @@ public interface IInteractable
         [Tooltip("Can't interact with this object, usually used for items that need some perquisites to be interacted with, and then needs to get changed to one of the other types")]
         NoInteraction
     }
+    bool destroyed { get; protected set; }
     public InteractionType interactionType { get; protected set; }
     void Interact(GameObject player);
     void Interact(GameObject player, Item item);

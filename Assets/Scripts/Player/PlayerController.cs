@@ -70,15 +70,19 @@ public class PlayerController : MonoBehaviour
     }
     void OnItemPrimary(InputValue value)
     {
-        itemManager.PrimaryUse();
+        var val = value.isPressed;
+        
+        itemManager.PrimaryUse(val);
     }
     void OnItemSecondary(InputValue value)
     {
-        itemManager.SecondaryUse();
+        var val = value.isPressed;
+        itemManager.SecondaryUse(val);
     }
     void OnItemTertiary(InputValue value)
     {
-        itemManager.TertiaryUse();
+        var val = value.isPressed;
+        itemManager.TertiaryUse(val);
     }
     private void FixedUpdate() {    
         movement.Move(input.moveDirection, input.isBoosting);
