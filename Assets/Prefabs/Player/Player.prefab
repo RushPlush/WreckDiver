@@ -680,7 +680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  runMultiplier: 2
+  runMultiplier: 1.2
   fov: 60
 --- !u!114 &3993409632646248429
 MonoBehaviour:
@@ -697,7 +697,7 @@ MonoBehaviour:
   rayLenght: 3
   groundLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 9
   rideHeight: 2.5
   rideSpringDampener: 3
   rideSpringStrength: 10
