@@ -3,7 +3,12 @@ guid: 69a231ae0d020b649be8fe08e28f91c0
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Koridor_listverk_main
+    second: {fileID: 2100000, guid: 40aceaa8235087b469e264452b2dcc6a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
