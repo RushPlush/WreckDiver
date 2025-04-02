@@ -10,6 +10,7 @@ Shader "DefaultPBR"
 		_Normal("Normal", 2D) = "white" {}
 		_Metalic("Metalic", 2D) = "white" {}
 		_Occlusion("Occlusion", 2D) = "white" {}
+		_Smoothness("Smoothness", Range( 0 , 1)) = 0
 		[HideInInspector] _texcoord( "", 2D ) = "white" {}
 
 
@@ -252,7 +253,10 @@ Shader "DefaultPBR"
 				#define ENABLE_TERRAIN_PERPIXEL_NORMAL
 			#endif
 
-			
+			#define ASE_NEEDS_FRAG_WORLD_TANGENT
+			#define ASE_NEEDS_FRAG_WORLD_NORMAL
+			#define ASE_NEEDS_FRAG_WORLD_BITANGENT
+
 
 			#if defined(ASE_EARLY_Z_DEPTH_OPTIMIZE) && (SHADER_TARGET >= 45)
 				#define ASE_SV_DEPTH SV_DepthLessEqual
@@ -305,6 +309,7 @@ Shader "DefaultPBR"
 			float4 _Normal_TexelSize;
 			float4 _Metalic_ST;
 			float4 _Occlusion_ST;
+			float _Smoothness;
 			#ifdef ASE_TRANSMISSION
 				float _TransmissionShadow;
 			#endif
@@ -341,12 +346,32 @@ Shader "DefaultPBR"
 			sampler2D _Occlusion;
 
 
-			float3 CombineSamplesSharp128_g1( float S0, float S1, float S2, float Strength )
+			void CalculateUVsSmooth46_g1( float2 UV, float4 TexelSize, out float2 UV0, out float2 UV1, out float2 UV2, out float2 UV3, out float2 UV4, out float2 UV5, out float2 UV6, out float2 UV7, out float2 UV8 )
 			{
 				{
-				    float3 va = float3( 0.13, 0, ( S1 - S0 ) * Strength );
-				    float3 vb = float3( 0, 0.13, ( S2 - S0 ) * Strength );
-				    return normalize( cross( va, vb ) );
+				    float3 pos = float3( TexelSize.xy, 0 );
+				    float3 neg = float3( -pos.xy, 0 );
+				    UV0 = UV + neg.xy;
+				    UV1 = UV + neg.zy;
+				    UV2 = UV + float2( pos.x, neg.y );
+				    UV3 = UV + neg.xz;
+				    UV4 = UV;
+				    UV5 = UV + pos.xz;
+				    UV6 = UV + float2( neg.x, pos.y );
+				    UV7 = UV + pos.zy;
+				    UV8 = UV + pos.xy;
+				    return;
+				}
+			}
+			
+			float3 CombineSamplesSmooth58_g1( float Strength, float S0, float S1, float S2, float S3, float S4, float S5, float S6, float S7, float S8 )
+			{
+				{
+				    float3 normal;
+				    normal.x = Strength * ( S0 - S2 + 2 * S3 - 2 * S5 + S6 - S8 );
+				    normal.y = Strength * ( S0 + 2 * S1 + S2 - S6 - 2 * S7 - S8 );
+				    normal.z = 1.0;
+				    return normalize( normal );
 				}
 			}
 			
@@ -558,31 +583,44 @@ Shader "DefaultPBR"
 
 				float2 uv_Albedo = input.ase_texcoord9.xy * _Albedo_ST.xy + _Albedo_ST.zw;
 				
-				float localCalculateUVsSharp110_g1 = ( 0.0 );
+				float temp_output_91_0_g1 = 0.5;
+				float Strength58_g1 = temp_output_91_0_g1;
+				float localCalculateUVsSmooth46_g1 = ( 0.0 );
 				float2 uv_Normal = input.ase_texcoord9.xy * _Normal_ST.xy + _Normal_ST.zw;
 				float2 temp_output_85_0_g1 = uv_Normal;
-				float2 UV110_g1 = temp_output_85_0_g1;
-				float4 TexelSize110_g1 = _Normal_TexelSize;
-				float2 UV0110_g1 = float2( 0,0 );
-				float2 UV1110_g1 = float2( 0,0 );
-				float2 UV2110_g1 = float2( 0,0 );
-				{
-				{
-				    UV110_g1.y -= TexelSize110_g1.y * 0.5;
-				    UV0110_g1 = UV110_g1;
-				    UV1110_g1 = UV110_g1 + float2( TexelSize110_g1.x, 0 );
-				    UV2110_g1 = UV110_g1 + float2( 0, TexelSize110_g1.y );
-				}
-				}
-				float4 break134_g1 = tex2D( _Normal, UV0110_g1 );
-				float S0128_g1 = break134_g1.r;
-				float4 break136_g1 = tex2D( _Normal, UV1110_g1 );
-				float S1128_g1 = break136_g1.r;
-				float4 break138_g1 = tex2D( _Normal, UV2110_g1 );
-				float S2128_g1 = break138_g1.r;
-				float temp_output_91_0_g1 = 1.5;
-				float Strength128_g1 = temp_output_91_0_g1;
-				float3 localCombineSamplesSharp128_g1 = CombineSamplesSharp128_g1( S0128_g1 , S1128_g1 , S2128_g1 , Strength128_g1 );
+				float2 UV46_g1 = temp_output_85_0_g1;
+				float4 TexelSize46_g1 = _Normal_TexelSize;
+				float2 UV046_g1 = float2( 0,0 );
+				float2 UV146_g1 = float2( 0,0 );
+				float2 UV246_g1 = float2( 0,0 );
+				float2 UV346_g1 = float2( 0,0 );
+				float2 UV446_g1 = float2( 0,0 );
+				float2 UV546_g1 = float2( 0,0 );
+				float2 UV646_g1 = float2( 0,0 );
+				float2 UV746_g1 = float2( 0,0 );
+				float2 UV846_g1 = float2( 0,0 );
+				CalculateUVsSmooth46_g1( UV46_g1 , TexelSize46_g1 , UV046_g1 , UV146_g1 , UV246_g1 , UV346_g1 , UV446_g1 , UV546_g1 , UV646_g1 , UV746_g1 , UV846_g1 );
+				float4 break140_g1 = tex2D( _Normal, UV046_g1 );
+				float S058_g1 = break140_g1.r;
+				float4 break142_g1 = tex2D( _Normal, UV146_g1 );
+				float S158_g1 = break142_g1.r;
+				float4 break146_g1 = tex2D( _Normal, UV246_g1 );
+				float S258_g1 = break146_g1.r;
+				float4 break148_g1 = tex2D( _Normal, UV346_g1 );
+				float S358_g1 = break148_g1.r;
+				float4 break150_g1 = tex2D( _Normal, UV446_g1 );
+				float S458_g1 = break150_g1.r;
+				float4 break152_g1 = tex2D( _Normal, UV546_g1 );
+				float S558_g1 = break152_g1.r;
+				float4 break154_g1 = tex2D( _Normal, UV646_g1 );
+				float S658_g1 = break154_g1.r;
+				float4 break156_g1 = tex2D( _Normal, UV746_g1 );
+				float S758_g1 = break156_g1.r;
+				float4 break158_g1 = tex2D( _Normal, UV846_g1 );
+				float S858_g1 = break158_g1.r;
+				float3 localCombineSamplesSmooth58_g1 = CombineSamplesSmooth58_g1( Strength58_g1 , S058_g1 , S158_g1 , S258_g1 , S358_g1 , S458_g1 , S558_g1 , S658_g1 , S758_g1 , S858_g1 );
+				float3x3 ase_tangentToWorldFast = float3x3( WorldTangent.x, WorldBiTangent.x, WorldNormal.x, WorldTangent.y, WorldBiTangent.y, WorldNormal.y, WorldTangent.z, WorldBiTangent.z, WorldNormal.z );
+				float3 tangentToWorldDir68_g1 = mul( ase_tangentToWorldFast, localCombineSamplesSmooth58_g1 );
 				
 				float2 uv_Metalic = input.ase_texcoord9.xy * _Metalic_ST.xy + _Metalic_ST.zw;
 				
@@ -590,11 +628,11 @@ Shader "DefaultPBR"
 				
 
 				float3 BaseColor = tex2D( _Albedo, uv_Albedo ).rgb;
-				float3 Normal = localCombineSamplesSharp128_g1;
+				float3 Normal = tangentToWorldDir68_g1;
 				float3 Emission = 0;
 				float3 Specular = 0.5;
 				float Metallic = tex2D( _Metalic, uv_Metalic ).r;
-				float Smoothness = 0.5;
+				float Smoothness = _Smoothness;
 				float Occlusion = tex2D( _Occlusion, uv_Occlusion ).r;
 				float Alpha = 1;
 				float AlphaClipThreshold = 0.5;
@@ -934,6 +972,7 @@ Shader "DefaultPBR"
 			float4 _Normal_TexelSize;
 			float4 _Metalic_ST;
 			float4 _Occlusion_ST;
+			float _Smoothness;
 			#ifdef ASE_TRANSMISSION
 				float _TransmissionShadow;
 			#endif
@@ -1238,6 +1277,7 @@ Shader "DefaultPBR"
 			float4 _Normal_TexelSize;
 			float4 _Metalic_ST;
 			float4 _Occlusion_ST;
+			float _Smoothness;
 			#ifdef ASE_TRANSMISSION
 				float _TransmissionShadow;
 			#endif
@@ -1513,6 +1553,7 @@ Shader "DefaultPBR"
 			float4 _Normal_TexelSize;
 			float4 _Metalic_ST;
 			float4 _Occlusion_ST;
+			float _Smoothness;
 			#ifdef ASE_TRANSMISSION
 				float _TransmissionShadow;
 			#endif
@@ -1807,6 +1848,7 @@ Shader "DefaultPBR"
 			float4 _Normal_TexelSize;
 			float4 _Metalic_ST;
 			float4 _Occlusion_ST;
+			float _Smoothness;
 			#ifdef ASE_TRANSMISSION
 				float _TransmissionShadow;
 			#endif
@@ -2052,7 +2094,11 @@ Shader "DefaultPBR"
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/LODCrossFade.hlsl"
             #endif
 
-			
+			#define ASE_NEEDS_FRAG_WORLD_TANGENT
+			#define ASE_NEEDS_FRAG_WORLD_NORMAL
+			#define ASE_NEEDS_VERT_NORMAL
+			#define ASE_NEEDS_VERT_TANGENT
+
 
 			#if defined(ASE_EARLY_Z_DEPTH_OPTIMIZE) && (SHADER_TARGET >= 45)
 				#define ASE_SV_DEPTH SV_DepthLessEqual
@@ -2082,6 +2128,7 @@ Shader "DefaultPBR"
 					float4 shadowCoord : TEXCOORD4;
 				#endif
 				float4 ase_texcoord5 : TEXCOORD5;
+				float4 ase_texcoord6 : TEXCOORD6;
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 				UNITY_VERTEX_OUTPUT_STEREO
 			};
@@ -2092,6 +2139,7 @@ Shader "DefaultPBR"
 			float4 _Normal_TexelSize;
 			float4 _Metalic_ST;
 			float4 _Occlusion_ST;
+			float _Smoothness;
 			#ifdef ASE_TRANSMISSION
 				float _TransmissionShadow;
 			#endif
@@ -2125,12 +2173,32 @@ Shader "DefaultPBR"
 			sampler2D _Normal;
 
 
-			float3 CombineSamplesSharp128_g1( float S0, float S1, float S2, float Strength )
+			void CalculateUVsSmooth46_g1( float2 UV, float4 TexelSize, out float2 UV0, out float2 UV1, out float2 UV2, out float2 UV3, out float2 UV4, out float2 UV5, out float2 UV6, out float2 UV7, out float2 UV8 )
 			{
 				{
-				    float3 va = float3( 0.13, 0, ( S1 - S0 ) * Strength );
-				    float3 vb = float3( 0, 0.13, ( S2 - S0 ) * Strength );
-				    return normalize( cross( va, vb ) );
+				    float3 pos = float3( TexelSize.xy, 0 );
+				    float3 neg = float3( -pos.xy, 0 );
+				    UV0 = UV + neg.xy;
+				    UV1 = UV + neg.zy;
+				    UV2 = UV + float2( pos.x, neg.y );
+				    UV3 = UV + neg.xz;
+				    UV4 = UV;
+				    UV5 = UV + pos.xz;
+				    UV6 = UV + float2( neg.x, pos.y );
+				    UV7 = UV + pos.zy;
+				    UV8 = UV + pos.xy;
+				    return;
+				}
+			}
+			
+			float3 CombineSamplesSmooth58_g1( float Strength, float S0, float S1, float S2, float S3, float S4, float S5, float S6, float S7, float S8 )
+			{
+				{
+				    float3 normal;
+				    normal.x = Strength * ( S0 - S2 + 2 * S3 - 2 * S5 + S6 - S8 );
+				    normal.y = Strength * ( S0 + 2 * S1 + S2 - S6 - 2 * S7 - S8 );
+				    normal.z = 1.0;
+				    return normalize( normal );
 				}
 			}
 			
@@ -2142,10 +2210,17 @@ Shader "DefaultPBR"
 				UNITY_TRANSFER_INSTANCE_ID(input, output);
 				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(output);
 
+				float3 ase_normalWS = TransformObjectToWorldNormal( input.normalOS );
+				float3 ase_tangentWS = TransformObjectToWorldDir( input.tangentOS.xyz );
+				float ase_tangentSign = input.tangentOS.w * ( unity_WorldTransformParams.w >= 0.0 ? 1.0 : -1.0 );
+				float3 ase_bitangentWS = cross( ase_normalWS, ase_tangentWS ) * ase_tangentSign;
+				output.ase_texcoord6.xyz = ase_bitangentWS;
+				
 				output.ase_texcoord5.xy = input.ase_texcoord.xy;
 				
 				//setting value to unused interpolator channels and avoid initialization warnings
 				output.ase_texcoord5.zw = 0;
+				output.ase_texcoord6.w = 0;
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
 					float3 defaultVertexValue = input.positionOS.xyz;
 				#else
@@ -2291,34 +2366,48 @@ Shader "DefaultPBR"
 					#endif
 				#endif
 
-				float localCalculateUVsSharp110_g1 = ( 0.0 );
+				float temp_output_91_0_g1 = 0.5;
+				float Strength58_g1 = temp_output_91_0_g1;
+				float localCalculateUVsSmooth46_g1 = ( 0.0 );
 				float2 uv_Normal = input.ase_texcoord5.xy * _Normal_ST.xy + _Normal_ST.zw;
 				float2 temp_output_85_0_g1 = uv_Normal;
-				float2 UV110_g1 = temp_output_85_0_g1;
-				float4 TexelSize110_g1 = _Normal_TexelSize;
-				float2 UV0110_g1 = float2( 0,0 );
-				float2 UV1110_g1 = float2( 0,0 );
-				float2 UV2110_g1 = float2( 0,0 );
-				{
-				{
-				    UV110_g1.y -= TexelSize110_g1.y * 0.5;
-				    UV0110_g1 = UV110_g1;
-				    UV1110_g1 = UV110_g1 + float2( TexelSize110_g1.x, 0 );
-				    UV2110_g1 = UV110_g1 + float2( 0, TexelSize110_g1.y );
-				}
-				}
-				float4 break134_g1 = tex2D( _Normal, UV0110_g1 );
-				float S0128_g1 = break134_g1.r;
-				float4 break136_g1 = tex2D( _Normal, UV1110_g1 );
-				float S1128_g1 = break136_g1.r;
-				float4 break138_g1 = tex2D( _Normal, UV2110_g1 );
-				float S2128_g1 = break138_g1.r;
-				float temp_output_91_0_g1 = 1.5;
-				float Strength128_g1 = temp_output_91_0_g1;
-				float3 localCombineSamplesSharp128_g1 = CombineSamplesSharp128_g1( S0128_g1 , S1128_g1 , S2128_g1 , Strength128_g1 );
+				float2 UV46_g1 = temp_output_85_0_g1;
+				float4 TexelSize46_g1 = _Normal_TexelSize;
+				float2 UV046_g1 = float2( 0,0 );
+				float2 UV146_g1 = float2( 0,0 );
+				float2 UV246_g1 = float2( 0,0 );
+				float2 UV346_g1 = float2( 0,0 );
+				float2 UV446_g1 = float2( 0,0 );
+				float2 UV546_g1 = float2( 0,0 );
+				float2 UV646_g1 = float2( 0,0 );
+				float2 UV746_g1 = float2( 0,0 );
+				float2 UV846_g1 = float2( 0,0 );
+				CalculateUVsSmooth46_g1( UV46_g1 , TexelSize46_g1 , UV046_g1 , UV146_g1 , UV246_g1 , UV346_g1 , UV446_g1 , UV546_g1 , UV646_g1 , UV746_g1 , UV846_g1 );
+				float4 break140_g1 = tex2D( _Normal, UV046_g1 );
+				float S058_g1 = break140_g1.r;
+				float4 break142_g1 = tex2D( _Normal, UV146_g1 );
+				float S158_g1 = break142_g1.r;
+				float4 break146_g1 = tex2D( _Normal, UV246_g1 );
+				float S258_g1 = break146_g1.r;
+				float4 break148_g1 = tex2D( _Normal, UV346_g1 );
+				float S358_g1 = break148_g1.r;
+				float4 break150_g1 = tex2D( _Normal, UV446_g1 );
+				float S458_g1 = break150_g1.r;
+				float4 break152_g1 = tex2D( _Normal, UV546_g1 );
+				float S558_g1 = break152_g1.r;
+				float4 break154_g1 = tex2D( _Normal, UV646_g1 );
+				float S658_g1 = break154_g1.r;
+				float4 break156_g1 = tex2D( _Normal, UV746_g1 );
+				float S758_g1 = break156_g1.r;
+				float4 break158_g1 = tex2D( _Normal, UV846_g1 );
+				float S858_g1 = break158_g1.r;
+				float3 localCombineSamplesSmooth58_g1 = CombineSamplesSmooth58_g1( Strength58_g1 , S058_g1 , S158_g1 , S258_g1 , S358_g1 , S458_g1 , S558_g1 , S658_g1 , S758_g1 , S858_g1 );
+				float3 ase_bitangentWS = input.ase_texcoord6.xyz;
+				float3x3 ase_tangentToWorldFast = float3x3( WorldTangent.xyz.x, ase_bitangentWS.x, WorldNormal.x, WorldTangent.xyz.y, ase_bitangentWS.y, WorldNormal.y, WorldTangent.xyz.z, ase_bitangentWS.z, WorldNormal.z );
+				float3 tangentToWorldDir68_g1 = mul( ase_tangentToWorldFast, localCombineSamplesSmooth58_g1 );
 				
 
-				float3 Normal = localCombineSamplesSharp128_g1;
+				float3 Normal = tangentToWorldDir68_g1;
 				float Alpha = 1;
 				float AlphaClipThreshold = 0.5;
 
@@ -2447,7 +2536,10 @@ Shader "DefaultPBR"
 				#define ENABLE_TERRAIN_PERPIXEL_NORMAL
 			#endif
 
-			
+			#define ASE_NEEDS_FRAG_WORLD_TANGENT
+			#define ASE_NEEDS_FRAG_WORLD_NORMAL
+			#define ASE_NEEDS_FRAG_WORLD_BITANGENT
+
 
 			#if defined(ASE_EARLY_Z_DEPTH_OPTIMIZE) && (SHADER_TARGET >= 45)
 				#define ASE_SV_DEPTH SV_DepthLessEqual
@@ -2500,6 +2592,7 @@ Shader "DefaultPBR"
 			float4 _Normal_TexelSize;
 			float4 _Metalic_ST;
 			float4 _Occlusion_ST;
+			float _Smoothness;
 			#ifdef ASE_TRANSMISSION
 				float _TransmissionShadow;
 			#endif
@@ -2538,12 +2631,32 @@ Shader "DefaultPBR"
 
 			#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/UnityGBuffer.hlsl"
 
-			float3 CombineSamplesSharp128_g1( float S0, float S1, float S2, float Strength )
+			void CalculateUVsSmooth46_g1( float2 UV, float4 TexelSize, out float2 UV0, out float2 UV1, out float2 UV2, out float2 UV3, out float2 UV4, out float2 UV5, out float2 UV6, out float2 UV7, out float2 UV8 )
 			{
 				{
-				    float3 va = float3( 0.13, 0, ( S1 - S0 ) * Strength );
-				    float3 vb = float3( 0, 0.13, ( S2 - S0 ) * Strength );
-				    return normalize( cross( va, vb ) );
+				    float3 pos = float3( TexelSize.xy, 0 );
+				    float3 neg = float3( -pos.xy, 0 );
+				    UV0 = UV + neg.xy;
+				    UV1 = UV + neg.zy;
+				    UV2 = UV + float2( pos.x, neg.y );
+				    UV3 = UV + neg.xz;
+				    UV4 = UV;
+				    UV5 = UV + pos.xz;
+				    UV6 = UV + float2( neg.x, pos.y );
+				    UV7 = UV + pos.zy;
+				    UV8 = UV + pos.xy;
+				    return;
+				}
+			}
+			
+			float3 CombineSamplesSmooth58_g1( float Strength, float S0, float S1, float S2, float S3, float S4, float S5, float S6, float S7, float S8 )
+			{
+				{
+				    float3 normal;
+				    normal.x = Strength * ( S0 - S2 + 2 * S3 - 2 * S5 + S6 - S8 );
+				    normal.y = Strength * ( S0 + 2 * S1 + S2 - S6 - 2 * S7 - S8 );
+				    normal.z = 1.0;
+				    return normalize( normal );
 				}
 			}
 			
@@ -2753,31 +2866,44 @@ Shader "DefaultPBR"
 
 				float2 uv_Albedo = input.ase_texcoord9.xy * _Albedo_ST.xy + _Albedo_ST.zw;
 				
-				float localCalculateUVsSharp110_g1 = ( 0.0 );
+				float temp_output_91_0_g1 = 0.5;
+				float Strength58_g1 = temp_output_91_0_g1;
+				float localCalculateUVsSmooth46_g1 = ( 0.0 );
 				float2 uv_Normal = input.ase_texcoord9.xy * _Normal_ST.xy + _Normal_ST.zw;
 				float2 temp_output_85_0_g1 = uv_Normal;
-				float2 UV110_g1 = temp_output_85_0_g1;
-				float4 TexelSize110_g1 = _Normal_TexelSize;
-				float2 UV0110_g1 = float2( 0,0 );
-				float2 UV1110_g1 = float2( 0,0 );
-				float2 UV2110_g1 = float2( 0,0 );
-				{
-				{
-				    UV110_g1.y -= TexelSize110_g1.y * 0.5;
-				    UV0110_g1 = UV110_g1;
-				    UV1110_g1 = UV110_g1 + float2( TexelSize110_g1.x, 0 );
-				    UV2110_g1 = UV110_g1 + float2( 0, TexelSize110_g1.y );
-				}
-				}
-				float4 break134_g1 = tex2D( _Normal, UV0110_g1 );
-				float S0128_g1 = break134_g1.r;
-				float4 break136_g1 = tex2D( _Normal, UV1110_g1 );
-				float S1128_g1 = break136_g1.r;
-				float4 break138_g1 = tex2D( _Normal, UV2110_g1 );
-				float S2128_g1 = break138_g1.r;
-				float temp_output_91_0_g1 = 1.5;
-				float Strength128_g1 = temp_output_91_0_g1;
-				float3 localCombineSamplesSharp128_g1 = CombineSamplesSharp128_g1( S0128_g1 , S1128_g1 , S2128_g1 , Strength128_g1 );
+				float2 UV46_g1 = temp_output_85_0_g1;
+				float4 TexelSize46_g1 = _Normal_TexelSize;
+				float2 UV046_g1 = float2( 0,0 );
+				float2 UV146_g1 = float2( 0,0 );
+				float2 UV246_g1 = float2( 0,0 );
+				float2 UV346_g1 = float2( 0,0 );
+				float2 UV446_g1 = float2( 0,0 );
+				float2 UV546_g1 = float2( 0,0 );
+				float2 UV646_g1 = float2( 0,0 );
+				float2 UV746_g1 = float2( 0,0 );
+				float2 UV846_g1 = float2( 0,0 );
+				CalculateUVsSmooth46_g1( UV46_g1 , TexelSize46_g1 , UV046_g1 , UV146_g1 , UV246_g1 , UV346_g1 , UV446_g1 , UV546_g1 , UV646_g1 , UV746_g1 , UV846_g1 );
+				float4 break140_g1 = tex2D( _Normal, UV046_g1 );
+				float S058_g1 = break140_g1.r;
+				float4 break142_g1 = tex2D( _Normal, UV146_g1 );
+				float S158_g1 = break142_g1.r;
+				float4 break146_g1 = tex2D( _Normal, UV246_g1 );
+				float S258_g1 = break146_g1.r;
+				float4 break148_g1 = tex2D( _Normal, UV346_g1 );
+				float S358_g1 = break148_g1.r;
+				float4 break150_g1 = tex2D( _Normal, UV446_g1 );
+				float S458_g1 = break150_g1.r;
+				float4 break152_g1 = tex2D( _Normal, UV546_g1 );
+				float S558_g1 = break152_g1.r;
+				float4 break154_g1 = tex2D( _Normal, UV646_g1 );
+				float S658_g1 = break154_g1.r;
+				float4 break156_g1 = tex2D( _Normal, UV746_g1 );
+				float S758_g1 = break156_g1.r;
+				float4 break158_g1 = tex2D( _Normal, UV846_g1 );
+				float S858_g1 = break158_g1.r;
+				float3 localCombineSamplesSmooth58_g1 = CombineSamplesSmooth58_g1( Strength58_g1 , S058_g1 , S158_g1 , S258_g1 , S358_g1 , S458_g1 , S558_g1 , S658_g1 , S758_g1 , S858_g1 );
+				float3x3 ase_tangentToWorldFast = float3x3( WorldTangent.x, WorldBiTangent.x, WorldNormal.x, WorldTangent.y, WorldBiTangent.y, WorldNormal.y, WorldTangent.z, WorldBiTangent.z, WorldNormal.z );
+				float3 tangentToWorldDir68_g1 = mul( ase_tangentToWorldFast, localCombineSamplesSmooth58_g1 );
 				
 				float2 uv_Metalic = input.ase_texcoord9.xy * _Metalic_ST.xy + _Metalic_ST.zw;
 				
@@ -2785,11 +2911,11 @@ Shader "DefaultPBR"
 				
 
 				float3 BaseColor = tex2D( _Albedo, uv_Albedo ).rgb;
-				float3 Normal = localCombineSamplesSharp128_g1;
+				float3 Normal = tangentToWorldDir68_g1;
 				float3 Emission = 0;
 				float3 Specular = 0.5;
 				float Metallic = tex2D( _Metalic, uv_Metalic ).r;
-				float Smoothness = 0.5;
+				float Smoothness = _Smoothness;
 				float Occlusion = tex2D( _Occlusion, uv_Occlusion ).r;
 				float Alpha = 1;
 				float AlphaClipThreshold = 0.5;
@@ -2979,6 +3105,7 @@ Shader "DefaultPBR"
 			float4 _Normal_TexelSize;
 			float4 _Metalic_ST;
 			float4 _Occlusion_ST;
+			float _Smoothness;
 			#ifdef ASE_TRANSMISSION
 				float _TransmissionShadow;
 			#endif
@@ -3230,6 +3357,7 @@ Shader "DefaultPBR"
 			float4 _Normal_TexelSize;
 			float4 _Metalic_ST;
 			float4 _Occlusion_ST;
+			float _Smoothness;
 			#ifdef ASE_TRANSMISSION
 				float _TransmissionShadow;
 			#endif
@@ -3491,6 +3619,7 @@ Shader "DefaultPBR"
 			float4 _Normal_TexelSize;
 			float4 _Metalic_ST;
 			float4 _Occlusion_ST;
+			float _Smoothness;
 			#ifdef ASE_TRANSMISSION
 				float _TransmissionShadow;
 			#endif
@@ -3614,10 +3743,11 @@ Shader "DefaultPBR"
 Version=19801
 Node;AmplifyShaderEditor.SamplerNode;11;-432,-112;Inherit;True;Property;_Albedo;Albedo;0;0;Create;True;0;0;0;False;0;False;-1;None;7394e3e8ff8f5d44eabe9b8085288029;True;0;False;white;Auto;False;Object;-1;Auto;Texture2D;8;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;6;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4;FLOAT3;5
 Node;AmplifyShaderEditor.SamplerNode;14;-432,224;Inherit;True;Property;_Metalic;Metalic;2;0;Create;True;0;0;0;False;0;False;-1;None;d6d5582bc1f46c944bf02fc03a381acb;True;0;False;white;Auto;False;Object;-1;Auto;Texture2D;8;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;6;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4;FLOAT3;5
-Node;AmplifyShaderEditor.FunctionNode;12;-432,80;Inherit;False;Normal From Texture;-1;;1;9728ee98a55193249b513caf9a0f1676;13,149,0,147,0,143,0,141,0,139,0,151,0,137,0,153,0,159,0,157,0,155,0,135,0,108,0;4;87;SAMPLER2D;0;False;85;FLOAT2;0,0;False;74;SAMPLERSTATE;0;False;91;FLOAT;1.5;False;2;FLOAT3;40;FLOAT3;0
 Node;AmplifyShaderEditor.TexturePropertyNode;13;-752,80;Inherit;True;Property;_Normal;Normal;1;0;Create;True;0;0;0;False;0;False;None;a75bf655f8e5aa14cb04a4d6ba1caa4b;False;white;Auto;Texture2D;-1;0;2;SAMPLER2D;0;SAMPLERSTATE;1
 Node;AmplifyShaderEditor.SamplerNode;15;-432,416;Inherit;True;Property;_Roughness;Roughness;3;0;Create;True;0;0;0;False;0;False;-1;None;None;True;0;False;white;Auto;False;Object;-1;Auto;Texture2D;8;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;6;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4;FLOAT3;5
 Node;AmplifyShaderEditor.SamplerNode;16;-432,608;Inherit;True;Property;_Occlusion;Occlusion;4;0;Create;True;0;0;0;False;0;False;-1;None;904ee23fa5693414a804ecf7b10b4e27;True;0;False;white;Auto;False;Object;-1;Auto;Texture2D;8;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;6;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4;FLOAT3;5
+Node;AmplifyShaderEditor.FunctionNode;12;-432,80;Inherit;False;Normal From Texture;-1;;1;9728ee98a55193249b513caf9a0f1676;13,149,0,147,0,143,0,141,0,139,0,151,0,137,0,153,0,159,0,157,0,155,0,135,0,108,1;4;87;SAMPLER2D;0;False;85;FLOAT2;0,0;False;74;SAMPLERSTATE;0;False;91;FLOAT;0.5;False;2;FLOAT3;40;FLOAT3;0
+Node;AmplifyShaderEditor.RangedFloatNode;17;-48,464;Inherit;False;Property;_Smoothness;Smoothness;5;0;Create;True;0;0;0;False;0;False;0;0;0;1;0;1;FLOAT;0
 Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;0;0,0;Float;False;False;-1;3;UnityEditor.ShaderGraphLitGUI;0;1;New Amplify Shader;94348b07e5e8bab40bd6c8a1e3df54cd;True;ExtraPrePass;0;0;ExtraPrePass;5;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;True;0;False;;False;False;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;1;False;;True;3;False;;True;True;0;False;;0;False;;True;4;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;UniversalMaterialType=Lit;True;5;True;12;all;0;False;True;1;1;False;;0;False;;0;1;False;;0;False;;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;True;True;True;True;True;0;False;;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;1;False;;True;3;False;;True;True;0;False;;0;False;;True;0;False;False;0;;0;0;Standard;0;False;0
 Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;1;0,0;Float;False;True;-1;3;UnityEditor.ShaderGraphLitGUI;0;12;DefaultPBR;94348b07e5e8bab40bd6c8a1e3df54cd;True;Forward;0;1;Forward;21;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;True;0;False;;False;False;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;1;False;;True;3;False;;True;True;0;False;;0;False;;True;4;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;UniversalMaterialType=Lit;True;5;True;12;all;0;False;True;1;1;False;;0;False;;1;1;False;;0;False;;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;True;True;True;True;0;False;;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;1;False;;True;3;False;;True;True;0;False;;0;False;;True;1;LightMode=UniversalForward;False;False;0;;0;0;Standard;45;Lighting Model;0;0;Workflow;1;0;Surface;0;0;  Refraction Model;0;0;  Blend;0;0;Two Sided;1;0;Alpha Clipping;1;0;  Use Shadow Threshold;0;0;Fragment Normal Space,InvertActionOnDeselection;0;0;Forward Only;0;0;Transmission;0;0;  Transmission Shadow;0.5,False,;0;Translucency;0;0;  Translucency Strength;1,False,;0;  Normal Distortion;0.5,False,;0;  Scattering;2,False,;0;  Direct;0.9,False,;0;  Ambient;0.1,False,;0;  Shadow;0.5,False,;0;Cast Shadows;1;0;Receive Shadows;1;0;Receive SSAO;1;0;Motion Vectors;1;0;  Add Precomputed Velocity;0;0;GPU Instancing;1;0;LOD CrossFade;1;0;Built-in Fog;1;0;_FinalColorxAlpha;0;0;Meta Pass;1;0;Override Baked GI;0;0;Extra Pre Pass;0;0;Tessellation;0;0;  Phong;0;0;  Strength;0.5,False,;0;  Type;0;0;  Tess;16,False,;0;  Min;10,False,;0;  Max;25,False,;0;  Edge Length;16,False,;0;  Max Displacement;25,False,;0;Write Depth;0;0;  Early Z;0;0;Vertex Position,InvertActionOnDeselection;1;0;Debug Display;0;0;Clear Coat;0;0;0;11;False;True;True;True;True;True;True;True;True;True;True;False;;False;0
 Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;2;0,0;Float;False;False;-1;3;UnityEditor.ShaderGraphLitGUI;0;1;New Amplify Shader;94348b07e5e8bab40bd6c8a1e3df54cd;True;ShadowCaster;0;2;ShadowCaster;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;True;0;False;;False;False;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;1;False;;True;3;False;;True;True;0;False;;0;False;;True;4;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;UniversalMaterialType=Lit;True;5;True;12;all;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;False;False;True;False;False;False;False;0;False;;False;False;False;False;False;False;False;False;False;True;1;False;;True;3;False;;False;True;1;LightMode=ShadowCaster;False;False;0;;0;0;Standard;0;False;0
@@ -3631,8 +3761,9 @@ Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;9;0,0;Float;False;False;-1;
 Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;10;0,0;Float;False;False;-1;3;UnityEditor.ShaderGraphLitGUI;0;1;New Amplify Shader;94348b07e5e8bab40bd6c8a1e3df54cd;True;MotionVectors;0;10;MotionVectors;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;True;0;False;;False;False;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;1;False;;True;3;False;;True;True;0;False;;0;False;;True;4;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;UniversalMaterialType=Lit;True;5;True;12;all;0;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;True;True;False;False;0;False;;False;False;False;False;False;False;False;False;False;False;False;False;True;1;LightMode=MotionVectors;False;False;0;;0;0;Standard;0;False;0
 WireConnection;12;87;13;0
 WireConnection;1;0;11;0
-WireConnection;1;1;12;40
-WireConnection;1;3;14;0
+WireConnection;1;1;12;0
+WireConnection;1;3;14;1
+WireConnection;1;4;17;0
 WireConnection;1;5;16;0
 ASEEND*/
-//CHKSM=7579D4F8332D1A8672355A927AC5E5E182C3EAF1
+//CHKSM=E5945F46CD308C17E3B398E3C03E03A30CEF76A0
