@@ -82,6 +82,16 @@ public class InventorySystem : MonoBehaviour
         var index = items.FindIndex(t => t.Item == item);
         return index != -1;
     }
+    /// <summary>
+    /// Returns true if the given item exists in the inventory, false otherwise.
+    /// </summary>
+    /// <param name="item">The item to check for.</param>
+    /// <returns>True if the item exists in the inventory, false otherwise.</returns>
+    public Item GetItem(Item item)
+    {
+        var index = items.FindIndex(t => t.Item == item);
+        return items[index].Item;
+    }
 
     /// <summary>
     /// Clears the inventory.
