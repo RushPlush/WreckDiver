@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7dd9f6ee9a29308489471335c407139b
+guid: b50d98d0877f5414f8ed12ff7aba5c38
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,18 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Glass_LightOn
-    second: {fileID: 2100000, guid: 0010926ca1e6a4446a1921628fed409a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Glass_glow
-    second: {fileID: 2100000, guid: cb8f63c3fc31c3849ac14b5b8813d9c8, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: copper
-    second: {fileID: 2100000, guid: e1255c383d4a62545885b7b4c9319cda, type: 2}
+      name: standardSurface1
+    second: {fileID: 2100000, guid: 2879a5c5fcf286145bae884793075138, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
