@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2558525296687447872
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 970730105155292183}
+  m_Layer: 0
+  m_Name: ItemHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &970730105155292183
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2558525296687447872}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.00569, y: -0.00614, z: -0.00622}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5702079761115817783}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3790087624914791891
 GameObject:
   m_ObjectHideFlags: 0
@@ -28,7 +59,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.025, z: 0.38}
-  m_LocalScale: {x: 0.33, y: 0.33, z: 0.33}
+  m_LocalScale: {x: 0.81999993, y: 0.81999993, z: 0.81999993}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 9121892666373756790}
@@ -129,7 +160,7 @@ ReflectionProbe:
   serializedVersion: 2
   m_Type: 0
   m_Mode: 1
-  m_RefreshMode: 1
+  m_RefreshMode: 0
   m_TimeSlicingMode: 1
   m_Resolution: 512
   m_UpdateFrequency: 0
@@ -522,8 +553,9 @@ GameObject:
   - component: {fileID: 3993409632646248429}
   - component: {fileID: 5550902784295520407}
   - component: {fileID: 1238656694213876441}
-  - component: {fileID: 4144735889805633130}
-  m_Layer: 0
+  - component: {fileID: 4317550189200116167}
+  - component: {fileID: 9161423038958935481}
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -723,9 +755,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 137efc701a42bb740bf85f4513932858, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxBreath: 100
-  breathRegenerationRate: 10
-  breathDepletionRate: 0.5
+  InOxygenPocket: 0
+  oxygen: 0
+  maxOxygen: 100
+  oxygenRegenerationRate: 10
+  oxygenDepletionRate: 0.5
 --- !u!33 &1238656694213876441
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -734,26 +768,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7814603946874218175}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &4144735889805633130
+--- !u!114 &4317550189200116167
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7814603946874218175}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bd8147ff0a646a091773bc0d93c3b1a, type: 3}
+  m_Script: {fileID: 11500000, guid: 73005b07b0ea0da49be63a98961e7bb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raySource: {fileID: 0}
-  maxInteractionDistance: 5
-  interactableLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  useClosest: 1
-  DotWeight: 1
-  DistanceWeight: 1
+  items: []
+  references:
+    version: 2
+    RefIds: []
+--- !u!114 &9161423038958935481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7814603946874218175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 551226a0576336149b2bea0d1d6d8b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemHolder: {fileID: 2558525296687447872}
+  harpoonsLoaded: 0
 --- !u!1 &7836040041961508013
 GameObject:
   m_ObjectHideFlags: 0
@@ -866,12 +910,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -1255605710908113952, guid: 32eae6fb39788d84ba1a42f000799431, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 970730105155292183}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32eae6fb39788d84ba1a42f000799431, type: 3}
 --- !u!4 &2754042894043282236 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 32eae6fb39788d84ba1a42f000799431, type: 3}
+  m_PrefabInstance: {fileID: 2428260532891819223}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5702079761115817783 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -1255605710908113952, guid: 32eae6fb39788d84ba1a42f000799431, type: 3}
   m_PrefabInstance: {fileID: 2428260532891819223}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6900942970335734597
@@ -940,7 +992,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 21010a9b697089a41a9b4d33fdaa699e, type: 3}
       propertyPath: m_Layer
-      value: 30
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -992,14 +1044,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd8147ff0a646a091773bc0d93c3b1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   raySource: {fileID: 7390834924226774145}
   maxInteractionDistance: 5
-  interactableLayer:
+  raycastLayers:
     serializedVersion: 2
-    m_Bits: 1073741824
+    m_Bits: 0
   useClosest: 1
   DotWeight: 1
   DistanceWeight: 1
+  ShowGizmos: 1
 --- !u!4 &6363492183167356078 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 21010a9b697089a41a9b4d33fdaa699e, type: 3}

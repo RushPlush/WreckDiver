@@ -78,22 +78,42 @@ public class HarpoonBehaviour : MonoBehaviour, IItem {
 
     public void SecondaryUse(bool pressed) // Pull?
     {
-        if(harpoonInstances[0] == null && harpoonInstances[1] == null) return; //todo what happens when it can't pull (when neither harpoon is instanced)
-        if(harpoonsReady[0] != false && harpoonsReady[1] != false && harpoonInstances[0] != null && harpoonInstances[1] != null)
+        if (pressed)
         {
-            DoublePull();
+            if (harpoonInstances[0] == null && harpoonInstances[1] == null) return; //todo what happens when it can't pull (when neither harpoon is instanced)
+            
+            if (harpoonsReady[0] != false && harpoonsReady[1] != false && harpoonInstances[0] != null && harpoonInstances[1] != null)
+            {
+                DoublePull();
+            }
+            else if (!harpoonsReady[1] && harpoonInstances[1] != null ||
+                     !harpoonsReady[0] && harpoonInstances[0] != null)
+            {
+                print("SinglePull");
+                SinglePull();
+            }
         }
-        else if(harpoonsReady[0] && !harpoonsReady[1] && harpoonInstances[1] != null || 
-                harpoonsReady[1] && !harpoonsReady[0] && harpoonInstances[0] != null)
-        { 
-            SinglePull();
+        else
+        {
+            StopPull();
+        }
+    }
+    void StopPull()
+    {
+        for (int i = 0; i < numberOfHarpoons; i++)
+        {
+            if (pullableScripts[i] != null)
+            {
+                pullableScripts[i].Stop();
+            }
+            playerPullable.Stop();
         }
     }
     public void SinglePull()
     {
         for (int i = 0; i < numberOfHarpoons; i++)
         {
-            if (!harpoonsReady[i])
+            if (!harpoonsReady[i] && harpoonInstances[i] != null)
             {
                 if(pullableScripts[i] != null)
                 {
@@ -111,7 +131,20 @@ public class HarpoonBehaviour : MonoBehaviour, IItem {
 
     void DoublePull()
     {
-        
+        playerPullable.Release();
+        if (pullableScripts[0] == null && pullableScripts[1] == null) return; // does nothing, can't pull anything
+        if(pullableScripts[0] == null)
+        {
+            pullableScripts[1].Pull(harpoonInstances[0].transform);
+            return;
+        }
+        else if (pullableScripts[1] == null)
+        {
+            pullableScripts[0].Pull(harpoonInstances[1].transform);
+            return;
+        }
+        pullableScripts[0].Pull(pullableScripts[1]);
+        pullableScripts[1].Pull(pullableScripts[0]);
     }
 
     public void TertiaryUse(bool pressed) //Reload
