@@ -1,18 +1,18 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
+
 //[RequireComponent(typeof(Camera))] //As in it needs a child with it
 public class PlayerCamera : MonoBehaviour
 {
-    [SerializeField] private Vector2 mouseSensitivity = new Vector2(0.5f, 5f);
-    [SerializeField] private Vector2 contollerSensitivity = new Vector2(3f, 15f);
+    [SerializeField] private Vector2 mouseSensitivity = new Vector2(.05f, .03f);
+    [SerializeField] private Vector2 contollerSensitivity = new Vector2(1f, 1f);
 
     private Camera cam;
-    private Input input;
 
-    private float multiplier = 0.01f;
+    private Vector2 sensitivity = new Vector2(5f, 5f);
 
-    private float xRot;
-    private float yRot;
+    private Vector2 rot;
     
     private void Awake() {
         try
@@ -24,25 +24,21 @@ public class PlayerCamera : MonoBehaviour
             Console.WriteLine(e + " camera in child not found");
             throw;
         }
-        input = GetComponent<Input>();
     }
 
     public void Look(Vector2 input)
     {
-        if (this.input.usingKeyboard)
-        {
-            xRot += input.x * mouseSensitivity.x * multiplier;
-            yRot -= input.y * mouseSensitivity.y * multiplier;
-        }
-        else
-        {
-            xRot += input.x * contollerSensitivity.x * multiplier;
-            yRot -= input.y * contollerSensitivity.y * multiplier;
-        }
+        input.y = -input.y;
+        rot += input * sensitivity;
+        rot.y = Mathf.Clamp(rot.y, -80, 80);
         
-        yRot = Mathf.Clamp(yRot, -80, 80);
-        
-        cam.transform.localRotation = Quaternion.Euler(yRot, 0, 0 );
-        transform.localRotation = Quaternion.Euler(0, xRot, 0);
+        cam.transform.localRotation = Quaternion.Euler(rot.y, 0, 0 );
+        transform.localRotation = Quaternion.Euler(0, rot.x, 0);
+    }
+
+    public void ChangeScheme(bool isController)
+    {
+        sensitivity = isController ? contollerSensitivity : mouseSensitivity;
+        Debug.Log("Scheme changed to " + (isController ? "Controller" : "keyboard&Mouse"));
     }
 }

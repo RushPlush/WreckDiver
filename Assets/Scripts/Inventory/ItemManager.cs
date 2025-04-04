@@ -18,7 +18,7 @@ public class ItemManager : MonoBehaviour
     private void Awake()
     {
         inventorySystem = GetComponent<InventorySystem>();
-        heldItemInstance = itemHolder.transform.GetChild(0).gameObject;
+        // heldItemInstance = itemHolder.transform.GetChild(0).gameObject;
         //itemHolderMeshFilter = itemHolder.GetComponent<MeshFilter>();
     }
     

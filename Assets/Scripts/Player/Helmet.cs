@@ -7,7 +7,7 @@ public class Helmet : MonoBehaviour
     private Transform playerTrans;
     private Transform cameraTrans;
     private Transform lookPoint;
-    Input input;
+    public Vector2 Movement;
     
     [SerializeField] private float deadZoneSize = 20;
     [SerializeField] private float innerDeadZoneSize = 5;
@@ -18,7 +18,6 @@ public class Helmet : MonoBehaviour
     void Start()
     {
         playerTrans = transform.parent;
-        input       = playerTrans.GetComponent<Input>();
         cameraTrans = playerTrans.GetChild(0);
         lookPoint   = cameraTrans.GetChild(0);
         offset      = transform.localPosition; 
@@ -34,7 +33,7 @@ public class Helmet : MonoBehaviour
     private void LateUpdate()
     {
         float angle = Mathf.Abs(Quaternion.Angle(cameraTrans.rotation, transform.rotation));
-        if (angle > deadZoneSize || input.moveDirection.magnitude > movementMagnitudeDeadZone) 
+        if (angle > deadZoneSize || Movement.magnitude > movementMagnitudeDeadZone)
         {
             transform.rotation = Quaternion.RotateTowards(transform.rotation, cameraTrans.rotation, springForce *
                 (angle - innerDeadZoneSize) * Time.deltaTime); // todo something to bias it in the direction the camera is going, since it's lagging behind were it's trending, do some A B testing to see if it's better
