@@ -14,7 +14,7 @@ public class Harpoon : MonoBehaviour
 
     private void Awake()
     {
-        rb=GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
     }
 
     public void SetHarpoonBehaviour(HarpoonBehaviour harpoonBehaviour)
@@ -45,7 +45,7 @@ public class Harpoon : MonoBehaviour
     {
         int layerNumber = -1;
         int layer = layerMaskIn.value;
-        while(layer > 0)
+        while (layer > 0)
         {
             layer = layer >> 1;
             layerNumber++;
@@ -54,7 +54,7 @@ public class Harpoon : MonoBehaviour
     }
     private void OnCollisionEnter(Collision other)
     {
-        if(!isHarpoonActive) return;
+        if (!isHarpoonActive) return;
         transform.parent = other.transform;
         isHarpoonActive = false;
         print(GetLayerNumber(afterImpactLayer));
@@ -64,7 +64,7 @@ public class Harpoon : MonoBehaviour
         rb.collisionDetectionMode = CollisionDetectionMode.Discrete;
         rb.interpolation = RigidbodyInterpolation.None;
         MonoBehaviour[] allScripts = transform.parent.GetComponents<MonoBehaviour>();
-        if(allScripts.Length == 0) return;
+        if (allScripts.Length == 0) return;
         for (int i = 0; i < allScripts.Length; i++)
         {
             if (allScripts[i] is not Pullable) continue;
@@ -77,9 +77,9 @@ public class Harpoon : MonoBehaviour
     {
         print(gameObject.name + " Destroyed");
         Destroyed = true;
-        if(harpoonBehaviour != null)
+        if (harpoonBehaviour != null)
             harpoonBehaviour.DestroyHarpoon(indexValue);
-        if(pullable != null)
+        if (pullable != null)
             pullable.Release();
     }
 }

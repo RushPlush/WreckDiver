@@ -13,8 +13,9 @@ public class PlayerCamera : MonoBehaviour
     private Vector2 sensitivity = new Vector2(5f, 5f);
 
     private Vector2 rot;
-    
-    private void Awake() {
+
+    private void Awake()
+    {
         try
         {
             cam = GetComponentInChildren<Camera>();
@@ -24,6 +25,17 @@ public class PlayerCamera : MonoBehaviour
             Console.WriteLine(e + " camera in child not found");
             throw;
         }
+        DeviceListener.OnDeviceChange += OnDeviceChange;
+    }
+
+    private void OnDestroy()
+    {
+        DeviceListener.OnDeviceChange -= OnDeviceChange;
+    }
+
+    private void OnDeviceChange(DeviceType obj)
+    {
+        sensitivity = obj == DeviceType.Gamepad ? contollerSensitivity : mouseSensitivity;
     }
 
     public void Look(Vector2 input)
@@ -31,14 +43,8 @@ public class PlayerCamera : MonoBehaviour
         input.y = -input.y;
         rot += input * sensitivity;
         rot.y = Mathf.Clamp(rot.y, -80, 80);
-        
-        cam.transform.localRotation = Quaternion.Euler(rot.y, 0, 0 );
-        transform.localRotation = Quaternion.Euler(0, rot.x, 0);
-    }
 
-    public void ChangeScheme(bool isController)
-    {
-        sensitivity = isController ? contollerSensitivity : mouseSensitivity;
-        Debug.Log("Scheme changed to " + (isController ? "Controller" : "keyboard&Mouse"));
+        cam.transform.localRotation = Quaternion.Euler(rot.y, 0, 0);
+        transform.localRotation = Quaternion.Euler(0, rot.x, 0);
     }
 }

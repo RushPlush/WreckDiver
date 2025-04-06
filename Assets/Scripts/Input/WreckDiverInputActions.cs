@@ -310,7 +310,52 @@ public partial class @WreckDiverInputActions: IInputActionCollection2, IDisposab
                     ""id"": ""4bc108af-3e2e-4bf2-b08a-e4a0a696b0db"",
                     ""expectedControlType"": """",
                     ""processors"": """",
+                    ""interactions"": ""Tap"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Up"",
+                    ""type"": ""Button"",
+                    ""id"": ""0b91e6f1-df9a-4df3-9047-cafb46c9dc53"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
                     ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Down"",
+                    ""type"": ""Button"",
+                    ""id"": ""5d07b5c3-d70a-4217-90ce-9aae6171d1a8"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Left"",
+                    ""type"": ""Button"",
+                    ""id"": ""e8bccc6d-5327-4fb7-998c-97b0e1f46b85"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Right"",
+                    ""type"": ""Button"",
+                    ""id"": ""de162006-3a0c-4499-8dee-3aedd8cb6839"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Deselect"",
+                    ""type"": ""Button"",
+                    ""id"": ""88a6791d-30ae-45a5-8e4e-4488e32416d6"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": ""Tap"",
                     ""initialStateCheck"": false
                 }
             ],
@@ -334,6 +379,116 @@ public partial class @WreckDiverInputActions: IInputActionCollection2, IDisposab
                     ""processors"": """",
                     ""groups"": "";Gamepad"",
                     ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2be9d04e-0184-4af5-8010-e9f7f887446c"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""Up"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cfd0c0c8-1b62-4dab-a616-d92bb98c007e"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Up"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9d60be99-73c4-4676-8dbd-564dad519f1c"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""Down"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1ecd4e79-9750-4b8a-a4cd-6e4f6d383106"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Down"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f20d0bac-c58a-41aa-b926-ce287e501a4a"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Left"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c119cb9c-84af-4305-8727-4d5e1b532fba"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""Left"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a86a5754-8db9-4cd8-8de1-15cf87a885a1"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Right"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""791cda1e-f7b7-43e3-ac9d-500a6078f632"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""Right"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c331e310-6ff5-45e8-9a67-5c21f0a209da"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Deselect"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f37f2a7e-9c20-48e8-8551-8eb6e6185f7d"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Deselect"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -417,6 +572,11 @@ public partial class @WreckDiverInputActions: IInputActionCollection2, IDisposab
         // Interact
         m_Interact = asset.FindActionMap("Interact", throwIfNotFound: true);
         m_Interact_Select = m_Interact.FindAction("Select", throwIfNotFound: true);
+        m_Interact_Up = m_Interact.FindAction("Up", throwIfNotFound: true);
+        m_Interact_Down = m_Interact.FindAction("Down", throwIfNotFound: true);
+        m_Interact_Left = m_Interact.FindAction("Left", throwIfNotFound: true);
+        m_Interact_Right = m_Interact.FindAction("Right", throwIfNotFound: true);
+        m_Interact_Deselect = m_Interact.FindAction("Deselect", throwIfNotFound: true);
     }
 
     ~@WreckDiverInputActions()
@@ -618,11 +778,21 @@ public partial class @WreckDiverInputActions: IInputActionCollection2, IDisposab
     private readonly InputActionMap m_Interact;
     private List<IInteractActions> m_InteractActionsCallbackInterfaces = new List<IInteractActions>();
     private readonly InputAction m_Interact_Select;
+    private readonly InputAction m_Interact_Up;
+    private readonly InputAction m_Interact_Down;
+    private readonly InputAction m_Interact_Left;
+    private readonly InputAction m_Interact_Right;
+    private readonly InputAction m_Interact_Deselect;
     public struct InteractActions
     {
         private @WreckDiverInputActions m_Wrapper;
         public InteractActions(@WreckDiverInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Select => m_Wrapper.m_Interact_Select;
+        public InputAction @Up => m_Wrapper.m_Interact_Up;
+        public InputAction @Down => m_Wrapper.m_Interact_Down;
+        public InputAction @Left => m_Wrapper.m_Interact_Left;
+        public InputAction @Right => m_Wrapper.m_Interact_Right;
+        public InputAction @Deselect => m_Wrapper.m_Interact_Deselect;
         public InputActionMap Get() { return m_Wrapper.m_Interact; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -635,6 +805,21 @@ public partial class @WreckDiverInputActions: IInputActionCollection2, IDisposab
             @Select.started += instance.OnSelect;
             @Select.performed += instance.OnSelect;
             @Select.canceled += instance.OnSelect;
+            @Up.started += instance.OnUp;
+            @Up.performed += instance.OnUp;
+            @Up.canceled += instance.OnUp;
+            @Down.started += instance.OnDown;
+            @Down.performed += instance.OnDown;
+            @Down.canceled += instance.OnDown;
+            @Left.started += instance.OnLeft;
+            @Left.performed += instance.OnLeft;
+            @Left.canceled += instance.OnLeft;
+            @Right.started += instance.OnRight;
+            @Right.performed += instance.OnRight;
+            @Right.canceled += instance.OnRight;
+            @Deselect.started += instance.OnDeselect;
+            @Deselect.performed += instance.OnDeselect;
+            @Deselect.canceled += instance.OnDeselect;
         }
 
         private void UnregisterCallbacks(IInteractActions instance)
@@ -642,6 +827,21 @@ public partial class @WreckDiverInputActions: IInputActionCollection2, IDisposab
             @Select.started -= instance.OnSelect;
             @Select.performed -= instance.OnSelect;
             @Select.canceled -= instance.OnSelect;
+            @Up.started -= instance.OnUp;
+            @Up.performed -= instance.OnUp;
+            @Up.canceled -= instance.OnUp;
+            @Down.started -= instance.OnDown;
+            @Down.performed -= instance.OnDown;
+            @Down.canceled -= instance.OnDown;
+            @Left.started -= instance.OnLeft;
+            @Left.performed -= instance.OnLeft;
+            @Left.canceled -= instance.OnLeft;
+            @Right.started -= instance.OnRight;
+            @Right.performed -= instance.OnRight;
+            @Right.canceled -= instance.OnRight;
+            @Deselect.started -= instance.OnDeselect;
+            @Deselect.performed -= instance.OnDeselect;
+            @Deselect.canceled -= instance.OnDeselect;
         }
 
         public void RemoveCallbacks(IInteractActions instance)
@@ -720,5 +920,10 @@ public partial class @WreckDiverInputActions: IInputActionCollection2, IDisposab
     public interface IInteractActions
     {
         void OnSelect(InputAction.CallbackContext context);
+        void OnUp(InputAction.CallbackContext context);
+        void OnDown(InputAction.CallbackContext context);
+        void OnLeft(InputAction.CallbackContext context);
+        void OnRight(InputAction.CallbackContext context);
+        void OnDeselect(InputAction.CallbackContext context);
     }
 }

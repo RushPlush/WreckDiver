@@ -1099,12 +1099,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd8147ff0a646a091773bc0d93c3b1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 7814603946874218175}
   raySource: {fileID: 7390834924226774145}
   maxInteractionDistance: 5
   raycastLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1073741824
   useClosest: 1
   DotWeight: 1
   DistanceWeight: 1
