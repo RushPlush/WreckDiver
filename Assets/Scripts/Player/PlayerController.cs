@@ -1,11 +1,7 @@
 using System.Collections;
-using System.Linq;
-using AmplifyShaderEditor;
 using Player;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.LowLevel;
-using UnityEngine.InputSystem.Users;
 
 [RequireComponent(typeof(FloatCapsule))]
 [RequireComponent(typeof(Movement))]
@@ -113,6 +109,7 @@ public class PlayerController : MonoBehaviour
 
     public void FixedUpdate()
     {
+        if (!movement.enabled) return;
         movement.Move(diverInputActions.Movement.Move.ReadValue<Vector2>(), isBoosting);
         if (DeviceListener.CurrentDevice is not DeviceType.Gamepad) return;
         camera.Look(diverInputActions.Movement.Look.ReadValue<Vector2>());
@@ -185,10 +182,12 @@ public class PlayerController : MonoBehaviour
     public void DisableMovement()
     {
         diverInputActions.Movement.Disable();
+        movement.enabled = false;
     }
 
     public void EnableMovement()
     {
         diverInputActions.Movement.Enable();
+        movement.enabled = true;
     }
 }

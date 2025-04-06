@@ -39,13 +39,11 @@ public class Codelock : MonoBehaviour, IInteractableWithPlayer
     {
         highlighted--;
         if (highlighted < 0) highlighted = lockwheels.Length - 1;
-        lockwheels[highlighted].Decrement();
     }
 
     private void InteractOnRight(InputAction.CallbackContext obj)
     {
         highlighted = (highlighted + 1) % lockwheels.Length;
-        lockwheels[highlighted].Increment();
     }
 
     private void InteractOnDown(InputAction.CallbackContext obj)
@@ -150,17 +148,17 @@ public class Codelock : MonoBehaviour, IInteractableWithPlayer
 
     IEnumerator Selected()
     {
-        yield return new WaitForEndOfFrame();
+        yield return new WaitForFixedUpdate();
         while (elapsedTime < 0.5f)
         {
             elapsedTime += Time.deltaTime;
             Camera.main.transform.position = Vector3.Lerp(oldCameraOffsets.position, cameraOffset.position, elapsedTime / 0.5f);
-            Camera.main.transform.eulerAngles = Vector3.Lerp(oldCameraOffsets.eulerAngle, cameraOffset.eulerAngle, elapsedTime / 0.5f);
-            yield return new WaitForEndOfFrame();
+            Camera.main.transform.rotation = Quaternion.Lerp(Quaternion.Euler(oldCameraOffsets.eulerAngle), Quaternion.Euler(cameraOffset.eulerAngle), elapsedTime / 0.5f);
+            yield return new WaitForFixedUpdate();
         }
         elapsedTime = 0;
         Camera.main.transform.position = cameraOffset.position;
-        Camera.main.transform.eulerAngles = cameraOffset.eulerAngle;
+        Camera.main.transform.rotation = Quaternion.Euler(cameraOffset.eulerAngle);
         interact.Enable();
         outline.enabled = false;
         highlighted = 0;
@@ -177,27 +175,27 @@ public class Codelock : MonoBehaviour, IInteractableWithPlayer
 
     public void Deselect(GameObject player)
     {
-        player.GetComponent<PlayerController>().EnableMovement();
-        StartCoroutine(Deselected());
+        StartCoroutine(Deselected(player));
     }
 
-    IEnumerator Deselected()
+    IEnumerator Deselected(GameObject player)
     {
-        yield return new WaitForEndOfFrame();
+        yield return new WaitForFixedUpdate();
         while (elapsedTime < 0.5f)
         {
             elapsedTime += Time.deltaTime;
             Camera.main.transform.position = Vector3.Lerp(cameraOffset.position, oldCameraOffsets.position, elapsedTime / 0.5f);
-            Camera.main.transform.eulerAngles = Vector3.Lerp(cameraOffset.eulerAngle, oldCameraOffsets.eulerAngle, elapsedTime / 0.5f);
-            yield return new WaitForEndOfFrame();
+            Camera.main.transform.rotation = Quaternion.Lerp(Quaternion.Euler(cameraOffset.eulerAngle), Quaternion.Euler(oldCameraOffsets.eulerAngle), elapsedTime / 0.5f);
+            yield return new WaitForFixedUpdate();
         }
         elapsedTime = 0;
         Camera.main.transform.position = oldCameraOffsets.position;
-        Camera.main.transform.eulerAngles = oldCameraOffsets.eulerAngle;
+        Camera.main.transform.rotation = Quaternion.Euler(oldCameraOffsets.eulerAngle);
         interact.Disable();
         outline.enabled = true;
         lockwheels[highlighted].Unhighlight();
         highlighted = -1;
+        player.GetComponent<PlayerController>().EnableMovement();
     }
 
     public void Highlight()
