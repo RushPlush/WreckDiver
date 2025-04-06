@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Linq;
 using AmplifyShaderEditor;
 using Player;
@@ -140,20 +141,38 @@ public class PlayerController : MonoBehaviour
         isBoosting = !context.canceled;
     }
 
+    private double lastKeyPress = 0;
+
     public void OnSelect(InputAction.CallbackContext context)
     {
+        if(lastKeyPress + 0.3 > context.startTime) return;
+        lastKeyPress = context.startTime + 0.5;
         interactor.Select();
+        StartCoroutine(DelayedSelect());
+    }
+
+    IEnumerator DelayedSelect()
+    {
+        yield return new WaitForSeconds(0.5f);
         var interact = diverInputActions.Interact;
         interact.Deselect.started += OnDeselect;
         interact.Select.started -= OnSelect;
     }
 
-    private void OnDeselect(InputAction.CallbackContext context)
+    IEnumerator DelayedDeselect()
     {
-        interactor.Deselect();
+        yield return new WaitForSeconds(0.5f);
         var interact = diverInputActions.Interact;
         interact.Deselect.started -= OnDeselect;
         interact.Select.started += OnSelect;
+    }
+
+    private void OnDeselect(InputAction.CallbackContext context)
+    {
+        if(lastKeyPress + 0.3 > context.startTime) return;
+        lastKeyPress = context.startTime + 0.5;
+        interactor.Deselect();
+        StartCoroutine(DelayedDeselect());
     }
 
     public void OnPause(InputAction.CallbackContext context)

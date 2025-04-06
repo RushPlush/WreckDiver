@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -17,6 +18,8 @@ public class Codelock : MonoBehaviour, IInteractableWithPlayer
     private WreckDiverInputActions diverInputActions;
     private WreckDiverInputActions.InteractActions interact;
     private Outline outline;
+    private (Vector3 position, Vector3 eulerAngle) oldCameraOffsets;
+    private (Vector3 position, Vector3 eulerAngle) cameraOffset = (new(0.2f, 0, -0.0134f), new (0, -90, 0));
 
     void Awake()
     {
@@ -29,6 +32,7 @@ public class Codelock : MonoBehaviour, IInteractableWithPlayer
 
         outline = GetComponent<Outline>();
         outline.enabled = false;
+        cameraOffset.position += transform.position;
     }
 
     private void InteractOnLeft(InputAction.CallbackContext obj)
@@ -137,29 +141,68 @@ public class Codelock : MonoBehaviour, IInteractableWithPlayer
     public void Select(GameObject player)
     {
         player.GetComponent<PlayerController>().DisableMovement();
+        oldCameraOffsets.position = Camera.main.transform.position;
+        oldCameraOffsets.eulerAngle = Camera.main.transform.eulerAngles;
+        StartCoroutine(Selected());
+    }
+
+    private float elapsedTime = 0;
+
+    IEnumerator Selected()
+    {
+        yield return new WaitForEndOfFrame();
+        while (elapsedTime < 0.5f)
+        {
+            elapsedTime += Time.deltaTime;
+            Camera.main.transform.position = Vector3.Lerp(oldCameraOffsets.position, cameraOffset.position, elapsedTime / 0.5f);
+            Camera.main.transform.eulerAngles = Vector3.Lerp(oldCameraOffsets.eulerAngle, cameraOffset.eulerAngle, elapsedTime / 0.5f);
+            yield return new WaitForEndOfFrame();
+        }
+        elapsedTime = 0;
+        Camera.main.transform.position = cameraOffset.position;
+        Camera.main.transform.eulerAngles = cameraOffset.eulerAngle;
         interact.Enable();
         outline.enabled = false;
+        highlighted = 0;
+        lockwheels[0].Highlight();
     }
 
     public void Select()
     {
-        throw new System.NotImplementedException();
     }
 
     public void Deselect()
     {
-        throw new System.NotImplementedException();
     }
 
     public void Deselect(GameObject player)
     {
         player.GetComponent<PlayerController>().EnableMovement();
+        StartCoroutine(Deselected());
+    }
+
+    IEnumerator Deselected()
+    {
+        yield return new WaitForEndOfFrame();
+        while (elapsedTime < 0.5f)
+        {
+            elapsedTime += Time.deltaTime;
+            Camera.main.transform.position = Vector3.Lerp(cameraOffset.position, oldCameraOffsets.position, elapsedTime / 0.5f);
+            Camera.main.transform.eulerAngles = Vector3.Lerp(cameraOffset.eulerAngle, oldCameraOffsets.eulerAngle, elapsedTime / 0.5f);
+            yield return new WaitForEndOfFrame();
+        }
+        elapsedTime = 0;
+        Camera.main.transform.position = oldCameraOffsets.position;
+        Camera.main.transform.eulerAngles = oldCameraOffsets.eulerAngle;
         interact.Disable();
         outline.enabled = true;
+        lockwheels[highlighted].Unhighlight();
+        highlighted = -1;
     }
 
     public void Highlight()
     {
+        if (highlighted >= 0) return;
         outline.enabled = true;
     }
 

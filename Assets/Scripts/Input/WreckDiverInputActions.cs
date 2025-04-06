@@ -476,7 +476,7 @@ public partial class @WreckDiverInputActions: IInputActionCollection2, IDisposab
                     ""path"": ""<Keyboard>/f"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""Deselect"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -487,7 +487,7 @@ public partial class @WreckDiverInputActions: IInputActionCollection2, IDisposab
                     ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Gamepad"",
                     ""action"": ""Deselect"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
