@@ -54,6 +54,8 @@ public class PlayerController : MonoBehaviour
         movement.Move.performed += OnMove;
         movement.Look.performed += OnLook;
         movement.Jump.performed += OnJump;
+        movement.Jump.started += OnJump;
+        movement.Jump.canceled += OnJump;
         movement.Boost.performed += OnBoost;
         movement.Enable();
         var interact = diverInputActions.Interact;
@@ -70,6 +72,8 @@ public class PlayerController : MonoBehaviour
         movement.Move.performed -= OnMove;
         movement.Look.performed -= OnLook;
         movement.Jump.performed -= OnJump;
+        movement.Jump.started -= OnJump;
+        movement.Jump.canceled -= OnJump;
         movement.Boost.performed -= OnBoost;
         movement.Disable();
         var interact = diverInputActions.Interact;
