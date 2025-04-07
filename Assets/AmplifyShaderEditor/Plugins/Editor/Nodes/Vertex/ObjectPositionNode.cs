@@ -2,8 +2,7 @@
 // Copyright (c) Amplify Creations, Lda <info@amplify.pt>
 
 using System;
-using UnityEngine;
-using UnityEditor;
+
 namespace AmplifyShaderEditor
 {
 	[Serializable]

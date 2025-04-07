@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 //[RequireComponent(typeof(Camera))] //As in it needs a child with it
 public class PlayerCamera : MonoBehaviour

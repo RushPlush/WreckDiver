@@ -51,10 +51,13 @@ public class ItemManager : MonoBehaviour
             heldItem = inventorySystem.GetItems()[currentItemIndex].Item;
             //itemHolderMeshFilter.mesh = heldItem.Mesh;
             if (heldItem.Prefab != null)
-                heldItemInstance = Instantiate(heldItem.Prefab, itemHolder.transform);
-            heldItemBehaviour = heldItemInstance.GetComponent<IItem>();
-            isHoldingItem = true;
-            print("Holding: " + heldItem.Name);
+            {
+                heldItemInstance = Instantiate(heldItem.Prefab, transform);
+                heldItemInstance.transform.localPosition = itemHolder.transform.position - transform.position;
+                heldItemBehaviour = heldItemInstance.GetComponent<IItem>();
+                isHoldingItem = true;
+                print("Holding: " + heldItem.Name);
+            }
         }
     }
 
@@ -64,15 +67,18 @@ public class ItemManager : MonoBehaviour
         if (heldItem == null) return;
         inventorySystem.RemoveItem(heldItem);
     }
-    public void PrimaryUse(bool isPressed)
+
+    public void PrimaryUse()
     {
         // if(!heldItem.HasBehaviour) return;
-        heldItemBehaviour?.PrimaryUse(isPressed);
+        heldItemBehaviour?.PrimaryUse();
     }
+
     public void SecondaryUse(bool isPressed)
     {
         heldItemBehaviour?.SecondaryUse(isPressed);
     }
+
     public void TertiaryUse(bool isPressed)
     {
         heldItemBehaviour?.TertiaryUse(isPressed);

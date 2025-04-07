@@ -1,4 +1,4 @@
-﻿using OpenCover.Framework.Model;using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
 public static class QuaternionExtensions

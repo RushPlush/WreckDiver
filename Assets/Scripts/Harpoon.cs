@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class Harpoon : MonoBehaviour
@@ -26,6 +25,7 @@ public class Harpoon : MonoBehaviour
     {
         indexValue = index;
     }
+
     public void Shoot()
     {
         isHarpoonActive = true;
@@ -52,6 +52,7 @@ public class Harpoon : MonoBehaviour
         }
         return layerNumber;
     }
+
     private void OnCollisionEnter(Collision other)
     {
         if (!isHarpoonActive) return;

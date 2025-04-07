@@ -1,10 +1,6 @@
 // Amplify Shader Editor - Visual Shader vEditing Tool
 // Copyright (c) Amplify Creations, Lda <info@amplify.pt>
 
-using UnityEngine;
-using UnityEditor;
-using System;
-
 namespace AmplifyShaderEditor
 {
 	[NodeAttributes( "Material Quality", "Logical Operators", "Choose between separate branches according to currently selected Quality (SRP only) ", Available = true )]

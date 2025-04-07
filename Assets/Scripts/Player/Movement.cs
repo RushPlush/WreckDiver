@@ -50,7 +50,15 @@ public class Movement : MonoBehaviour
             rb.AddForce(moveDirection.normalized * (moveSpeed * movementMultiplier), ForceMode.Acceleration);
             cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, fov, 0.1f);
         }
+    }
 
+    public void StopMoving()
+    {
+        rb.isKinematic = true;
+    }
 
+    public void StartMoving()
+    {
+        rb.isKinematic = false;
     }
 }

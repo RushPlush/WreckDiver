@@ -1,7 +1,5 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Player
@@ -74,7 +72,6 @@ namespace Player
             {
                 if (interactables[i].IsDestroyed)
                 {
-                    Debug.Log($"Interactable {((MonoBehaviour)interactables[i]).name} Has been destroyed removing");
                     interactables.RemoveAt(i);
                     interactableTransforms.RemoveAt(i);
                     interactableColliders.RemoveAt(i);

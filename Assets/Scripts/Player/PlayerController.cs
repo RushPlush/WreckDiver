@@ -64,6 +64,26 @@ public class PlayerController : MonoBehaviour
         var player = diverInputActions.Player;
         player.Pause.performed += OnPause;
         player.Enable();
+        var inventory = diverInputActions.Inventory;
+        inventory.Use.started += OnUse;
+        inventory.CycleUp.started += OnCycleUp;
+        inventory.CycleDown.started += OnCycleDown;
+        inventory.Enable();
+    }
+
+    private void OnCycleUp(InputAction.CallbackContext obj)
+    {
+        itemManager.ChangeItem(1);
+    }
+
+    private void OnUse(InputAction.CallbackContext obj)
+    {
+        itemManager.PrimaryUse();
+    }
+
+    private void OnCycleDown(InputAction.CallbackContext obj)
+    {
+        itemManager.ChangeItem(-1);
     }
 
     private void OnDisable()
@@ -83,6 +103,11 @@ public class PlayerController : MonoBehaviour
         var player = diverInputActions.Player;
         player.Pause.performed -= OnPause;
         player.Disable();
+        var inventory = diverInputActions.Inventory;
+        inventory.Use.started -= OnUse;
+        inventory.CycleUp.started -= OnCycleUp;
+        inventory.CycleDown.started -= OnCycleDown;
+        inventory.Disable();
     }
 
     // void OnChangeItem(InputValue value)
@@ -146,7 +171,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnSelect(InputAction.CallbackContext context)
     {
-        if(lastKeyPress + 0.3 > context.startTime) return;
+        if (lastKeyPress + 0.3 > context.startTime) return;
         lastKeyPress = context.startTime + 0.5;
         interactor.Select();
         StartCoroutine(DelayedSelect());
@@ -170,7 +195,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnDeselect(InputAction.CallbackContext context)
     {
-        if(lastKeyPress + 0.3 > context.startTime) return;
+        if (lastKeyPress + 0.3 > context.startTime) return;
         lastKeyPress = context.startTime + 0.5;
         interactor.Deselect();
         StartCoroutine(DelayedDeselect());
@@ -178,7 +203,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnPause(InputAction.CallbackContext context)
     {
-        if (context.canceled || context.started) return;
+        if (context.canceled || context.started || !movement.enabled) return;
         if (diverInputActions.Movement.enabled) diverInputActions.Movement.Disable();
         else diverInputActions.Movement.Enable();
     }
@@ -186,12 +211,16 @@ public class PlayerController : MonoBehaviour
     public void DisableMovement()
     {
         diverInputActions.Movement.Disable();
+        diverInputActions.Inventory.Disable();
+        movement.StopMoving();
         movement.enabled = false;
     }
 
     public void EnableMovement()
     {
         diverInputActions.Movement.Enable();
+        diverInputActions.Inventory.Enable();
+        movement.StartMoving();
         movement.enabled = true;
     }
 }

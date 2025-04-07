@@ -493,6 +493,107 @@ public partial class @WreckDiverInputActions: IInputActionCollection2, IDisposab
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Inventory"",
+            ""id"": ""12f92589-90c6-457c-b955-197eea9fea3a"",
+            ""actions"": [
+                {
+                    ""name"": ""Use"",
+                    ""type"": ""Button"",
+                    ""id"": ""0e3ec2a4-d433-426d-9922-2f70cb2d75da"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CycleUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""8e8c1ed8-730c-41c0-8cdb-b050e13ae962"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CycleDown"",
+                    ""type"": ""Button"",
+                    ""id"": ""a4d7d7dd-3ce5-42f7-932f-d44ce35adbf7"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""52463845-2f14-460c-a9a8-46f5f84e7672"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""Use"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d748d4da-9d2c-4d80-900e-3ef24d8be155"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Use"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e4f7001a-929d-4248-8bb0-d85db933c9d1"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""CycleUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""680d40bf-cbc2-4b4d-ab6d-075ffbf9a9d3"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""CycleUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c01ba727-e462-4746-8833-de7909bde205"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""CycleDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e9feef94-d22f-47ab-8f44-42a94eaf0d61"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""CycleDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -577,6 +678,11 @@ public partial class @WreckDiverInputActions: IInputActionCollection2, IDisposab
         m_Interact_Left = m_Interact.FindAction("Left", throwIfNotFound: true);
         m_Interact_Right = m_Interact.FindAction("Right", throwIfNotFound: true);
         m_Interact_Deselect = m_Interact.FindAction("Deselect", throwIfNotFound: true);
+        // Inventory
+        m_Inventory = asset.FindActionMap("Inventory", throwIfNotFound: true);
+        m_Inventory_Use = m_Inventory.FindAction("Use", throwIfNotFound: true);
+        m_Inventory_CycleUp = m_Inventory.FindAction("CycleUp", throwIfNotFound: true);
+        m_Inventory_CycleDown = m_Inventory.FindAction("CycleDown", throwIfNotFound: true);
     }
 
     ~@WreckDiverInputActions()
@@ -584,6 +690,7 @@ public partial class @WreckDiverInputActions: IInputActionCollection2, IDisposab
         UnityEngine.Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, WreckDiverInputActions.Player.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_Movement.enabled, "This will cause a leak and performance issues, WreckDiverInputActions.Movement.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_Interact.enabled, "This will cause a leak and performance issues, WreckDiverInputActions.Interact.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Inventory.enabled, "This will cause a leak and performance issues, WreckDiverInputActions.Inventory.Disable() has not been called.");
     }
 
     public void Dispose()
@@ -859,6 +966,68 @@ public partial class @WreckDiverInputActions: IInputActionCollection2, IDisposab
         }
     }
     public InteractActions @Interact => new InteractActions(this);
+
+    // Inventory
+    private readonly InputActionMap m_Inventory;
+    private List<IInventoryActions> m_InventoryActionsCallbackInterfaces = new List<IInventoryActions>();
+    private readonly InputAction m_Inventory_Use;
+    private readonly InputAction m_Inventory_CycleUp;
+    private readonly InputAction m_Inventory_CycleDown;
+    public struct InventoryActions
+    {
+        private @WreckDiverInputActions m_Wrapper;
+        public InventoryActions(@WreckDiverInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Use => m_Wrapper.m_Inventory_Use;
+        public InputAction @CycleUp => m_Wrapper.m_Inventory_CycleUp;
+        public InputAction @CycleDown => m_Wrapper.m_Inventory_CycleDown;
+        public InputActionMap Get() { return m_Wrapper.m_Inventory; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(InventoryActions set) { return set.Get(); }
+        public void AddCallbacks(IInventoryActions instance)
+        {
+            if (instance == null || m_Wrapper.m_InventoryActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_InventoryActionsCallbackInterfaces.Add(instance);
+            @Use.started += instance.OnUse;
+            @Use.performed += instance.OnUse;
+            @Use.canceled += instance.OnUse;
+            @CycleUp.started += instance.OnCycleUp;
+            @CycleUp.performed += instance.OnCycleUp;
+            @CycleUp.canceled += instance.OnCycleUp;
+            @CycleDown.started += instance.OnCycleDown;
+            @CycleDown.performed += instance.OnCycleDown;
+            @CycleDown.canceled += instance.OnCycleDown;
+        }
+
+        private void UnregisterCallbacks(IInventoryActions instance)
+        {
+            @Use.started -= instance.OnUse;
+            @Use.performed -= instance.OnUse;
+            @Use.canceled -= instance.OnUse;
+            @CycleUp.started -= instance.OnCycleUp;
+            @CycleUp.performed -= instance.OnCycleUp;
+            @CycleUp.canceled -= instance.OnCycleUp;
+            @CycleDown.started -= instance.OnCycleDown;
+            @CycleDown.performed -= instance.OnCycleDown;
+            @CycleDown.canceled -= instance.OnCycleDown;
+        }
+
+        public void RemoveCallbacks(IInventoryActions instance)
+        {
+            if (m_Wrapper.m_InventoryActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IInventoryActions instance)
+        {
+            foreach (var item in m_Wrapper.m_InventoryActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_InventoryActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public InventoryActions @Inventory => new InventoryActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -925,5 +1094,11 @@ public partial class @WreckDiverInputActions: IInputActionCollection2, IDisposab
         void OnLeft(InputAction.CallbackContext context);
         void OnRight(InputAction.CallbackContext context);
         void OnDeselect(InputAction.CallbackContext context);
+    }
+    public interface IInventoryActions
+    {
+        void OnUse(InputAction.CallbackContext context);
+        void OnCycleUp(InputAction.CallbackContext context);
+        void OnCycleDown(InputAction.CallbackContext context);
     }
 }

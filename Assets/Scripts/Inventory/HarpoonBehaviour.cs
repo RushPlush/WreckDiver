@@ -1,7 +1,5 @@
-using System;
 using System.Linq;
 using Inventory;
-using UnityEditor.VersionControl;
 using UnityEngine;
 
 public class HarpoonBehaviour : MonoBehaviour, IItem
@@ -49,14 +47,12 @@ public class HarpoonBehaviour : MonoBehaviour, IItem
             Reload();
         }
     }
+
     bool previouseState = false;
-    public void PrimaryUse(bool pressed) // Shoot
+
+    public void PrimaryUse() // Shoot
     {
-        if (pressed && !previouseState)
-        {
-            Shoot();
-        }
-        previouseState = pressed;
+        Shoot();
     }
 
     private void Shoot()
@@ -99,6 +95,7 @@ public class HarpoonBehaviour : MonoBehaviour, IItem
             StopPull();
         }
     }
+
     void StopPull()
     {
         for (int i = 0; i < numberOfHarpoons; i++)
@@ -110,6 +107,7 @@ public class HarpoonBehaviour : MonoBehaviour, IItem
             playerPullable.Stop();
         }
     }
+
     public void SinglePull()
     {
         for (int i = 0; i < numberOfHarpoons; i++)
@@ -182,10 +180,12 @@ public class HarpoonBehaviour : MonoBehaviour, IItem
             //todo what happens when it can't reload
         }
     }
+
     public void SetPullable(int index, Pullable pullable)
     {
         pullableScripts[index] = pullable;
     }
+
     public void DestroyHarpoon(int index)
     {
         harpoonsReady[index] = false;
