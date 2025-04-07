@@ -25,12 +25,13 @@ public class Lockwheel : MonoBehaviour
         var currentRotation = GetRotation(codeFace);
         if (transform.localRotation != currentRotation)
         {
-            var prevRotation = GetRotation(codeFace);
+            var prevRotation = GetRotation(prevCodeFace);
             float localSpeedModifier = Math.Abs(prevCodeFace - codeFace);
             if (localSpeedModifier > 5)
             {
                 localSpeedModifier = 5 + (5 - localSpeedModifier);
             }
+
 
             localSpeedModifier *= speedModifier;
             // lerp rotation to the new rotation
