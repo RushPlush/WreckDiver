@@ -1,6 +1,7 @@
 using System.Linq;
 using Inventory;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class HarpoonBehaviour : MonoBehaviour, IItem
 {
@@ -50,8 +51,9 @@ public class HarpoonBehaviour : MonoBehaviour, IItem
 
     bool previouseState = false;
 
-    public void PrimaryUse() // Shoot
+    public void PrimaryUse(InputAction.CallbackContext context) // Shoot
     {
+        if (!context.started) return;
         Shoot();
     }
 
@@ -73,9 +75,9 @@ public class HarpoonBehaviour : MonoBehaviour, IItem
         }
     }
 
-    public void SecondaryUse(bool pressed) // Pull?
+    public void SecondaryUse(InputAction.CallbackContext context) // Pull?
     {
-        if (pressed)
+        if (context.performed)
         {
             if (harpoonInstances[0] == null && harpoonInstances[1] == null) return; //todo what happens when it can't pull (when neither harpoon is instanced)
 
@@ -146,9 +148,9 @@ public class HarpoonBehaviour : MonoBehaviour, IItem
         pullableScripts[1].Pull(pullableScripts[0]);
     }
 
-    public void TertiaryUse(bool pressed) //Reload
+    public void TertiaryUse(InputAction.CallbackContext context) //Reload
     {
-        if (!itemManager.inventorySystem.HasItem(harpoonItem)) return; //todo what happens when it can't reload
+        if (!itemManager.inventorySystem.HasItem(harpoonItem) && !context.started) return; //todo what happens when it can't reload
         itemManager.inventorySystem.RemoveItem(harpoonItem);
         Reload();
     }

@@ -140,19 +140,19 @@ namespace Player
             }
         }
 
-        public void Select()
+        public bool Select()
         {
-            if (interactionIndex == -1) return;
-            if (interactables.Count == 0) return;
+            if (interactionIndex == -1) return false;
+            if (interactables.Count == 0) return false;
             var interactable = interactables[interactionIndex];
             if (interactable is IInteractableWithPlayerAndItem interactableWithPlayerAndItem)
-                interactableWithPlayerAndItem.Select(player, new Item());
+                return interactableWithPlayerAndItem.Select(player, new Item());
             else if (interactable is IInteractableWithPlayer interactableWithPlayer)
-                interactableWithPlayer.Select(player);
+                return interactableWithPlayer.Select(player);
             else if (interactable is IInteractableWithItem interactableWithItem)
-                interactableWithItem.Select(new Item());
+                return interactableWithItem.Select(new Item());
             else
-                interactable.Select();
+                return interactable.Select();
         }
 
         private void OnTriggerStay(Collider other)

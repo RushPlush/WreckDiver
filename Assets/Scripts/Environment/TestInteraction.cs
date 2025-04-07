@@ -14,9 +14,10 @@ public class TestInteraction : MonoBehaviour, IInteractable
 
     bool IInteractable.IsDestroyed => destroyed;
     
-    public void Select()
+    public bool Select()
     {
         print("Interacted with TestInteraction");
+        return false;
     }
 
     public void Deselect()

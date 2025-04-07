@@ -9,24 +9,24 @@ public interface IHighlightable
 public interface IInteractable : IHighlightable
 {
     bool IsDestroyed { get; }
-    void Select();
+    bool Select();
     void Deselect();
 }
 
 public interface IInteractableWithPlayer : IInteractable
 {
-    void Select(GameObject player);
+    bool Select(GameObject player);
     void Deselect(GameObject player);
 }
 
 public interface IInteractableWithItem : IInteractable
 {
-    void Select(Item item);
+    bool Select(Item item);
     void Deselect(Item item);
 }
 
 public interface IInteractableWithPlayerAndItem : IInteractableWithPlayer, IInteractableWithItem
 {
-    void Select(GameObject player, Item item);
+    bool Select(GameObject player, Item item);
     void Deselect(GameObject player, Item item);
 }

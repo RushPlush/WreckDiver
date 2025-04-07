@@ -16,9 +16,9 @@ public class PickupAble : MonoBehaviour, IInteractableWithPlayer
     public bool destroyed { get; private set; }
 
     bool IInteractable.IsDestroyed => destroyed;
-    public void Select()
+    public bool Select()
     {
-        throw new NotImplementedException();
+        return false;
     }
 
     public void Deselect()
@@ -31,11 +31,12 @@ public class PickupAble : MonoBehaviour, IInteractableWithPlayer
         destroyed = true;
     }
 
-    public void Select(GameObject player)
+    public bool Select(GameObject player)
     {
         print(gameObject.name + " Interacted with player");
         player.GetComponent<ItemManager>().inventorySystem.AddItem(item, quantity);
         Destroy(this.gameObject);
+        return false;
     }
 
     public void Deselect(GameObject player)

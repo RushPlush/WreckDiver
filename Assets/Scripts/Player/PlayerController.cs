@@ -65,25 +65,43 @@ public class PlayerController : MonoBehaviour
         player.Pause.performed += OnPause;
         player.Enable();
         var inventory = diverInputActions.Inventory;
-        inventory.Use.started += OnUse;
+        inventory.PrimaryUse.started += OnPrimaryUse;
+        inventory.PrimaryUse.performed += OnPrimaryUse;
+        inventory.PrimaryUse.canceled += OnPrimaryUse;
+        // inventory.SecondaryUse.started += OnSecondaryUse;
+        // inventory.SecondaryUse.performed += OnSecondaryUse;
+        // inventory.SecondaryUse.canceled += OnSecondaryUse;
+        inventory.TertiaryUse.started += OnTertiaryUse;
+        inventory.TertiaryUse.performed += OnTertiaryUse;
+        inventory.TertiaryUse.canceled += OnTertiaryUse;
         inventory.CycleUp.started += OnCycleUp;
         inventory.CycleDown.started += OnCycleDown;
         inventory.Enable();
     }
 
-    private void OnCycleUp(InputAction.CallbackContext obj)
+    private void OnCycleDown(InputAction.CallbackContext context)
+    {
+        itemManager.ChangeItem(-1);
+    }
+
+    private void OnCycleUp(InputAction.CallbackContext context)
     {
         itemManager.ChangeItem(1);
     }
 
-    private void OnUse(InputAction.CallbackContext obj)
+    private void OnPrimaryUse(InputAction.CallbackContext context)
     {
-        itemManager.PrimaryUse();
+        itemManager.PrimaryUse(context);
     }
 
-    private void OnCycleDown(InputAction.CallbackContext obj)
+    private void OnSecondaryUse(InputAction.CallbackContext context)
     {
-        itemManager.ChangeItem(-1);
+        itemManager.SecondaryUse(context);
+    }
+
+    private void OnTertiaryUse(InputAction.CallbackContext context)
+    {
+        itemManager.TertiaryUse(context);
     }
 
     private void OnDisable()
@@ -104,7 +122,15 @@ public class PlayerController : MonoBehaviour
         player.Pause.performed -= OnPause;
         player.Disable();
         var inventory = diverInputActions.Inventory;
-        inventory.Use.started -= OnUse;
+        inventory.PrimaryUse.started -= OnPrimaryUse;
+        inventory.PrimaryUse.performed -= OnPrimaryUse;
+        inventory.PrimaryUse.canceled -= OnPrimaryUse;
+        // inventory.SecondaryUse.started -= OnSecondaryUse;
+        // inventory.SecondaryUse.performed -= OnSecondaryUse;
+        // inventory.SecondaryUse.canceled -= OnSecondaryUse;
+        inventory.TertiaryUse.started -= OnTertiaryUse;
+        inventory.TertiaryUse.performed -= OnTertiaryUse;
+        inventory.TertiaryUse.canceled -= OnTertiaryUse;
         inventory.CycleUp.started -= OnCycleUp;
         inventory.CycleDown.started -= OnCycleDown;
         inventory.Disable();
@@ -171,9 +197,8 @@ public class PlayerController : MonoBehaviour
 
     public void OnSelect(InputAction.CallbackContext context)
     {
-        if (lastKeyPress + 0.3 > context.startTime) return;
-        lastKeyPress = context.startTime + 0.5;
-        interactor.Select();
+        if (!interactor.Select()) return;
+        diverInputActions.Interact.Select.started -= OnSelect;
         StartCoroutine(DelayedSelect());
     }
 
@@ -182,22 +207,19 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         var interact = diverInputActions.Interact;
         interact.Deselect.started += OnDeselect;
-        interact.Select.started -= OnSelect;
     }
 
     IEnumerator DelayedDeselect()
     {
         yield return new WaitForSeconds(0.5f);
         var interact = diverInputActions.Interact;
-        interact.Deselect.started -= OnDeselect;
         interact.Select.started += OnSelect;
     }
 
     private void OnDeselect(InputAction.CallbackContext context)
     {
-        if (lastKeyPress + 0.3 > context.startTime) return;
-        lastKeyPress = context.startTime + 0.5;
         interactor.Deselect();
+        diverInputActions.Interact.Deselect.started -= OnDeselect;
         StartCoroutine(DelayedDeselect());
     }
 

@@ -136,12 +136,13 @@ public class Codelock : MonoBehaviour, IInteractableWithPlayer
 
     bool IInteractable.IsDestroyed => !enabled;
 
-    public void Select(GameObject player)
+    public bool Select(GameObject player)
     {
         player.GetComponent<PlayerController>().DisableMovement();
         oldCameraOffsets.position = Camera.main.transform.position;
         oldCameraOffsets.eulerAngle = Camera.main.transform.eulerAngles;
         StartCoroutine(Selected());
+        return true;
     }
 
     private float elapsedTime = 0;
@@ -165,8 +166,9 @@ public class Codelock : MonoBehaviour, IInteractableWithPlayer
         lockwheels[0].Highlight();
     }
 
-    public void Select()
+    public bool Select()
     {
+        return false;
     }
 
     public void Deselect()

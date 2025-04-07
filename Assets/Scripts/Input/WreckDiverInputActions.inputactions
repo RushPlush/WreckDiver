@@ -477,7 +477,7 @@
             "id": "12f92589-90c6-457c-b955-197eea9fea3a",
             "actions": [
                 {
-                    "name": "Use",
+                    "name": "PrimaryUse",
                     "type": "Button",
                     "id": "0e3ec2a4-d433-426d-9922-2f70cb2d75da",
                     "expectedControlType": "",
@@ -502,6 +502,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "TertiaryUse",
+                    "type": "Button",
+                    "id": "45f9653c-a18b-4d07-8d38-2e78bdf3ac8c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -512,7 +521,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
-                    "action": "Use",
+                    "action": "PrimaryUse",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -523,7 +532,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Use",
+                    "action": "PrimaryUse",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -568,6 +577,28 @@
                     "processors": "",
                     "groups": ";Gamepad",
                     "action": "CycleDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2cec3269-52c1-43ab-86ad-e4076157dab7",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "TertiaryUse",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c2bc6ff3-e8fc-40c4-af73-54c5407c0997",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "TertiaryUse",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

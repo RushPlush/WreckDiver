@@ -6,6 +6,7 @@ public class Harpoon : MonoBehaviour
     private bool isHarpoonActive = false;
     [SerializeField] private LayerMask afterImpactLayer;
     [SerializeField] private float speed = 10f;
+    [SerializeField] private Vector3 initialScale;
     Rigidbody rb;
     HarpoonBehaviour harpoonBehaviour;
     Pullable pullable;
@@ -14,6 +15,7 @@ public class Harpoon : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        transform.localScale = initialScale;
     }
 
     public void SetHarpoonBehaviour(HarpoonBehaviour harpoonBehaviour)
@@ -58,9 +60,7 @@ public class Harpoon : MonoBehaviour
         if (!isHarpoonActive) return;
         transform.parent = other.transform;
         isHarpoonActive = false;
-        print(GetLayerNumber(afterImpactLayer));
         gameObject.layer = GetLayerNumber(afterImpactLayer);
-        print(gameObject.layer);
         rb.isKinematic = true;
         rb.collisionDetectionMode = CollisionDetectionMode.Discrete;
         rb.interpolation = RigidbodyInterpolation.None;

@@ -1,6 +1,7 @@
 using Inventory;
 using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ItemManager : MonoBehaviour
 {
@@ -52,9 +53,8 @@ public class ItemManager : MonoBehaviour
             //itemHolderMeshFilter.mesh = heldItem.Mesh;
             if (heldItem.Prefab != null)
             {
-                heldItemInstance = Instantiate(heldItem.Prefab, transform);
-                heldItemInstance.transform.localPosition = itemHolder.transform.position - transform.position;
-                heldItemBehaviour = heldItemInstance.GetComponent<IItem>();
+                heldItemInstance = Instantiate(heldItem.Prefab, itemHolder.transform);
+                heldItemBehaviour = heldItemInstance.GetComponent<IItem>(); 
                 isHoldingItem = true;
                 print("Holding: " + heldItem.Name);
             }
@@ -68,19 +68,19 @@ public class ItemManager : MonoBehaviour
         inventorySystem.RemoveItem(heldItem);
     }
 
-    public void PrimaryUse()
+    public void PrimaryUse(InputAction.CallbackContext pressed)
     {
         // if(!heldItem.HasBehaviour) return;
-        heldItemBehaviour?.PrimaryUse();
+        heldItemBehaviour?.PrimaryUse(pressed);
     }
 
-    public void SecondaryUse(bool isPressed)
+    public void SecondaryUse(InputAction.CallbackContext pressed)
     {
-        heldItemBehaviour?.SecondaryUse(isPressed);
+        heldItemBehaviour?.SecondaryUse(pressed);
     }
 
-    public void TertiaryUse(bool isPressed)
+    public void TertiaryUse(InputAction.CallbackContext pressed)
     {
-        heldItemBehaviour?.TertiaryUse(isPressed);
+        heldItemBehaviour?.TertiaryUse(pressed);
     }
 }
