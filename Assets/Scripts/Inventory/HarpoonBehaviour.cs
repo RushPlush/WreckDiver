@@ -4,7 +4,8 @@ using Inventory;
 using UnityEditor.VersionControl;
 using UnityEngine;
 
-public class HarpoonBehaviour : MonoBehaviour, IItem {
+public class HarpoonBehaviour : MonoBehaviour, IItem
+{
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField] private GameObject harpoon;
     [SerializeField] private Item harpoonItem;
@@ -19,7 +20,7 @@ public class HarpoonBehaviour : MonoBehaviour, IItem {
     private ItemManager itemManager;
     int lastShotIndex = -1;
     bool skippedLastShot = false;
-    
+
     private void Awake()
     {
         // in scene, find player by tag, get item manager
@@ -51,7 +52,7 @@ public class HarpoonBehaviour : MonoBehaviour, IItem {
     bool previouseState = false;
     public void PrimaryUse(bool pressed) // Shoot
     {
-        if(pressed && !previouseState)
+        if (pressed && !previouseState)
         {
             Shoot();
         }
@@ -81,7 +82,7 @@ public class HarpoonBehaviour : MonoBehaviour, IItem {
         if (pressed)
         {
             if (harpoonInstances[0] == null && harpoonInstances[1] == null) return; //todo what happens when it can't pull (when neither harpoon is instanced)
-            
+
             if (harpoonsReady[0] != false && harpoonsReady[1] != false && harpoonInstances[0] != null && harpoonInstances[1] != null)
             {
                 DoublePull();
@@ -115,7 +116,7 @@ public class HarpoonBehaviour : MonoBehaviour, IItem {
         {
             if (!harpoonsReady[i] && harpoonInstances[i] != null)
             {
-                if(pullableScripts[i] != null)
+                if (pullableScripts[i] != null)
                 {
                     pullableScripts[i].Pull(playerPullable);
                     playerPullable.Pull(pullableScripts[i]);
@@ -133,7 +134,7 @@ public class HarpoonBehaviour : MonoBehaviour, IItem {
     {
         playerPullable.Release();
         if (pullableScripts[0] == null && pullableScripts[1] == null) return; // does nothing, can't pull anything
-        if(pullableScripts[0] == null)
+        if (pullableScripts[0] == null)
         {
             pullableScripts[1].Pull(harpoonInstances[0].transform);
             return;
@@ -166,9 +167,9 @@ public class HarpoonBehaviour : MonoBehaviour, IItem {
                     continue;
                 }
             }
-            if(harpoonsReady[i] == false)
+            if (harpoonsReady[i] == false)
             {
-                itemManager.harpoonsLoaded = i+1;
+                itemManager.harpoonsLoaded = i + 1;
                 harpoonInstances[i] = Instantiate(harpoon, harpoonSpawnPoints[i]);
                 harpoonInstances[i].transform.SetParent(harpoonSpawnPoints[i], true);
                 harpoonScripts[i] = harpoonInstances[i].GetComponent<Harpoon>();

@@ -1,4 +1,4 @@
-using AmplifyShaderEditor;
+using System.Collections;
 using Player;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -8,86 +8,186 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Input))]
 public class PlayerController : MonoBehaviour
 {
-    private Input input;
+    private WreckDiverInputActions diverInputActions;
     private Movement movement;
     private PlayerCamera camera;
     private FloatCapsule floatCapsule;
     private Interactor interactor;
     private LookPoint lookPoint;
     private ItemManager itemManager;
+    private Helmet helmet;
+    private bool isBoosting;
 
     private void Awake()
     {
         floatCapsule = GetComponent<FloatCapsule>();
         camera = GetComponent<PlayerCamera>();
         movement = GetComponent<Movement>();
-        input = GetComponent<Input>();
+        diverInputActions = new WreckDiverInputActions();
         itemManager = GetComponent<ItemManager>();
         interactor = transform.GetChild(0).GetComponentInChildren<Interactor>(); //This is a hacky way to get the Interactor component, it should be done in a better way
         lookPoint = transform.GetChild(0).GetComponentInChildren<LookPoint>(); //This is a hacky way to get the LookPoint component, it should be done in a better way
-        if(interactor == null)
+        helmet = GetComponentInChildren<Helmet>();
+        if (interactor == null)
         {
             Debug.LogError("Interactor not found, make sure camera is the first child of the player, and that the Interactor is a child of the camera");
         }
-        if(lookPoint == null)
+        if (lookPoint == null)
         {
             Debug.LogError("LookPoint not found, make sure camera is the first child of the player, and that the LookPoint is a child of the camera");
         }
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
+
     private void Start()
     {
         //Sets all rotations to 0
         transform.rotation = Quaternion.Euler(0, transform.rotation.y, 0);
     }
-    private void Update()
-    {
-        if (Cursor.lockState != CursorLockMode.Locked)
-            return;
 
-        camera.Look(input.lookVector);
-        lookPoint.UpdatePosition(input.lookVector, input.usingKeyboard);
-        floatCapsule.Jump(input.jumpTrigger, input.isJumping);
-        if(input.interactTrigger)
-        {
-            interactor.Interact();
-        }
-        //m_ItemManager.ChangeItem(m_Input.itemChange);
-        //if(m_Input.isUsingPrimary)
-        //{
-        //    m_ItemManager.PrimaryUse();
-        //}
-        //if(m_Input.isUsingSecondary)
-        //{
-        //    m_ItemManager.SecondaryUse();
-        //}
-        //if(m_Input.isUsingTertiary)
-        //{
-        //    m_ItemManager.TertiaryUse();
-        //}
-    }
-    void OnChangeItem(InputValue value)
+    private void OnEnable()
     {
-        var val = (int)value.Get<float>();
-        print(val);
-        itemManager.ChangeItem(val);
+        DeviceListener.SetupEvents();
+        var movement = diverInputActions.Movement;
+        movement.Move.performed += OnMove;
+        movement.Look.performed += OnLook;
+        movement.Jump.performed += OnJump;
+        movement.Boost.performed += OnBoost;
+        movement.Enable();
+        var interact = diverInputActions.Interact;
+        interact.Select.started += OnSelect;
+        interact.Enable();
+        var player = diverInputActions.Player;
+        player.Pause.performed += OnPause;
+        player.Enable();
     }
-    void OnItemPrimary(InputValue value)
+
+    private void OnDisable()
     {
-        var val = value.isPressed;
-        
-        itemManager.PrimaryUse(val);
+        var movement = diverInputActions.Movement;
+        movement.Move.performed -= OnMove;
+        movement.Look.performed -= OnLook;
+        movement.Jump.performed -= OnJump;
+        movement.Boost.performed -= OnBoost;
+        movement.Disable();
+        var interact = diverInputActions.Interact;
+        interact.Select.started -= OnSelect;
+        interact.Deselect.started -= OnDeselect;
+        interact.Disable();
+        var player = diverInputActions.Player;
+        player.Pause.performed -= OnPause;
+        player.Disable();
     }
-    void OnItemSecondary(InputValue value)
+
+    // void OnChangeItem(InputValue value)
+    // {
+    //     var val = (int)value.Get<float>();
+    //     print(val);
+    //     itemManager.ChangeItem(val);
+    // }
+    //
+    // void OnItemPrimary(InputValue value)
+    // {
+    //     var val = value.isPressed;
+    //
+    //     itemManager.PrimaryUse(val);
+    // }
+    //
+    // void OnItemSecondary(InputValue value)
+    // {
+    //     var val = value.isPressed;
+    //     itemManager.SecondaryUse(val);
+    // }
+    //
+    // void OnItemTertiary(InputValue value)
+    // {
+    //     var val = value.isPressed;
+    //     itemManager.TertiaryUse(val);
+    // }
+
+    public void FixedUpdate()
     {
-        var val = value.isPressed;
-        itemManager.SecondaryUse(val);
+        if (!movement.enabled) return;
+        movement.Move(diverInputActions.Movement.Move.ReadValue<Vector2>(), isBoosting);
+        if (DeviceListener.CurrentDevice is not DeviceType.Gamepad) return;
+        camera.Look(diverInputActions.Movement.Look.ReadValue<Vector2>());
+        lookPoint.UpdatePosition(diverInputActions.Movement.Look.ReadValue<Vector2>());
     }
-    void OnItemTertiary(InputValue value)
+
+    public void OnMove(InputAction.CallbackContext context)
     {
-        var val = value.isPressed;
-        itemManager.TertiaryUse(val);
+        helmet.Movement = context.ReadValue<Vector2>();
     }
-    private void FixedUpdate() {    
-        movement.Move(input.moveDirection, input.isBoosting);
+
+    public void OnLook(InputAction.CallbackContext context)
+    {
+        if (DeviceListener.CurrentDevice is DeviceType.Gamepad) return;
+        camera.Look(context.ReadValue<Vector2>());
+        lookPoint.UpdatePosition(context.ReadValue<Vector2>());
+    }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        floatCapsule.Jump(context.started, !context.started);
+    }
+
+    public void OnBoost(InputAction.CallbackContext context)
+    {
+        isBoosting = !context.canceled;
+    }
+
+    private double lastKeyPress = 0;
+
+    public void OnSelect(InputAction.CallbackContext context)
+    {
+        if(lastKeyPress + 0.3 > context.startTime) return;
+        lastKeyPress = context.startTime + 0.5;
+        interactor.Select();
+        StartCoroutine(DelayedSelect());
+    }
+
+    IEnumerator DelayedSelect()
+    {
+        yield return new WaitForSeconds(0.5f);
+        var interact = diverInputActions.Interact;
+        interact.Deselect.started += OnDeselect;
+        interact.Select.started -= OnSelect;
+    }
+
+    IEnumerator DelayedDeselect()
+    {
+        yield return new WaitForSeconds(0.5f);
+        var interact = diverInputActions.Interact;
+        interact.Deselect.started -= OnDeselect;
+        interact.Select.started += OnSelect;
+    }
+
+    private void OnDeselect(InputAction.CallbackContext context)
+    {
+        if(lastKeyPress + 0.3 > context.startTime) return;
+        lastKeyPress = context.startTime + 0.5;
+        interactor.Deselect();
+        StartCoroutine(DelayedDeselect());
+    }
+
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        if (context.canceled || context.started) return;
+        if (diverInputActions.Movement.enabled) diverInputActions.Movement.Disable();
+        else diverInputActions.Movement.Enable();
+    }
+
+    public void DisableMovement()
+    {
+        diverInputActions.Movement.Disable();
+        movement.enabled = false;
+    }
+
+    public void EnableMovement()
+    {
+        diverInputActions.Movement.Enable();
+        movement.enabled = true;
     }
 }
