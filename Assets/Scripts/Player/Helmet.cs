@@ -50,6 +50,6 @@ public class Helmet : MonoBehaviour
                 (angle - innerDeadZoneSize) / 4 * Time.deltaTime);
         }
 
-        transform.localPosition = playerTrans.localPosition + offset;
+        transform.localPosition = playerTrans.localPosition + offset * playerTrans.localScale.x;
     }
 }
