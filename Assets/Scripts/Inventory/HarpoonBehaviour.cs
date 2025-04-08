@@ -150,7 +150,7 @@ public class HarpoonBehaviour : MonoBehaviour, IItem
 
     public void TertiaryUse(InputAction.CallbackContext context) //Reload
     {
-        if (!itemManager.inventorySystem.HasItem(harpoonItem) && !context.started) return; //todo what happens when it can't reload
+        if (!itemManager.inventorySystem.HasItem(harpoonItem) || !context.started) return; //todo what happens when it can't reload
         itemManager.inventorySystem.RemoveItem(harpoonItem);
         Reload();
     }

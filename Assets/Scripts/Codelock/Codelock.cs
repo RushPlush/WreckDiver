@@ -15,11 +15,13 @@ public class Codelock : MonoBehaviour, IInteractableWithPlayer
     [SerializeField] private Vector2[] codePositions;
     [SerializeField] private GameObject[] codeObjects;
 
+    [SerializeField] private GameObject currentInteractor;
+
     private WreckDiverInputActions diverInputActions;
     private WreckDiverInputActions.InteractActions interact;
     private Outline outline;
     private (Vector3 position, Vector3 eulerAngle) oldCameraOffsets;
-    private (Vector3 position, Vector3 eulerAngle) cameraOffset = (new(0.2f, 0, -0.0134f), new (0, -90, 0));
+    private (Vector3 position, Vector3 eulerAngle) cameraOffset = (new(-0.175f, 0, -0.5f), new (0, 15, 0));
 
     void Awake()
     {
@@ -65,8 +67,8 @@ public class Codelock : MonoBehaviour, IInteractableWithPlayer
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        // if (unlockable is not IUnlockable _)
-        //     throw new System.Exception("Unlockable must implement IUnlockable");
+        if (unlockable is not IUnlockable _)
+            throw new System.Exception("Unlockable must implement IUnlockable");
 
         // get all lockwheels for this component
         lockwheels = GetComponentsInChildren<Lockwheel>();
@@ -130,6 +132,9 @@ public class Codelock : MonoBehaviour, IInteractableWithPlayer
         else if (unlockable != null) Debug.Log($"Unlockable {unlockable.name} must implement IUnlockable to unlock");
         else return;
 
+        Deselect(currentInteractor);
+        StartCoroutine(DelayedUnhighlight());
+
         // stop updating
         enabled = false;
     }
@@ -138,6 +143,7 @@ public class Codelock : MonoBehaviour, IInteractableWithPlayer
 
     public bool Select(GameObject player)
     {
+        currentInteractor = player;
         player.GetComponent<PlayerController>().DisableMovement();
         oldCameraOffsets.position = Camera.main.transform.position;
         oldCameraOffsets.eulerAngle = Camera.main.transform.eulerAngles;
@@ -177,6 +183,7 @@ public class Codelock : MonoBehaviour, IInteractableWithPlayer
 
     public void Deselect(GameObject player)
     {
+        currentInteractor = null;
         StartCoroutine(Deselected(player));
     }
 
@@ -208,6 +215,13 @@ public class Codelock : MonoBehaviour, IInteractableWithPlayer
 
     public void Unhighlight()
     {
+        outline.enabled = false;
+    }
+
+    IEnumerator DelayedUnhighlight()
+    {
+        while (elapsedTime < 0.5f) yield return new WaitForFixedUpdate();
+        yield return new WaitForFixedUpdate();
         outline.enabled = false;
     }
 }
