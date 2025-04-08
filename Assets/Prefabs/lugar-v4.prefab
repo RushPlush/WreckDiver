@@ -405,6 +405,9 @@ Transform:
   - {fileID: 7321712522337484268}
   - {fileID: 8222963672622636870}
   - {fileID: 6375790756866748766}
+  - {fileID: 6059906219575185475}
+  - {fileID: 1787745202034522698}
+  - {fileID: 5847669802908768244}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5812871444075329641
@@ -1738,6 +1741,68 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ac48ce920097be344a6650655dcc9ed9, type: 3}
   m_PrefabInstance: {fileID: 2694741376103361183}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3518477403709504111
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4653893468065285952}
+    m_Modifications:
+    - target: {fileID: 2544723902312651423, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+      propertyPath: m_Name
+      value: WallLamp_LightOn_Model_placeholder_Vera (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890040219577008165, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.702
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890040219577008165, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.7140007
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890040219577008165, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.491
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890040219577008165, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.707138
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890040219577008165, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890040219577008165, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.70707566
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890040219577008165, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890040219577008165, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890040219577008165, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -89.995
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890040219577008165, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+--- !u!4 &1787745202034522698 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2890040219577008165, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+  m_PrefabInstance: {fileID: 3518477403709504111}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3551962317994069375
 PrefabInstance:
@@ -3375,6 +3440,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 69a231ae0d020b649be8fe08e28f91c0, type: 3}
   m_PrefabInstance: {fileID: 8473360632016566445}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8735968361635977169
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4653893468065285952}
+    m_Modifications:
+    - target: {fileID: 2544723902312651423, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+      propertyPath: m_Name
+      value: WallLamp_LightOn_Model_placeholder_Vera (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890040219577008165, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.944
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890040219577008165, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.7140007
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890040219577008165, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890040219577008165, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9914969
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890040219577008165, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890040219577008165, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.13013025
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890040219577008165, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890040219577008165, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890040219577008165, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 14.954
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890040219577008165, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+--- !u!4 &5847669802908768244 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2890040219577008165, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+  m_PrefabInstance: {fileID: 8735968361635977169}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8738433166955415218
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3452,6 +3579,68 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ac48ce920097be344a6650655dcc9ed9, type: 3}
   m_PrefabInstance: {fileID: 8738433166955415218}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8935811113355792486
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4653893468065285952}
+    m_Modifications:
+    - target: {fileID: 2544723902312651423, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+      propertyPath: m_Name
+      value: WallLamp_LightOn_Model_placeholder_Vera
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890040219577008165, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.742
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890040219577008165, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.7140007
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890040219577008165, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.029
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890040219577008165, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.707138
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890040219577008165, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890040219577008165, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.70707566
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890040219577008165, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890040219577008165, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890040219577008165, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -89.995
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890040219577008165, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+--- !u!4 &6059906219575185475 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2890040219577008165, guid: 4f2d38236c371f148832248f10a4180c, type: 3}
+  m_PrefabInstance: {fileID: 8935811113355792486}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9086140391571783752
 PrefabInstance:

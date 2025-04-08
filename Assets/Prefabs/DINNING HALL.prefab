@@ -120,6 +120,9 @@ Transform:
   - {fileID: 5022569836531568575}
   - {fileID: 2965721770331105381}
   - {fileID: 6878107894047596261}
+  - {fileID: 4562039234186259446}
+  - {fileID: 4992949539397318401}
+  - {fileID: 1108361219193844709}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &32066656436671344
@@ -130,10 +133,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     - target: {fileID: -8679921383154817045, guid: 715a9258b88347644949416de7e90151, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.399999
@@ -190,6 +189,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blankt_Gulv_NewUV_Model (6)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -286,10 +289,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: d3fe2980342779447a26f18d59f651b4, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 0a85a72a8d408834ba2510fcbf91a555, type: 2}
     - target: {fileID: -8679921383154817045, guid: ac48ce920097be344a6650655dcc9ed9, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.457166
@@ -346,6 +345,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: koridor_vegg2_NewUV_Model (9)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d3fe2980342779447a26f18d59f651b4, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a85a72a8d408834ba2510fcbf91a555, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -364,10 +367,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     - target: {fileID: -8679921383154817045, guid: 715a9258b88347644949416de7e90151, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.399999
@@ -424,6 +423,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blankt_Gulv_NewUV_Model (17)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -520,10 +523,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: d3fe2980342779447a26f18d59f651b4, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 0a85a72a8d408834ba2510fcbf91a555, type: 2}
     - target: {fileID: -8679921383154817045, guid: ac48ce920097be344a6650655dcc9ed9, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.457166
@@ -580,6 +579,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: koridor_vegg2_NewUV_Model (3)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d3fe2980342779447a26f18d59f651b4, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a85a72a8d408834ba2510fcbf91a555, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -598,10 +601,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: d3fe2980342779447a26f18d59f651b4, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 0a85a72a8d408834ba2510fcbf91a555, type: 2}
     - target: {fileID: -8679921383154817045, guid: ac48ce920097be344a6650655dcc9ed9, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.457166
@@ -658,6 +657,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: koridor_vegg2_NewUV_Model (10)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d3fe2980342779447a26f18d59f651b4, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a85a72a8d408834ba2510fcbf91a555, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -833,6 +836,88 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b50d98d0877f5414f8ed12ff7aba5c38, type: 3}
   m_PrefabInstance: {fileID: 609505580086965437}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &704716160090360290
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7421581635797119819}
+    m_Modifications:
+    - target: {fileID: 1310068924192403155, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_Name
+      value: RoofLamp_On (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.359
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.481
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -18.411
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6087617
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7933532
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6162459876115569490, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_Range
+      value: 12.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6162459876115569490, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_Intensity
+      value: 8.3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+--- !u!4 &4992949539397318401 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+  m_PrefabInstance: {fileID: 704716160090360290}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &709639909680950035
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -841,10 +926,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     - target: {fileID: -8679921383154817045, guid: c45b2ccbec5da71418d8f54298473b92, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.399999
@@ -901,6 +982,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: industriell_Gulv_NewUV_Model (7)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1006,10 +1091,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     - target: {fileID: -8679921383154817045, guid: 715a9258b88347644949416de7e90151, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.399999
@@ -1066,6 +1147,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blankt_Gulv_NewUV_Model (2)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1084,10 +1169,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: d3fe2980342779447a26f18d59f651b4, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 0a85a72a8d408834ba2510fcbf91a555, type: 2}
     - target: {fileID: -8679921383154817045, guid: ac48ce920097be344a6650655dcc9ed9, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.457166
@@ -1144,6 +1225,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: koridor_vegg2_NewUV_Model (7)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d3fe2980342779447a26f18d59f651b4, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a85a72a8d408834ba2510fcbf91a555, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1428,10 +1513,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     - target: {fileID: -8679921383154817045, guid: 715a9258b88347644949416de7e90151, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.399999
@@ -1488,6 +1569,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blankt_Gulv_NewUV_Model (8)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1506,10 +1591,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     - target: {fileID: -8679921383154817045, guid: c45b2ccbec5da71418d8f54298473b92, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.399999
@@ -1566,6 +1647,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: industriell_Gulv_NewUV_Model (9)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1584,10 +1669,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     - target: {fileID: -8679921383154817045, guid: c45b2ccbec5da71418d8f54298473b92, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.399999
@@ -1644,6 +1725,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: industriell_Gulv_NewUV_Model (5)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1662,10 +1747,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     - target: {fileID: -8679921383154817045, guid: 715a9258b88347644949416de7e90151, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.399999
@@ -1722,6 +1803,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blankt_Gulv_NewUV_Model (4)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1740,10 +1825,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     - target: {fileID: -8679921383154817045, guid: c45b2ccbec5da71418d8f54298473b92, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.399999
@@ -1800,6 +1881,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: industriell_Gulv_NewUV_Model (11)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1974,10 +2059,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     - target: {fileID: -8679921383154817045, guid: c45b2ccbec5da71418d8f54298473b92, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.399999
@@ -2034,6 +2115,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: industriell_Gulv_NewUV_Model (12)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2052,10 +2137,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: d3fe2980342779447a26f18d59f651b4, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 0a85a72a8d408834ba2510fcbf91a555, type: 2}
     - target: {fileID: -8679921383154817045, guid: ac48ce920097be344a6650655dcc9ed9, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.457166
@@ -2112,6 +2193,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: koridor_vegg2_NewUV_Model (13)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d3fe2980342779447a26f18d59f651b4, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a85a72a8d408834ba2510fcbf91a555, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2208,10 +2293,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: d3fe2980342779447a26f18d59f651b4, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 0a85a72a8d408834ba2510fcbf91a555, type: 2}
     - target: {fileID: -8679921383154817045, guid: ac48ce920097be344a6650655dcc9ed9, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.457166
@@ -2272,6 +2353,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0.0005
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d3fe2980342779447a26f18d59f651b4, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a85a72a8d408834ba2510fcbf91a555, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2290,10 +2375,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     - target: {fileID: -8679921383154817045, guid: 715a9258b88347644949416de7e90151, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.399999
@@ -2350,6 +2431,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blankt_Gulv_NewUV_Model (16)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2368,10 +2453,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     - target: {fileID: -8679921383154817045, guid: c45b2ccbec5da71418d8f54298473b92, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.399999
@@ -2428,6 +2509,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: industriell_Gulv_NewUV_Model (2)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2524,10 +2609,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: d3fe2980342779447a26f18d59f651b4, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 0a85a72a8d408834ba2510fcbf91a555, type: 2}
     - target: {fileID: -8679921383154817045, guid: ac48ce920097be344a6650655dcc9ed9, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.457166
@@ -2580,6 +2661,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d3fe2980342779447a26f18d59f651b4, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a85a72a8d408834ba2510fcbf91a555, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2598,10 +2683,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     - target: {fileID: -8679921383154817045, guid: c45b2ccbec5da71418d8f54298473b92, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.399999
@@ -2658,6 +2739,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: industriell_Gulv_NewUV_Model (13)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2676,10 +2761,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     - target: {fileID: -8679921383154817045, guid: 715a9258b88347644949416de7e90151, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.399999
@@ -2736,6 +2817,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blankt_Gulv_NewUV_Model (7)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2864,10 +2949,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     - target: {fileID: -8679921383154817045, guid: 715a9258b88347644949416de7e90151, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.399999
@@ -2924,6 +3005,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blankt_Gulv_NewUV_Model (3)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3208,10 +3293,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: d3fe2980342779447a26f18d59f651b4, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 0a85a72a8d408834ba2510fcbf91a555, type: 2}
     - target: {fileID: -8679921383154817045, guid: ac48ce920097be344a6650655dcc9ed9, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.457166
@@ -3268,6 +3349,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: koridor_vegg2_NewUV_Model (5)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d3fe2980342779447a26f18d59f651b4, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a85a72a8d408834ba2510fcbf91a555, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3772,10 +3857,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     - target: {fileID: -8679921383154817045, guid: c45b2ccbec5da71418d8f54298473b92, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.399999
@@ -3828,6 +3909,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3846,10 +3931,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     - target: {fileID: -8679921383154817045, guid: 715a9258b88347644949416de7e90151, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.399999
@@ -3906,6 +3987,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blankt_Gulv_NewUV_Model (9)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4112,10 +4197,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: d3fe2980342779447a26f18d59f651b4, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 0a85a72a8d408834ba2510fcbf91a555, type: 2}
     - target: {fileID: -8679921383154817045, guid: ac48ce920097be344a6650655dcc9ed9, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.457166
@@ -4172,6 +4253,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: koridor_vegg2_NewUV_Model (8)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d3fe2980342779447a26f18d59f651b4, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a85a72a8d408834ba2510fcbf91a555, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4190,10 +4275,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: d3fe2980342779447a26f18d59f651b4, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 0a85a72a8d408834ba2510fcbf91a555, type: 2}
     - target: {fileID: -8679921383154817045, guid: ac48ce920097be344a6650655dcc9ed9, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.457166
@@ -4250,6 +4331,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: koridor_vegg2_NewUV_Model (11)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d3fe2980342779447a26f18d59f651b4, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a85a72a8d408834ba2510fcbf91a555, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4456,10 +4541,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: d3fe2980342779447a26f18d59f651b4, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 0a85a72a8d408834ba2510fcbf91a555, type: 2}
     - target: {fileID: -8679921383154817045, guid: ac48ce920097be344a6650655dcc9ed9, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.457166
@@ -4516,6 +4597,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: koridor_vegg2_NewUV_Model (14)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d3fe2980342779447a26f18d59f651b4, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a85a72a8d408834ba2510fcbf91a555, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4644,10 +4729,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: d3fe2980342779447a26f18d59f651b4, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 0a85a72a8d408834ba2510fcbf91a555, type: 2}
     - target: {fileID: -8679921383154817045, guid: ac48ce920097be344a6650655dcc9ed9, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.457166
@@ -4704,6 +4785,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: koridor_vegg2_NewUV_Model (1)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d3fe2980342779447a26f18d59f651b4, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a85a72a8d408834ba2510fcbf91a555, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4714,6 +4799,88 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ac48ce920097be344a6650655dcc9ed9, type: 3}
   m_PrefabInstance: {fileID: 4778496209559830263}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4894447508707462406
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7421581635797119819}
+    m_Modifications:
+    - target: {fileID: 1310068924192403155, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_Name
+      value: RoofLamp_On (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.591
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.481
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -18.329
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6087617
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7933532
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6162459876115569490, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_Range
+      value: 12.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6162459876115569490, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_Intensity
+      value: 8.3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+--- !u!4 &1108361219193844709 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+  m_PrefabInstance: {fileID: 4894447508707462406}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4908468768548166358
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4722,10 +4889,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     - target: {fileID: -8679921383154817045, guid: 715a9258b88347644949416de7e90151, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.399999
@@ -4782,6 +4945,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blankt_Gulv_NewUV_Model (15)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4997,10 +5164,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     - target: {fileID: -8679921383154817045, guid: c45b2ccbec5da71418d8f54298473b92, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.399999
@@ -5057,6 +5220,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: industriell_Gulv_NewUV_Model (17)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5075,10 +5242,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     - target: {fileID: -8679921383154817045, guid: 715a9258b88347644949416de7e90151, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.399999
@@ -5135,6 +5298,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blankt_Gulv_NewUV_Model (5)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5153,10 +5320,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     - target: {fileID: -8679921383154817045, guid: c45b2ccbec5da71418d8f54298473b92, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.399999
@@ -5213,6 +5376,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: industriell_Gulv_NewUV_Model (15)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5309,10 +5476,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     - target: {fileID: -8679921383154817045, guid: 715a9258b88347644949416de7e90151, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.399999
@@ -5369,6 +5532,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blankt_Gulv_NewUV_Model (13)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5387,10 +5554,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     - target: {fileID: -8679921383154817045, guid: 715a9258b88347644949416de7e90151, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.399999
@@ -5443,6 +5606,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5461,10 +5628,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     - target: {fileID: -8679921383154817045, guid: c45b2ccbec5da71418d8f54298473b92, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.399999
@@ -5521,6 +5684,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: industriell_Gulv_NewUV_Model (14)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5539,10 +5706,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: d3fe2980342779447a26f18d59f651b4, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 0a85a72a8d408834ba2510fcbf91a555, type: 2}
     - target: {fileID: -8679921383154817045, guid: ac48ce920097be344a6650655dcc9ed9, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.457166
@@ -5599,6 +5762,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: koridor_vegg2_NewUV_Model (16)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d3fe2980342779447a26f18d59f651b4, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a85a72a8d408834ba2510fcbf91a555, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5837,10 +6004,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     - target: {fileID: -8679921383154817045, guid: 715a9258b88347644949416de7e90151, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.399999
@@ -5897,6 +6060,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blankt_Gulv_NewUV_Model (11)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5915,10 +6082,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     - target: {fileID: -8679921383154817045, guid: 715a9258b88347644949416de7e90151, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.399999
@@ -5975,6 +6138,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blankt_Gulv_NewUV_Model (10)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6103,10 +6270,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     - target: {fileID: -8679921383154817045, guid: c45b2ccbec5da71418d8f54298473b92, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.399999
@@ -6163,6 +6326,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: industriell_Gulv_NewUV_Model (16)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6259,10 +6426,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     - target: {fileID: -8679921383154817045, guid: c45b2ccbec5da71418d8f54298473b92, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.399999
@@ -6319,6 +6482,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: industriell_Gulv_NewUV_Model (10)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6337,10 +6504,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     - target: {fileID: -8679921383154817045, guid: c45b2ccbec5da71418d8f54298473b92, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.399999
@@ -6397,6 +6560,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: industriell_Gulv_NewUV_Model (6)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6415,10 +6582,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: d3fe2980342779447a26f18d59f651b4, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 0a85a72a8d408834ba2510fcbf91a555, type: 2}
     - target: {fileID: -8679921383154817045, guid: ac48ce920097be344a6650655dcc9ed9, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.457166
@@ -6475,6 +6638,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: koridor_vegg2_NewUV_Model (6)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d3fe2980342779447a26f18d59f651b4, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a85a72a8d408834ba2510fcbf91a555, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6493,10 +6660,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     - target: {fileID: -8679921383154817045, guid: c45b2ccbec5da71418d8f54298473b92, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.399999
@@ -6553,6 +6716,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: industriell_Gulv_NewUV_Model (1)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6571,10 +6738,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     - target: {fileID: -8679921383154817045, guid: c45b2ccbec5da71418d8f54298473b92, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.399999
@@ -6631,6 +6794,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: industriell_Gulv_NewUV_Model (3)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6805,10 +6972,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     - target: {fileID: -8679921383154817045, guid: c45b2ccbec5da71418d8f54298473b92, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.399999
@@ -6865,6 +7028,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: industriell_Gulv_NewUV_Model (4)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6883,10 +7050,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: d3fe2980342779447a26f18d59f651b4, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 0a85a72a8d408834ba2510fcbf91a555, type: 2}
     - target: {fileID: -8679921383154817045, guid: ac48ce920097be344a6650655dcc9ed9, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.457166
@@ -6943,6 +7106,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: koridor_vegg2_NewUV_Model (2)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d3fe2980342779447a26f18d59f651b4, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a85a72a8d408834ba2510fcbf91a555, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6961,10 +7128,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: d3fe2980342779447a26f18d59f651b4, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 0a85a72a8d408834ba2510fcbf91a555, type: 2}
     - target: {fileID: -8679921383154817045, guid: ac48ce920097be344a6650655dcc9ed9, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.457166
@@ -7021,6 +7184,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: koridor_vegg2_NewUV_Model (15)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d3fe2980342779447a26f18d59f651b4, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a85a72a8d408834ba2510fcbf91a555, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7039,10 +7206,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     - target: {fileID: -8679921383154817045, guid: c45b2ccbec5da71418d8f54298473b92, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.399999
@@ -7099,6 +7262,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: industriell_Gulv_NewUV_Model (8)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7117,10 +7284,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: d3fe2980342779447a26f18d59f651b4, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 0a85a72a8d408834ba2510fcbf91a555, type: 2}
     - target: {fileID: -8679921383154817045, guid: ac48ce920097be344a6650655dcc9ed9, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.457166
@@ -7177,6 +7340,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: koridor_vegg2_NewUV_Model (4)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d3fe2980342779447a26f18d59f651b4, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a85a72a8d408834ba2510fcbf91a555, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7265,6 +7432,88 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 92d323cd853ddbb4badd021cc5f5aaec, type: 3}
   m_PrefabInstance: {fileID: 8246039805048773313}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8341436411190367509
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7421581635797119819}
+    m_Modifications:
+    - target: {fileID: 1310068924192403155, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_Name
+      value: RoofLamp_On
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.698
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.481
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -18.373
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6087617
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7933532
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6162459876115569490, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_Range
+      value: 12.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6162459876115569490, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+      propertyPath: m_Intensity
+      value: 8.3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+--- !u!4 &4562039234186259446 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5516103308786532067, guid: b7bffe6cbcd5bee44ac97b2ac889d5fe, type: 3}
+  m_PrefabInstance: {fileID: 8341436411190367509}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8451794199208881171
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7273,10 +7522,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     - target: {fileID: -8679921383154817045, guid: 715a9258b88347644949416de7e90151, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.399999
@@ -7333,6 +7578,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blankt_Gulv_NewUV_Model (14)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7539,10 +7788,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     - target: {fileID: -8679921383154817045, guid: 715a9258b88347644949416de7e90151, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.399999
@@ -7599,6 +7844,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blankt_Gulv_NewUV_Model (1)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7617,10 +7866,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7421581635797119819}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     - target: {fileID: -8679921383154817045, guid: 715a9258b88347644949416de7e90151, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.399999
@@ -7677,6 +7922,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blankt_Gulv_NewUV_Model (12)
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e265fe2ae8bd0d5408b47a824b3fbd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 009b9c8e48d323d4b98345113229dab7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
