@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI; //important
 public class RandomMovement : MonoBehaviour //don't forget to change the script name if you haven't

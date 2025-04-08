@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
 public static class QuaternionExtensions
 {
@@ -62,4 +63,14 @@ public static class TransformExtensions
         a.localScale = Vector3.Slerp(a.localScale, b.localScale, t);
         return a;
     }
+}
+
+public static class InputDeviceExtensions
+{
+    public static DeviceType GetDeviceType(this InputDevice device) => device switch
+    {
+        Gamepad => DeviceType.Gamepad,
+        Keyboard => DeviceType.Keyboard,
+        _ => DeviceType.Keyboard
+    };
 }

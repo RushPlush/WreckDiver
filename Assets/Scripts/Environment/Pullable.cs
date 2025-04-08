@@ -1,6 +1,3 @@
-using System;
-using Unity.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -10,13 +7,13 @@ public class Pullable : MonoBehaviour
     private bool DefaultIsKinematic;
     private CollisionDetectionMode DefaultCollisionMode;
     private RigidbodyInterpolation DefaultInterpolation;
-    
-    private bool      isPulled = false;
-    private bool      hasOtherPullable = false;
-    private Pullable  otherPullable; // for cases when two pullables are connected
+
+    private bool isPulled = false;
+    private bool hasOtherPullable = false;
+    private Pullable otherPullable; // for cases when two pullables are connected
     private Transform puller;
     [SerializeField] private float pullForce = 10f;
-    
+
 
     private void Awake()
     {
@@ -41,7 +38,7 @@ public class Pullable : MonoBehaviour
     {
         otherPullable = other;
         puller = otherPullable.transform;
-        if(otherPullable.otherPullable == null)
+        if (otherPullable.otherPullable == null)
             otherPullable.Pull(this);
         Pull();
     }
@@ -55,23 +52,23 @@ public class Pullable : MonoBehaviour
     {
         isPulled = false;
     }
-    
+
     public void Release()
     {
         isPulled = false;
-        if(otherPullable != null)
+        if (otherPullable != null)
         {
             otherPullable.Release();
             otherPullable = null;
         }
-        puller = null; 
+        puller = null;
         rb.isKinematic = DefaultIsKinematic;
         rb.collisionDetectionMode = DefaultCollisionMode;
         rb.interpolation = DefaultInterpolation;
     }
     private void FixedUpdate()
     {
-        if(!isPulled) return;
+        if (!isPulled) return;
         float distance = Vector3.Distance(transform.position, puller.position);
         // distance multiplier to make the pull force stronger the further away the puller is
         float distanceMultiplier = distance / 10;

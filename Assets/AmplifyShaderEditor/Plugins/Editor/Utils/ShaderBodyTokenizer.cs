@@ -2,12 +2,8 @@
 // Copyright (c) Amplify Creations, Lda <info@amplify.pt>
 
 using UnityEngine;
-using UnityEditor;
 using System.Collections.Generic;
-using System.IO;
 using System.Text;
-using System.Globalization;
-using System.Text.RegularExpressions;
 
 namespace AmplifyShaderEditor
 {

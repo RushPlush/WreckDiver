@@ -4,7 +4,6 @@
 using UnityEngine;
 using UnityEditor;
 using System;
-using System.CodeDom;
 
 namespace AmplifyShaderEditor
 {

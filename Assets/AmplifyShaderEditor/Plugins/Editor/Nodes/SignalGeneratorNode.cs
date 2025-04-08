@@ -1,5 +1,3 @@
-using System;
-
 namespace AmplifyShaderEditor
 {
 	public class SignalGeneratorNode : ParentNode, ISignalGenerator

@@ -29,7 +29,7 @@ public class OxygenBehaviour : MonoBehaviour
             oxygen -= oxygenDepletionRate * Time.deltaTime;
         }
         oxygen = Math.Clamp(oxygen, 0, maxOxygen);
-        Debug.Log($"Oxygen: {oxygen}");
+        // Debug.Log($"Oxygen: {oxygen}");
     }
 
     public double GetOxygen() => oxygen;

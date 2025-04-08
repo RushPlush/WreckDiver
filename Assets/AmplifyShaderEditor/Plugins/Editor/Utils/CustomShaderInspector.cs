@@ -3,10 +3,8 @@
 
 using System;
 using System.Reflection;
-using System.Globalization;
 using UnityEngine;
 using UnityEditor;
-using AmplifyShaderEditor;
 
 namespace AmplifyShaderEditor
 {

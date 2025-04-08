@@ -1,11 +1,11 @@
-using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Inventory
 {
     public interface IItem
     {
-        public void PrimaryUse(bool pressed);
-        public void SecondaryUse(bool pressed);
-        public void TertiaryUse(bool pressed);
+        public void PrimaryUse(InputAction.CallbackContext context);
+        public void SecondaryUse(InputAction.CallbackContext context);
+        public void TertiaryUse(InputAction.CallbackContext context);
     }
 }
