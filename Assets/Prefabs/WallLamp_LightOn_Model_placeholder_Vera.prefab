@@ -212,6 +212,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 4324597d0bf24bb4a984aec18ff43076, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4324597d0bf24bb4a984aec18ff43076, type: 3}
       propertyPath: m_Name
       value: WallLamp_LightOn_Model_placeholder_Vera

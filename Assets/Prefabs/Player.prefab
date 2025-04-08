@@ -668,7 +668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensitivity: {x: 0.05, y: 0.03}
-  contollerSensitivity: {x: 3, y: 2}
+  contollerSensitivity: {x: 4, y: 2}
 --- !u!114 &5771132883410796867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -700,12 +700,12 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 9
-  rideHeight: 2.5
+  rideHeight: 3
   rideSpringDampener: 3
-  rideSpringStrength: 10
-  extraGravity: 20
+  rideSpringStrength: 12
+  extraGravity: 4
   bufferTime: 0.2
-  jumpForce: 10
+  jumpForce: 8
   sustainJumpForce: 4
   sustainJumpTime: 0.3
   jumpDelay: 0.3
