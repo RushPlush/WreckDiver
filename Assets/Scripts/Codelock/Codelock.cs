@@ -147,6 +147,7 @@ public class Codelock : MonoBehaviour, IInteractableWithPlayer
         player.GetComponent<PlayerController>().DisableMovement();
         oldCameraOffsets.position = Camera.main.transform.position;
         oldCameraOffsets.eulerAngle = Camera.main.transform.eulerAngles;
+        Camera.main.GetComponentInChildren<Light>().enabled = false;
         StartCoroutine(Selected());
         return true;
     }
@@ -184,6 +185,7 @@ public class Codelock : MonoBehaviour, IInteractableWithPlayer
     public void Deselect(GameObject player)
     {
         currentInteractor = null;
+        Camera.main.GetComponentInChildren<Light>().enabled = true;
         StartCoroutine(Deselected(player));
     }
 
