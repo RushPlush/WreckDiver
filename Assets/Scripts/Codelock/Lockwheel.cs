@@ -22,6 +22,8 @@ public class Lockwheel : MonoBehaviour
 
     void Update()
     {
+        while (codeFace < 0) codeFace += 10;
+        while (codeFace > 9) codeFace -= 10;
         var currentRotation = GetRotation(codeFace);
         if (transform.localRotation != currentRotation)
         {
