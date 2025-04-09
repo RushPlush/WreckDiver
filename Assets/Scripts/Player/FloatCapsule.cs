@@ -93,7 +93,7 @@ public class FloatCapsule : MonoBehaviour
 
             springForce = (x * rideSpringStrength) - (rayDirVel * rideSpringDampener);
 
-            if (!canJump)
+            if (Time.timeSinceLevelLoad <= jumpTimer)
             {
                 springForce = 0; // Here to avoid the spring from stopping the jump. resulting in inconsistent jumps.
             }
