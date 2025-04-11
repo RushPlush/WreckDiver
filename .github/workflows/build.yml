@@ -28,7 +28,7 @@ jobs:
         with:
           targetPlatform: StandaloneWindows64
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: ${{ github.event.repository.name }}-${{ steps.branch_name_short_sha.outputs.branch }}-${{ steps.branch_name_short_sha.outputs.sha }}
           path: build
