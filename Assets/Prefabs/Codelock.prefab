@@ -261,6 +261,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  currentInteractor: {fileID: 0}
 --- !u!114 &9161158945478299193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,7 +276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMode: 3
   outlineColor: {r: 1, g: 0.58040816, b: 0, a: 1}
-  outlineWidth: 2
+  outlineWidth: 8
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
