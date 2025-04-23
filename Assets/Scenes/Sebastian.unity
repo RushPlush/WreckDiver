@@ -364,6 +364,59 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &293986361
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 293986363}
+  - component: {fileID: 293986362}
+  m_Layer: 0
+  m_Name: FlockManager2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &293986362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293986361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a304f93a265a646b30f08c894cec0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishPrefab: {fileID: 7387792186118469060, guid: 91ebf7a4be367bf4c91a1f7947dca5d9, type: 3}
+  numFish: 30
+  allFish: []
+  swimLimits: {x: 5, y: 5, z: 5}
+  goalPos: {x: 0, y: 0, z: 0}
+  minSpeed: 0.69
+  maxSpeed: 2.58
+  neighbourDistance: 10
+  rotationSpeed: 2.27
+--- !u!4 &293986363
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293986361}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 889.69, y: 6.22, z: 941.21}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &718986330
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,11 +769,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishPrefab: {fileID: 7387792186118469060, guid: b612c7f513144fb4bbb5f530432f0705, type: 3}
-  numFish: 20
+  numFish: 15
   allFish: []
-  swimLimits: {x: 10, y: 10, z: 10}
-  minSpeed: 0.86
-  maxSpeed: 2.51
+  swimLimits: {x: 5, y: 5, z: 5}
+  goalPos: {x: 0, y: 0, z: 0}
+  minSpeed: 1.15
+  maxSpeed: 3.02
   neighbourDistance: 10
   rotationSpeed: 2.61
 --- !u!4 &1417099667
@@ -732,7 +786,7 @@ Transform:
   m_GameObject: {fileID: 1417099665}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 889.69, y: 6.22, z: 939.25}
+  m_LocalPosition: {x: 889.69, y: 6.22, z: 927.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1604,4 +1658,5 @@ SceneRoots:
   - {fileID: 718986336}
   - {fileID: 1856466543}
   - {fileID: 1417099667}
+  - {fileID: 293986363}
   - {fileID: 77255360}
