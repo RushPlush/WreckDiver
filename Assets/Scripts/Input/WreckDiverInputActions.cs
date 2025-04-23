@@ -135,9 +135,9 @@ public partial class @WreckDiverInputActions: IInputActionCollection2, IDisposab
                 },
                 {
                     ""name"": ""Boost"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""32071e1f-06a9-4715-b16a-f26e00db4f79"",
-                    ""expectedControlType"": """",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false

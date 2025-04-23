@@ -190,7 +190,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnBoost(InputAction.CallbackContext context)
     {
-        isBoosting = !context.canceled;
+        isBoosting = context.ReadValueAsButton();
     }
 
     private double lastKeyPress = 0;

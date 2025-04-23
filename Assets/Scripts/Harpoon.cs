@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Harpoon : MonoBehaviour
@@ -73,7 +74,7 @@ public class Harpoon : MonoBehaviour
             harpoonBehaviour.SetPullable(indexValue, pullable);
         }
     }
-    //todo 
+    
     private void OnDestroy()
     {
         print(gameObject.name + " Destroyed");
@@ -82,5 +83,10 @@ public class Harpoon : MonoBehaviour
             harpoonBehaviour.DestroyHarpoon(indexValue);
         if (pullable != null)
             pullable.Release();
+    }
+    public void Reset()
+    {
+        if(!isHarpoonActive) return;
+        Destroy(this.gameObject);
     }
 }

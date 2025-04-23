@@ -54,10 +54,10 @@ public class ItemManager : MonoBehaviour
             if (heldItem.Prefab != null)
             {
                 heldItemInstance = Instantiate(heldItem.Prefab, itemHolder.transform);
-                heldItemBehaviour = heldItemInstance.GetComponent<IItem>(); 
-                isHoldingItem = true;
-                print("Holding: " + heldItem.Name);
             }
+            heldItemBehaviour = heldItemInstance.GetComponent<IItem>(); 
+            isHoldingItem = true;
+            print("Holding: " + heldItem.Name);
         }
     }
 
