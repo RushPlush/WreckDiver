@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -129,13 +130,22 @@ public class Codelock : MonoBehaviour, IInteractableWithPlayer
 
         // if code matches, open lock if unlockable is assigned else log to console
         if (unlockable is IUnlockable unlockableInterface) unlockableInterface.Unlock();
-        else if (unlockable != null) Debug.Log($"Unlockable {unlockable.name} must implement IUnlockable to unlock");
+        else if (unlockable) Debug.Log($"Unlockable {unlockable.name} must implement IUnlockable to unlock");
         else return;
 
         Deselect(currentInteractor);
         StartCoroutine(DelayedUnhighlight());
 
         // stop updating
+        enabled = false;
+    }
+
+    /// <summary>
+    /// This is only used from the editor and should not be used in the game
+    /// </summary>
+    internal void Unlock()
+    {
+        if (unlockable is IUnlockable unlockableInterface) unlockableInterface.Unlock();
         enabled = false;
     }
 
@@ -171,6 +181,7 @@ public class Codelock : MonoBehaviour, IInteractableWithPlayer
         outline.enabled = false;
         highlighted = 0;
         lockwheels[0].Highlight();
+        currentInteractor.GetComponentInChildren<MappingHandler>().ToggleInteractionGuide();
     }
 
     public bool Select()
@@ -186,6 +197,7 @@ public class Codelock : MonoBehaviour, IInteractableWithPlayer
     {
         currentInteractor = null;
         Camera.main.GetComponentInChildren<Light>().enabled = true;
+        player.GetComponentInChildren<MappingHandler>().ToggleInteractionGuide();
         StartCoroutine(Deselected(player));
     }
 
@@ -206,7 +218,9 @@ public class Codelock : MonoBehaviour, IInteractableWithPlayer
         outline.enabled = true;
         lockwheels[highlighted].Unhighlight();
         highlighted = -1;
-        player.GetComponent<PlayerController>().EnableMovement();
+        var playerController = player.GetComponent<PlayerController>();
+        playerController.EnableMovement();
+        playerController.interactor.isInteracting = false;
     }
 
     public void Highlight()
@@ -225,5 +239,15 @@ public class Codelock : MonoBehaviour, IInteractableWithPlayer
         while (elapsedTime < 0.5f) yield return new WaitForFixedUpdate();
         yield return new WaitForFixedUpdate();
         outline.enabled = false;
+    }
+}
+
+[CustomEditor(typeof(Codelock))]
+public class CodelockEditor : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        base.OnInspectorGUI();
+        if (GUILayout.Button("Open Codelock")) (target as Codelock).Unlock();
     }
 }

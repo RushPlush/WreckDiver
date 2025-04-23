@@ -1,5 +1,4 @@
 using System.Collections;
-using Player;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,7 +11,7 @@ public class PlayerController : MonoBehaviour
     private Movement movement;
     private PlayerCamera camera;
     private FloatCapsule floatCapsule;
-    private Interactor interactor;
+    internal Interactor interactor;
     private LookPoint lookPoint;
     private ItemManager itemManager;
     private Helmet helmet;
@@ -198,6 +197,7 @@ public class PlayerController : MonoBehaviour
     public void OnSelect(InputAction.CallbackContext context)
     {
         if (!interactor.Select()) return;
+        interactor.isInteracting = true;
         diverInputActions.Interact.Select.started -= OnSelect;
         StartCoroutine(DelayedSelect());
     }
@@ -214,6 +214,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         var interact = diverInputActions.Interact;
         interact.Select.started += OnSelect;
+        interactor.isInteracting = false;
     }
 
     private void OnDeselect(InputAction.CallbackContext context)
