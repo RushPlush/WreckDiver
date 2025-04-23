@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SideFins
+  m_Name: Sidefins Jade
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -28,11 +28,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 5d02bc74de3127445a036e628d268e60, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3a0299b9bb04eb745a461230d9f14ea3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 5cb31853eba525446aca7852bf997804, type: 3}
+        m_Texture: {fileID: 2800000, guid: a1933a5db5adf70448d66e1b5976543a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -52,11 +52,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 5d02bc74de3127445a036e628d268e60, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3a0299b9bb04eb745a461230d9f14ea3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 281f4ce0ad311b343a16543efc735817, type: 3}
+        m_Texture: {fileID: 2800000, guid: c2db42af626ecf7458268b41cf6c943f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
