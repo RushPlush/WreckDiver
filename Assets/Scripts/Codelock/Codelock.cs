@@ -24,6 +24,8 @@ public class Codelock : MonoBehaviour, IInteractableWithPlayer
     private (Vector3 position, Vector3 eulerAngle) oldCameraOffsets;
     private (Vector3 position, Vector3 eulerAngle) cameraOffset = (new(-0.175f, 0, -0.5f), new (0, 15, 0));
 
+    private MappingHandler mappingHandler;
+
     void Awake()
     {
         diverInputActions = new WreckDiverInputActions();
@@ -158,6 +160,7 @@ public class Codelock : MonoBehaviour, IInteractableWithPlayer
         oldCameraOffsets.position = Camera.main.transform.position;
         oldCameraOffsets.eulerAngle = Camera.main.transform.eulerAngles;
         Camera.main.GetComponentInChildren<Light>().enabled = false;
+        mappingHandler = player.GetComponentInChildren<MappingHandler>();
         StartCoroutine(Selected());
         return true;
     }
@@ -181,7 +184,10 @@ public class Codelock : MonoBehaviour, IInteractableWithPlayer
         outline.enabled = false;
         highlighted = 0;
         lockwheels[0].Highlight();
-        currentInteractor.GetComponentInChildren<MappingHandler>().ToggleInteractionGuide();
+        if(mappingHandler && !mappingHandler.IsInteractionGuideActive())
+            mappingHandler.ToggleInteractionGuide();
+        if(mappingHandler && mappingHandler.IsInventoryGuideActive())
+            mappingHandler.ToggleInventoryGuide();
     }
 
     public bool Select()
@@ -197,7 +203,7 @@ public class Codelock : MonoBehaviour, IInteractableWithPlayer
     {
         currentInteractor = null;
         Camera.main.GetComponentInChildren<Light>().enabled = true;
-        player.GetComponentInChildren<MappingHandler>().ToggleInteractionGuide();
+        mappingHandler.ToggleInteractionGuide();
         StartCoroutine(Deselected(player));
     }
 

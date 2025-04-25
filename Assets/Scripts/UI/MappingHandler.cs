@@ -35,30 +35,31 @@ public class MappingHandler : MonoBehaviour
         }
     }
 
-    public void ToggleInteractionHint() => buttonHintMappings.Find(x => x.type == MappingType.Interact).buttonHint.SetActive(!buttonHintMappings.Find(x => x.type == MappingType.Interact).buttonHint.activeSelf);
+    public void ToggleInteractionHint() => Toggle(MappingType.Interact);
 
-    public bool IsInteractionHintActive() => buttonHintMappings.Find(x => x.type == MappingType.Interact).buttonHint.activeSelf;
+    public bool IsInteractionHintActive() => IsActive(MappingType.Interact);
 
-    public void ToggleInteractionGuide()
-    {
-        foreach (var (mapping, gameObject) in buttonHintMappings)
-        {
-            switch (mapping)
-            {
-                case MappingType.InteractUp:
-                case MappingType.InteractDown:
-                case MappingType.InteractLeft:
-                case MappingType.InteractRight:
-                case MappingType.InteractExit:
-                    gameObject.SetActive(!gameObject.activeSelf);
-                    break;
-                default:
-                    break;
-            }
-        }
-    }
+    public void ToggleInteractionGuide() => ToggleAll(MappingType.InteractUp, MappingType.InteractDown, MappingType.InteractLeft, MappingType.InteractRight, MappingType.InteractExit);
 
-    public bool IsInteractionGuideActive() => buttonHintMappings.FindAll(x => x.type is MappingType.InteractUp or MappingType.InteractDown or MappingType.InteractLeft or MappingType.InteractRight or MappingType.InteractExit).All(x => x.buttonHint.activeSelf);
+    public bool IsInteractionGuideActive() => IsAllActive(MappingType.InteractUp, MappingType.InteractDown, MappingType.InteractLeft, MappingType.InteractRight, MappingType.InteractExit);
+
+    public void ToggleMoveGuide() => ToggleAll(MappingType.MoveUp, MappingType.MoveDown, MappingType.MoveLeft, MappingType.MoveRight, MappingType.LookAround);
+
+    public bool IsMoveGuideActive() => IsAllActive(MappingType.MoveUp, MappingType.MoveDown, MappingType.MoveLeft, MappingType.MoveRight, MappingType.LookAround);
+
+    public void ToggleInventoryGuide() => ToggleAll(MappingType.InventoryNext, MappingType.InventoryPrevious, MappingType.UseItem);
+
+    public bool IsInventoryGuideActive() => IsAllActive(MappingType.InventoryNext, MappingType.InventoryPrevious, MappingType.UseItem);
+
+    // ReSharper disable MemberCanBePrivate.Global
+    public void Toggle(MappingType type) => buttonHintMappings.Find(x => x.type == type).buttonHint.SetActive(!buttonHintMappings.Find(x => x.type == type).buttonHint.activeSelf);
+
+    public void ToggleAll(params MappingType[] types) => buttonHintMappings.FindAll(x => types.Contains(x.type)).ForEach(x => x.buttonHint.SetActive(!x.buttonHint.activeSelf));
+
+    public bool IsActive(MappingType type) => buttonHintMappings.Find(x => x.type == type).buttonHint.activeSelf;
+
+    public bool IsAllActive(params MappingType[] types) => buttonHintMappings.FindAll(x => types.Contains(x.type)).All(x => x.buttonHint.activeSelf);
+    // ReSharper restore MemberCanBePrivate.Global
 }
 
 [CustomEditor(typeof(MappingHandler))]
@@ -137,5 +138,10 @@ public enum MappingType
     InteractDown,
     InteractLeft,
     InteractRight,
-    InteractExit
+    InteractExit,
+    MoveUp,
+    MoveDown,
+    MoveLeft,
+    MoveRight,
+    LookAround
 }

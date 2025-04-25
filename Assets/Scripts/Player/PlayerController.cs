@@ -199,6 +199,7 @@ public class PlayerController : MonoBehaviour
         if (!interactor.Select()) return;
         interactor.isInteracting = true;
         diverInputActions.Interact.Select.started -= OnSelect;
+        movement.ResetMoveTimer();
         StartCoroutine(DelayedSelect());
     }
 
