@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OxygenBehaviour : MonoBehaviour
 {
@@ -13,23 +14,31 @@ public class OxygenBehaviour : MonoBehaviour
     // ReSharper restore ConvertToConstant.Local
     // ReSharper restore FieldCanBeMadeReadOnly.Local
 
+    [SerializeField] private Image oxygenBar;
+    [SerializeField] private RectTransform oxygenBarParent;
+    private float maxSize = 0;
+
     private void Start()
     {
         oxygen = maxOxygen;
+        maxSize = oxygenBar.rectTransform.sizeDelta.x;
     }
 
     private void FixedUpdate()
     {
         if (InOxygenPocket)
         {
-            oxygen += oxygenRegenerationRate * Time.deltaTime;
+            oxygen += oxygenRegenerationRate * Time.fixedDeltaTime;
         }
         else
         {
-            oxygen -= oxygenDepletionRate * Time.deltaTime;
+            oxygen -= oxygenDepletionRate * Time.fixedDeltaTime;
         }
         oxygen = Math.Clamp(oxygen, 0, maxOxygen);
-        // Debug.Log($"Oxygen: {oxygen}");
+
+        var barSize = (float)(oxygen / maxOxygen * maxSize);
+        oxygenBar.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, barSize);
+        oxygenBar.rectTransform.SetLocalPositionAndRotation(new Vector3(barSize / 2 - maxSize / 2, 0, 0), Quaternion.identity);
     }
 
     public double GetOxygen() => oxygen;
