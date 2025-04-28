@@ -68,9 +68,9 @@ public class PlayerController : MonoBehaviour
         inventory.PrimaryUse.started += OnPrimaryUse;
         inventory.PrimaryUse.performed += OnPrimaryUse;
         inventory.PrimaryUse.canceled += OnPrimaryUse;
-        // inventory.SecondaryUse.started += OnSecondaryUse;
-        // inventory.SecondaryUse.performed += OnSecondaryUse;
-        // inventory.SecondaryUse.canceled += OnSecondaryUse;
+        inventory.SecondaryUse.started += OnSecondaryUse;
+        inventory.SecondaryUse.performed += OnSecondaryUse;
+        inventory.SecondaryUse.canceled += OnSecondaryUse;
         inventory.TertiaryUse.started += OnTertiaryUse;
         inventory.TertiaryUse.performed += OnTertiaryUse;
         inventory.TertiaryUse.canceled += OnTertiaryUse;
@@ -125,9 +125,9 @@ public class PlayerController : MonoBehaviour
         inventory.PrimaryUse.started -= OnPrimaryUse;
         inventory.PrimaryUse.performed -= OnPrimaryUse;
         inventory.PrimaryUse.canceled -= OnPrimaryUse;
-        // inventory.SecondaryUse.started -= OnSecondaryUse;
-        // inventory.SecondaryUse.performed -= OnSecondaryUse;
-        // inventory.SecondaryUse.canceled -= OnSecondaryUse;
+        inventory.SecondaryUse.started -= OnSecondaryUse;
+        inventory.SecondaryUse.performed -= OnSecondaryUse;
+        inventory.SecondaryUse.canceled -= OnSecondaryUse;
         inventory.TertiaryUse.started -= OnTertiaryUse;
         inventory.TertiaryUse.performed -= OnTertiaryUse;
         inventory.TertiaryUse.canceled -= OnTertiaryUse;

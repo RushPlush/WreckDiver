@@ -11,6 +11,7 @@ public class HarpoonBehaviour : MonoBehaviour, IItem
     [SerializeField] private Item harpoonGunItem;
     private const int numberOfHarpoons = 2;
     [SerializeField] private Transform[] harpoonSpawnPoints;
+    [SerializeField] private ParticleSystem[] harpoonParticles;
     private GameObject[] harpoonInstances = new GameObject[numberOfHarpoons];
     private bool[] harpoonsReady = new bool[numberOfHarpoons];
     private Harpoon[] harpoonScripts = new Harpoon[numberOfHarpoons];
@@ -68,6 +69,7 @@ public class HarpoonBehaviour : MonoBehaviour, IItem
                 harpoonInstances[i].transform.SetParent(null, true);
                 harpoonsReady[i] = false;
                 lastShotIndex = i;
+                harpoonParticles[i].Play();
                 skippedLastShot = false;
                 return;
             }
@@ -77,7 +79,7 @@ public class HarpoonBehaviour : MonoBehaviour, IItem
 
     public void SecondaryUse(InputAction.CallbackContext context) // Pull?
     {
-        if (context.performed)
+        if (context.started)
         {
             if (harpoonInstances[0] == null && harpoonInstances[1] == null) return; //todo what happens when it can't pull (when neither harpoon is instanced)
 
@@ -92,7 +94,7 @@ public class HarpoonBehaviour : MonoBehaviour, IItem
                 SinglePull();
             }
         }
-        else
+        else if(context.canceled)
         {
             StopPull();
         }
@@ -123,6 +125,7 @@ public class HarpoonBehaviour : MonoBehaviour, IItem
                 }
                 else
                 {
+                    if(!harpoonScripts[i].canPull) return;
                     playerPullable.Pull(harpoonInstances[i].transform);
                 }
             }

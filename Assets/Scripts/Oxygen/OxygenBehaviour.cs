@@ -9,7 +9,7 @@ public class OxygenBehaviour : MonoBehaviour
     // ReSharper disable ConvertToConstant.Local
     [SerializeField][Tooltip("In seconds")] private double maxOxygen = 300;
     [SerializeField] private double oxygenRegenerationRate = 30;
-    //[SerializeField] private double oxygenDepletionRate = .5f;
+    [SerializeField][Tooltip("Multiplier for how fast oxygen runs out, Default/neutral = 1")] private double oxygenDepletionRate = 1f;
     // ReSharper restore ConvertToConstant.Local
     // ReSharper restore FieldCanBeMadeReadOnly.Local
     [SerializeField] private float timeToDie = 10f;
@@ -35,7 +35,7 @@ public class OxygenBehaviour : MonoBehaviour
         }
         else
         {
-            oxygen -= Time.fixedDeltaTime;
+            oxygen -= oxygenDepletionRate * Time.fixedDeltaTime;
         }
         oxygen = Math.Clamp(oxygen, 0, maxOxygen);
         if (oxygen < 0.01)
@@ -43,7 +43,7 @@ public class OxygenBehaviour : MonoBehaviour
             timeToDieCounter += Time.fixedDeltaTime;
             // progress 0 to 1
             var progress = timeToDieCounter / timeToDie;
-            //todo add screen effect, sound effects etc here
+            //todo add screen effect, sound effects etc here, can use progress as a multiplier
             
             if (timeToDieCounter >= timeToDie)
             {
@@ -59,7 +59,14 @@ public class OxygenBehaviour : MonoBehaviour
         }
         // Debug.Log($"Oxygen: {oxygen}");
     }
-
+    public void LoseOxygen(double amount) 
+    {
+        oxygen = Math.Clamp(oxygen - amount, 0, maxOxygen);
+    }
+    public void SetDepletionRate(double depletionRate)
+    {
+        oxygenDepletionRate = depletionRate;
+    }
     public double GetOxygen() => oxygen;
     public void Reset()
     {
