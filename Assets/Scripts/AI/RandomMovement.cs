@@ -6,6 +6,8 @@ public class RandomMovement : MonoBehaviour
 {
     GameObject player;
     NavMeshAgent agent;
+    Animator animator;
+    BoxCollider boxCollider;
 
     [SerializeField] LayerMask groundLayer, playerLayer;
 
@@ -22,6 +24,8 @@ public class RandomMovement : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.Find("Player");
+        animator = GetComponent<Animator>();
+        boxCollider = GetComponentInChildren<BoxCollider>();
     }
 
 
@@ -34,11 +38,11 @@ public class RandomMovement : MonoBehaviour
         {
             Patrol();
         }
-        else if (playerInSight && !playerInAttackRange)
+        if (playerInSight && !playerInAttackRange)
         {
             Chase();
         }
-        else if (playerInSight && playerInAttackRange)
+        if (playerInSight && playerInAttackRange)
         {
             Attack();
         }  
@@ -46,7 +50,11 @@ public class RandomMovement : MonoBehaviour
 
     void Attack()
     {
-
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Moray Eel Bite Animation"))
+        {
+            animator.SetTrigger("Attack");
+            agent.SetDestination(transform.position);
+        }
     }
 
     void Chase()
@@ -79,6 +87,26 @@ public class RandomMovement : MonoBehaviour
         if (Physics.Raycast(destPoint, Vector3.down, groundLayer))
         {
             swimPointSet = true;
+        }
+    }
+
+    void EnableAttack()
+    {
+        boxCollider.enabled = true;
+    }
+
+    void DisableAttack()
+    {
+        boxCollider.enabled = false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        var player = other.GetComponent<Movement>();
+
+        if (player != null)
+        {
+            print("Hit!");
         }
     }
 }
