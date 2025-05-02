@@ -113,9 +113,9 @@
                 },
                 {
                     "name": "Boost",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "32071e1f-06a9-4715-b16a-f26e00db4f79",
-                    "expectedControlType": "",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -486,6 +486,24 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "SecondaryUse",
+                    "type": "Button",
+                    "id": "84d69079-4817-4d0d-9252-f7f48517e2ad",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TertiaryUse",
+                    "type": "Button",
+                    "id": "45f9653c-a18b-4d07-8d38-2e78bdf3ac8c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "CycleUp",
                     "type": "Button",
                     "id": "8e8c1ed8-730c-41c0-8cdb-b050e13ae962",
@@ -502,29 +520,9 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "TertiaryUse",
-                    "type": "Button",
-                    "id": "45f9653c-a18b-4d07-8d38-2e78bdf3ac8c",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "52463845-2f14-460c-a9a8-46f5f84e7672",
-                    "path": "<Gamepad>/rightTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Gamepad",
-                    "action": "PrimaryUse",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "",
                     "id": "d748d4da-9d2c-4d80-900e-3ef24d8be155",
@@ -532,6 +530,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
+                    "action": "PrimaryUse",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "52463845-2f14-460c-a9a8-46f5f84e7672",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
                     "action": "PrimaryUse",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -599,6 +608,28 @@
                     "processors": "",
                     "groups": ";Gamepad",
                     "action": "TertiaryUse",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b0635836-f82f-46b3-800a-bb4d29837929",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "SecondaryUse",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ff0822ea-b075-42fd-b91f-05160ce80fcc",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "SecondaryUse",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

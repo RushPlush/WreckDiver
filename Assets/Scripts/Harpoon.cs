@@ -7,14 +7,18 @@ public class Harpoon : MonoBehaviour
     [SerializeField] private LayerMask afterImpactLayer;
     [SerializeField] private float speed = 10f;
     [SerializeField] private Vector3 initialScale;
+    [SerializeField] private float maxTetherLength = 30f;
+    public bool canPull { get; private set; } = true;
     Rigidbody rb;
     HarpoonBehaviour harpoonBehaviour;
     Pullable pullable;
+    ParticleSystem particleSystem;
     bool Destroyed = false;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        particleSystem = GetComponentInChildren<ParticleSystem>();
         transform.localScale = initialScale;
     }
 
@@ -35,11 +39,13 @@ public class Harpoon : MonoBehaviour
         rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
         rb.AddForce(-transform.up * speed, ForceMode.Impulse);
         rb.interpolation = RigidbodyInterpolation.Interpolate;
+        particleSystem.Play();
     }
 
     private void FixedUpdate()
     {
         if (!isHarpoonActive) return;
+        particleSystem.emissionRate = rb.linearVelocity.magnitude * 10f;
         //transform.Translate(Vector3.forward * speed);
     }
 
@@ -73,7 +79,7 @@ public class Harpoon : MonoBehaviour
             harpoonBehaviour.SetPullable(indexValue, pullable);
         }
     }
-    //todo 
+    
     private void OnDestroy()
     {
         print(gameObject.name + " Destroyed");
@@ -82,5 +88,15 @@ public class Harpoon : MonoBehaviour
             harpoonBehaviour.DestroyHarpoon(indexValue);
         if (pullable != null)
             pullable.Release();
+    }
+    public void Reset()
+    {
+        if(!isHarpoonActive) return;
+        Destroy(this.gameObject);
+    }
+    public void SetCanPull(bool canPull)
+    {
+        
+        this.canPull = canPull;
     }
 }
