@@ -26,5 +26,10 @@ public class OxygenPocketBehaviour : MonoBehaviour
         {
             oxygenBehaviour.InOxygenPocket = false;
         }
+        var SaveAndLoad = other.gameObject.GetComponent<SaveAndLoad>();
+        if (SaveAndLoad != null)
+        {
+            SaveAndLoad.Save();
+        }
     }
 }

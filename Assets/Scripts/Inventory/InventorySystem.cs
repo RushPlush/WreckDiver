@@ -60,6 +60,11 @@ public class InventorySystem : MonoBehaviour
     {
         return items;
     }
+    
+    public void SetItems(List<ItemRecord> items)
+    {
+        this.items = items;
+    }
 
     /// <summary>
     /// Returns the quantity of a specific item in the inventory.
