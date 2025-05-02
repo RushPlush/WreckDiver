@@ -10,7 +10,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private float runMultiplier = 2f;
 
     private Rigidbody rb;
-    private float drag = 5.5f;
+    [SerializeField] private float drag = 5.5f;
     private Vector3 moveDirection;
 
     [SerializeField] private float fov = 60;
