@@ -39,7 +39,7 @@ public class FlockManager : MonoBehaviour
 
     void Update()
     {
-        if(Random.Range(0, 100) < 50)
+        if(Random.Range(0, 100) < 100)
         {
             goalPos = this.transform.position + new Vector3
                 (Random.Range(-swimLimits.x, swimLimits.x),

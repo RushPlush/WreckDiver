@@ -359,7 +359,7 @@ GameObject:
   - component: {fileID: 293986363}
   - component: {fileID: 293986362}
   m_Layer: 0
-  m_Name: FlockManager2
+  m_Name: Pink Fish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -382,10 +382,10 @@ MonoBehaviour:
   allFish: []
   swimLimits: {x: 5, y: 5, z: 5}
   goalPos: {x: 0, y: 0, z: 0}
-  minSpeed: 1.01
-  maxSpeed: 3.19
-  neighbourDistance: 6.79
-  rotationSpeed: 2.27
+  minSpeed: 3.46
+  maxSpeed: 4.07
+  neighbourDistance: 2.45
+  rotationSpeed: 4.63
 --- !u!4 &293986363
 Transform:
   m_ObjectHideFlags: 0
@@ -395,7 +395,7 @@ Transform:
   m_GameObject: {fileID: 293986361}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 889.69, y: 6.22, z: 941.21}
+  m_LocalPosition: {x: 887.88, y: 6.22, z: 947.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -993,7 +993,7 @@ GameObject:
   - component: {fileID: 1417099667}
   - component: {fileID: 1417099666}
   m_Layer: 0
-  m_Name: FlockManager
+  m_Name: Green Fish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1014,12 +1014,12 @@ MonoBehaviour:
   fishPrefab: {fileID: 7387792186118469060, guid: b612c7f513144fb4bbb5f530432f0705, type: 3}
   numFish: 40
   allFish: []
-  swimLimits: {x: 5, y: 5, z: 5}
+  swimLimits: {x: 10, y: 10, z: 10}
   goalPos: {x: 0, y: 0, z: 0}
-  minSpeed: 0.5
-  maxSpeed: 1.74
-  neighbourDistance: 10
-  rotationSpeed: 1.69
+  minSpeed: 1.37
+  maxSpeed: 2.54
+  neighbourDistance: 9.22
+  rotationSpeed: 2.83
 --- !u!4 &1417099667
 Transform:
   m_ObjectHideFlags: 0
