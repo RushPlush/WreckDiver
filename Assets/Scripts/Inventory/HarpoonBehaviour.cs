@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 public class HarpoonBehaviour : MonoBehaviour, IItem
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField] private GameObject harpoon;
     [SerializeField] private Item harpoonItem;
     [SerializeField] private Item harpoonGunItem;
@@ -16,6 +15,7 @@ public class HarpoonBehaviour : MonoBehaviour, IItem
     private bool[] harpoonsReady = new bool[numberOfHarpoons];
     private Harpoon[] harpoonScripts = new Harpoon[numberOfHarpoons];
     private Pullable[] pullableScripts = new Pullable[numberOfHarpoons];
+    [SerializeField] LineRenderer[] lineRenderers;
     private Pullable playerPullable;
     private ItemManager itemManager;
     int lastShotIndex = -1;

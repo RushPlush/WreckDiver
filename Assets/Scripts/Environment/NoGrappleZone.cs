@@ -14,9 +14,11 @@ public class NoGrappleZone : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Harpoon"))
-        {
-            
-        }
+        if (!other.CompareTag("Harpoon"))
+            return;
+        Harpoon harpoon = other.GetComponent<Harpoon>();
+        if (harpoon == null)
+            return;
+        harpoon.SetCanPull(true);
     }
 }

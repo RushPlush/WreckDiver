@@ -22,7 +22,7 @@
     "_tempCollidersAction": 1,
     "_paletteManager": {
         "_selectedPaletteIdx": 0,
-        "_selectedBrushIdx": -1,
+        "_selectedBrushIdx": 0,
         "_showBrushName": false,
         "_viewList": false,
         "_showTabsInMultipleRows": false,
@@ -468,7 +468,8 @@
                     "EditorOnly",
                     "MainCamera",
                     "Player",
-                    "GameController"
+                    "GameController",
+                    "Harpoon"
                 ],
                 "_slopeFilter": {
                     "_v1": 0.0,
@@ -2174,7 +2175,8 @@
                     "EditorOnly",
                     "MainCamera",
                     "Player",
-                    "GameController"
+                    "GameController",
+                    "Harpoon"
                 ]
             }
         ],
@@ -2892,7 +2894,7 @@
             "_origin": {
                 "x": 0.0,
                 "y": 0.0,
-                "z": 880.8403930664063
+                "z": 881.3080444335938
             },
             "_rotation": {
                 "x": 0.0,

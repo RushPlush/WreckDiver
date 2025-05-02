@@ -96,6 +96,7 @@ public class Harpoon : MonoBehaviour
     }
     public void SetCanPull(bool canPull)
     {
+        
         this.canPull = canPull;
     }
 }
