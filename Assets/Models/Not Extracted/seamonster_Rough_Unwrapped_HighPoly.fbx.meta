@@ -3,7 +3,37 @@ guid: c0bc420491b02874584de3b37914ae4c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Beak
+    second: {fileID: 2100000, guid: c5a086bdc09af2b4f93079b486acd2b6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body
+    second: {fileID: 2100000, guid: cf1e4b15b4e83e549a62a6431fbe95b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HeadFin
+    second: {fileID: 2100000, guid: f9cf39898acda394c83538461c3cee37, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Illuminate
+    second: {fileID: 2100000, guid: 149c9854addf37642b9097a9388db3d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pattern
+    second: {fileID: 2100000, guid: 22a5a4f7a6eb6144894cfaa198dafc4c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tentacles
+    second: {fileID: 2100000, guid: ad9668aca0a285940b09b8644203eba4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
