@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FlockManager : MonoBehaviour 
 {
-    public static FlockManager FM;
     public GameObject fishPrefab;
     public int numFish = 20;
     public GameObject[] allFish;
@@ -32,14 +31,14 @@ public class FlockManager : MonoBehaviour
                 Random.Range(-swimLimits.z, swimLimits.z));
 
             allFish[i] = Instantiate(fishPrefab, pos, Quaternion.identity);
+            allFish[i].GetComponent<Flock>().manager = this;
         }
-        FM = this;
         goalPos = this.transform.position;
     }
 
     void Update()
     {
-        if(Random.Range(0, 100) < 100)
+        if(Random.Range(0, 100) < 50)
         {
             goalPos = this.transform.position + new Vector3
                 (Random.Range(-swimLimits.x, swimLimits.x),

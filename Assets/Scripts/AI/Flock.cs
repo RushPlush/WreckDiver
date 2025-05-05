@@ -7,15 +7,16 @@ public class Flock : MonoBehaviour
 {
     float speed;
     bool turning = false;
+    public FlockManager manager;
     
     void Start ()
     {
-        speed = Random.Range(FlockManager.FM.minSpeed, FlockManager.FM.maxSpeed);
+        speed = Random.Range(manager.minSpeed, manager.maxSpeed);
     }
 
     void Update ()
     {
-        Bounds b = new Bounds(FlockManager.FM.transform.position, FlockManager.FM.swimLimits * 2);
+        Bounds b = new Bounds(manager.transform.position, manager.swimLimits * 2);
 
         if (!b.Contains(transform.position))
         {
@@ -26,15 +27,15 @@ public class Flock : MonoBehaviour
 
         if (turning)
         {
-            Vector3 direction = FlockManager.FM.transform.position - transform.position;
+            Vector3 direction = manager.transform.position - transform.position;
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction),
-                FlockManager.FM.rotationSpeed * Time.deltaTime);
+                manager.rotationSpeed * Time.deltaTime);
         }
         else
         {
             if (Random.Range(0, 100) < 10)
             {
-                speed = Random.Range(FlockManager.FM.minSpeed, FlockManager.FM.maxSpeed);
+                speed = Random.Range(manager.minSpeed, manager.maxSpeed);
             }
 
             if (Random.Range(0, 100) < 10)
@@ -49,7 +50,7 @@ public class Flock : MonoBehaviour
     void ApplyRules()
     {
         GameObject[] gos;
-        gos = FlockManager.FM.allFish;
+        gos = manager.allFish;
 
         Vector3 vCenter = Vector3.zero;
         Vector3 vAvoid = Vector3.zero;
@@ -62,7 +63,7 @@ public class Flock : MonoBehaviour
             if (go != this.gameObject)
             {
                 nDistance = Vector3.Distance(go.transform.position, this.transform.position);
-                if (nDistance <= FlockManager.FM.neighbourDistance)
+                if (nDistance <= manager.neighbourDistance)
                 {
                     vCenter += go.transform.position;
                     groupSize++;
@@ -80,18 +81,18 @@ public class Flock : MonoBehaviour
 
         if (groupSize > 0)
         {
-            vCenter = vCenter / groupSize + (FlockManager.FM.goalPos - this.transform.position);
+            vCenter = vCenter / groupSize + (manager.goalPos - this.transform.position);
             speed = gSpeed / groupSize;
-            if (speed > FlockManager.FM.maxSpeed)
+            if (speed > manager.maxSpeed)
             {
-                speed = FlockManager.FM.maxSpeed;
+                speed = manager.maxSpeed;
             }
 
             Vector3 direction = (vCenter + vAvoid) - transform.position;
             if (direction != Vector3.zero) 
                 transform.rotation = Quaternion.Slerp(transform.rotation,
                     Quaternion.LookRotation(direction),
-                    FlockManager.FM.rotationSpeed * Time.deltaTime);
+                    manager.rotationSpeed * Time.deltaTime);
         }
     }
 }

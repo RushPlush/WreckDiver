@@ -22,10 +22,10 @@
     "_tempCollidersAction": 1,
     "_paletteManager": {
         "_selectedPaletteIdx": 0,
-        "_selectedBrushIdx": 0,
+        "_selectedBrushIdx": -1,
         "_showBrushName": false,
         "_viewList": false,
-        "_showTabsInMultipleRows": false,
+        "_showTabsInMultipleRows": true,
         "_iconSize": 64
     },
     "_pinManager": {
@@ -612,7 +612,7 @@
                 "z": 0.0
             },
             "_spacingType": 0,
-            "_minSpacing": 2.7043256759643556,
+            "_minSpacing": 8.097265243530274,
             "_randomizePositions": true,
             "_randomness": 1.0,
             "_paintOnSurfaceToolSettings": {
@@ -937,7 +937,7 @@
                 "z": 0.0
             },
             "_spacingType": 0,
-            "_minSpacing": 2.7043256759643556,
+            "_minSpacing": 1.9233715534210206,
             "_randomizePositions": true,
             "_randomness": 1.0,
             "_simData": {
@@ -2894,7 +2894,7 @@
             "_origin": {
                 "x": 0.0,
                 "y": 0.0,
-                "z": 881.3080444335938
+                "z": 966.4111328125
             },
             "_rotation": {
                 "x": 0.0,
