@@ -25,6 +25,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4658219679020382632, guid: ff53e775ae32d07498bfd8a48de6b4f1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658219679020382632, guid: ff53e775ae32d07498bfd8a48de6b4f1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658219679020382632, guid: ff53e775ae32d07498bfd8a48de6b4f1, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658219679020382632, guid: ff53e775ae32d07498bfd8a48de6b4f1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 32.321014
       objectReference: {fileID: 0}
@@ -68,6 +80,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8187209983018096842, guid: ff53e775ae32d07498bfd8a48de6b4f1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8651926029126355869, guid: ff53e775ae32d07498bfd8a48de6b4f1, type: 3}
       propertyPath: m_Name
       value: Harpoon Pickup Variant
@@ -75,6 +91,14 @@ PrefabInstance:
     - target: {fileID: 8651926029126355869, guid: ff53e775ae32d07498bfd8a48de6b4f1, type: 3}
       propertyPath: m_Layer
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8942831660752154525, guid: ff53e775ae32d07498bfd8a48de6b4f1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.026
+      objectReference: {fileID: 0}
+    - target: {fileID: 8942831660752154525, guid: ff53e775ae32d07498bfd8a48de6b4f1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.012
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -123,7 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMode: 0
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
+  outlineWidth: 8
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
@@ -146,7 +170,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.11
-  m_Height: 1.06
+  m_Radius: 0.14
+  m_Height: 1.73
   m_Direction: 2
-  m_Center: {x: 0, y: -0.12, z: 0.07}
+  m_Center: {x: 0, y: 0, z: -0.12}

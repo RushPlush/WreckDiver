@@ -5,7 +5,6 @@ using System;
 using System.IO;
 using System.Text.RegularExpressions;
 using UnityEngine;
-using UnityEditor;
 using System.Collections.Generic;
 
 namespace AmplifyShaderEditor

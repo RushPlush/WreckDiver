@@ -1,9 +1,8 @@
 using System;
 using UnityEngine;
 
-public class PickupAble : MonoBehaviour, IInteractable
+public class PickupAble : MonoBehaviour, IInteractableWithPlayer
 {
-    private IInteractable.InteractionType interactionType1 = IInteractable.InteractionType.PlayerInteraction;
     [SerializeField] private Item item;
     [SerializeField] private int quantity = 1;
     private Outline m_Outline;
@@ -16,10 +15,15 @@ public class PickupAble : MonoBehaviour, IInteractable
 
     public bool destroyed { get; private set; }
 
-    bool IInteractable.destroyed
+    bool IInteractable.IsDestroyed => destroyed;
+    public bool Select()
     {
-        get => destroyed;
-        set => destroyed = value;
+        return false;
+    }
+
+    public void Deselect()
+    {
+        throw new NotImplementedException();
     }
 
     private void OnDestroy()
@@ -27,42 +31,16 @@ public class PickupAble : MonoBehaviour, IInteractable
         destroyed = true;
     }
 
-    IInteractable.InteractionType IInteractable.interactionType
-    {
-        get => interactionType1;
-        set => interactionType1 = value;
-    }
-
-    public void Interact(GameObject player)
+    public bool Select(GameObject player)
     {
         print(gameObject.name + " Interacted with player");
         player.GetComponent<ItemManager>().inventorySystem.AddItem(item, quantity);
         Destroy(this.gameObject);
+        return false;
     }
 
-    public void Interact(GameObject player, Item item)
+    public void Deselect(GameObject player)
     {
-        throw new System.NotImplementedException();
-    }
-
-    public void Interact(Item item)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void Interact()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void StopInteract()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void InteractionFailed()
-    {
-        throw new System.NotImplementedException();
     }
 
     public void Highlight()

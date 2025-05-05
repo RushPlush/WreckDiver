@@ -1,8 +1,5 @@
 using UnityEditor;
-using UnityEngine;
 using UnityEngine.Profiling;
-using UnityEngine.Internal;
-using System;
 
 namespace AmplifyShaderEditor
 {

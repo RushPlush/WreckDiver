@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
 
+[RequireComponent(typeof(Outline))]
+[DisallowMultipleComponent]
 public class Lockwheel : MonoBehaviour
 {
     [SerializeField, Range(0, 9)] private int codeFace = 0;
@@ -14,21 +16,24 @@ public class Lockwheel : MonoBehaviour
     {
         outline = GetComponent<Outline>();
         outline.enabled = false;
-        outline.OutlineColor = Color.HSVToRGB(60/360f, 1f, 1f);
-        transform.localRotation = Quaternion.Euler(0, anglePerFace * codeFace, 90);
+        outline.OutlineColor = Color.HSVToRGB(60 / 360f, 1f, 1f);
+        transform.localRotation = GetRotation(codeFace);
     }
 
     void Update()
     {
-        var currentRotation = Quaternion.Euler(0, anglePerFace * codeFace, 90);
+        while (codeFace < 0) codeFace += 10;
+        while (codeFace > 9) codeFace -= 10;
+        var currentRotation = GetRotation(codeFace);
         if (transform.localRotation != currentRotation)
         {
-            var prevRotation = Quaternion.Euler(0, anglePerFace * prevCodeFace, 90);
+            var prevRotation = GetRotation(prevCodeFace);
             float localSpeedModifier = Math.Abs(prevCodeFace - codeFace);
             if (localSpeedModifier > 5)
             {
                 localSpeedModifier = 5 + (5 - localSpeedModifier);
             }
+
 
             localSpeedModifier *= speedModifier;
             // lerp rotation to the new rotation
@@ -60,8 +65,10 @@ public class Lockwheel : MonoBehaviour
         face = Math.Clamp(face, 0, 9);
         codeFace = face;
         prevCodeFace = face;
-        transform.localRotation = Quaternion.Euler(0, anglePerFace * codeFace, 90);
+        transform.localRotation = GetRotation(face);
     }
+
+    private Quaternion GetRotation(int face) => Quaternion.Euler(anglePerFace * face, 0, 0);
 
     public int GetCodeFace() => prevCodeFace;
 

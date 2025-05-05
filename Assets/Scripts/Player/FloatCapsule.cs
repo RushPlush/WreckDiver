@@ -5,12 +5,13 @@ using UnityEngine.Serialization;
 public class FloatCapsule : MonoBehaviour
 {
     private Rigidbody rb;
-    
+
     [Header("RayCast")]
     [SerializeField] private float rayLenght = 1f;
     [SerializeField] private LayerMask groundLayer;
-    
-    [Header("Levitating")][Tooltip("How the capsule interacts with the ground, having it be levitating makes ledges and slopes easier to traverse.")]
+
+    [Header("Levitating")]
+    [Tooltip("How the capsule interacts with the ground, having it be levitating makes ledges and slopes easier to traverse.")]
     [SerializeField] private float rideHeight = 0.1f;
     [SerializeField] private float rideSpringDampener = 10f;
     [SerializeField] private float rideSpringStrength = 5f;
@@ -19,33 +20,40 @@ public class FloatCapsule : MonoBehaviour
     [SerializeField] private float extraGravity = 20f;
 
     private float springForce;
-    
+
     [Header("Jump")]
     private bool buffer = false;
-    [SerializeField][Tooltip("The amount of time wherein it will execute a jump when it becomes possible")] 
+    [SerializeField]
+    [Tooltip("The amount of time wherein it will execute a jump when it becomes possible")]
     private float bufferTime = 0.2f;
     private float bufferTimer;
     [SerializeField] private float jumpForce = 20f;
-    [SerializeField][Tooltip("The amount of force you get per frame when holding down the jump button. only works whilst the player has a positive y velocity")] 
+    [SerializeField]
+    [Tooltip("The amount of force you get per frame when holding down the jump button. only works whilst the player has a positive y velocity")]
     private float sustainJumpForce = 3f;
-    [SerializeField][Tooltip("The amount of time you can sustain a jump. To avoid large force values making the character effectively fly")]
-    private float sustainJumpTime  = .3f;
+    [SerializeField]
+    [Tooltip("The amount of time you can sustain a jump. To avoid large force values making the character effectively fly")]
+    private float sustainJumpTime = .3f;
     private float sustainJumpTimer = 0;
-    private bool  canSustain;
+    private bool canSustain;
 
-    [SerializeField][Tooltip("The delay wherein the player can't jump again. This prevents the player from being able to get multiple jumps in a row before leaving the grounded state. (Jumping higher than they're supposed to)")]
+    [SerializeField]
+    [Tooltip("The delay wherein the player can't jump again. This prevents the player from being able to get multiple jumps in a row before leaving the grounded state. (Jumping higher than they're supposed to)")]
     private float jumpDelay = 0.3f;
     private float jumpTimer;
     [FormerlySerializedAs("jumpAble")] public bool canJump = true;
-    
-    [FormerlySerializedAs("grounded")] [Header("Ground Check")]
+
+    [FormerlySerializedAs("grounded")]
+    [Header("Ground Check")]
     public bool isGrounded = true;
 
-    [Header("Coyote Time")][Tooltip("Coyote Time refers to the ability to jump after falling over a ledge, this helps make timing jumps more forgiving")]
+    [Header("Coyote Time")]
+    [Tooltip("Coyote Time refers to the ability to jump after falling over a ledge, this helps make timing jumps more forgiving")]
     public bool coyoteTime = true;
     [SerializeField] private float coyoteDelay = 0.2f;
-    private  float coyoteTimer;
-    private void Awake() {
+    private float coyoteTimer;
+    private void Awake()
+    {
         rb = GetComponent<Rigidbody>();
     }
     private void Start()
@@ -85,7 +93,7 @@ public class FloatCapsule : MonoBehaviour
 
             springForce = (x * rideSpringStrength) - (rayDirVel * rideSpringDampener);
 
-            if (!canJump)
+            if (Time.timeSinceLevelLoad <= jumpTimer)
             {
                 springForce = 0; // Here to avoid the spring from stopping the jump. resulting in inconsistent jumps.
             }
@@ -161,7 +169,7 @@ public class FloatCapsule : MonoBehaviour
             sustainJumpTimer = 0;
             jumpTimer = Time.timeSinceLevelLoad + jumpDelay;
         }
-        else if(jumpTriggered)
+        else if (jumpTriggered)
         {
             buffer = true;
             bufferTimer = bufferTime + Time.timeSinceLevelLoad;

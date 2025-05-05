@@ -3,8 +3,7 @@
 
 using UnityEngine;
 using System;
-using UnityEditor;
-	
+
 namespace AmplifyShaderEditor
 {
 	[Serializable]

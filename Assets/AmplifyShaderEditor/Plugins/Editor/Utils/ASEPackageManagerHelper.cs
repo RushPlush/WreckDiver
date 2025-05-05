@@ -3,7 +3,6 @@
 
 using System;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEditor;
 using UnityEditor.PackageManager.Requests;
 using System.Collections.Generic;
