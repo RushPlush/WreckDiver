@@ -16,6 +16,7 @@ public class OxygenBehaviour : MonoBehaviour
 
     [SerializeField] private Image oxygenBar;
     [SerializeField] private RectTransform oxygenBarParent;
+    [SerializeField] private GameObject OxygenArrow;
     private float maxSize = 0;
 
     [SerializeField] private float timeToDie = 10f;
@@ -64,8 +65,9 @@ public class OxygenBehaviour : MonoBehaviour
         {
             timeToDieCounter = 0f;
         }
-
-        var barSize = (float)(oxygen / maxOxygen * maxSize);
+        var progressOxygen = oxygen / maxOxygen;
+        OxygenArrow.transform.localEulerAngles = new Vector3(-(float)(1 + progressOxygen * 358.5), 0, 0 );
+        var barSize = (float)(progressOxygen * maxSize);
         oxygenBar.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, barSize);
         oxygenBar.rectTransform.SetLocalPositionAndRotation(new Vector3(barSize / 2 - maxSize / 2, 0, 0), Quaternion.identity);
     }
