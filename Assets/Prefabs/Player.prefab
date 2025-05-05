@@ -4880,9 +4880,8 @@ MonoBehaviour:
   oxygen: 0
   maxOxygen: 100
   oxygenRegenerationRate: 10
-  oxygenBarParent: {fileID: 0}
-  oxygenBar: {fileID: 723811489935408170}
-  oxygenDepletionRate: 0.125
+  oxygenDepletionRate: 0.5
+  timeToDie: 10
 --- !u!33 &1238656694213876441
 MeshFilter:
   m_ObjectHideFlags: 0
