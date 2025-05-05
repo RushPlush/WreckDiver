@@ -8,9 +8,9 @@ public class OxygenBehaviour : MonoBehaviour
     [SerializeField] private double oxygen;
     // ReSharper disable FieldCanBeMadeReadOnly.Local
     // ReSharper disable ConvertToConstant.Local
-    [SerializeField][Tooltip("In seconds")] private double maxOxygen = 300;
-    [SerializeField] private double oxygenRegenerationRate = 30;
-    [SerializeField][Tooltip("Multiplier for how fast oxygen runs out, Default/neutral = 1")] private double oxygenDepletionRate = 1f;
+    [SerializeField] private double maxOxygen = 100;
+    [SerializeField] private double oxygenRegenerationRate = 10;
+    [SerializeField] private double oxygenDepletionRate = .125f;
     // ReSharper restore ConvertToConstant.Local
     // ReSharper restore FieldCanBeMadeReadOnly.Local
 
