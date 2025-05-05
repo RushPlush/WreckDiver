@@ -2056,8 +2056,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3777917507257878300}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0.237}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.000027686357, y: 0, z: 0.23699677}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2073,11 +2073,11 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 0
-  m_Color: {r: 0.2981131, g: 0.2981131, b: 0.2981131, a: 1}
-  m_Intensity: 30
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 30.64
   m_Range: 90
   m_SpotAngle: 110.199684
-  m_InnerSpotAngle: 44.992416
+  m_InnerSpotAngle: 33.934517
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -3246,8 +3246,8 @@ Transform:
   m_Children:
   - {fileID: 1306539667654250791}
   - {fileID: 6363492183167356078}
-  - {fileID: 8314575894274995629}
   - {fileID: 5154240840614905015}
+  - {fileID: 8314575894274995629}
   m_Father: {fileID: 4487033215579494953}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &1116186470455150090
@@ -4880,9 +4880,9 @@ MonoBehaviour:
   oxygen: 0
   maxOxygen: 100
   oxygenRegenerationRate: 10
-  oxygenDepletionRate: 0.125
-  oxygenBar: {fileID: 723811489935408170}
   oxygenBarParent: {fileID: 0}
+  oxygenBar: {fileID: 723811489935408170}
+  oxygenDepletionRate: 0.125
 --- !u!33 &1238656694213876441
 MeshFilter:
   m_ObjectHideFlags: 0
