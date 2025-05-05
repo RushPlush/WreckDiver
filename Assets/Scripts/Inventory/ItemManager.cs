@@ -16,11 +16,21 @@ public class ItemManager : MonoBehaviour
     private int currentItemIndex = -1;
 
     public int harpoonsLoaded = 0; // todo save elsewhere, needed for between swaps 
+
+    private MappingHandler mappingHandler;
+
     private void Awake()
     {
         inventorySystem = GetComponent<InventorySystem>();
+        mappingHandler = GetComponentInChildren<MappingHandler>();
         // heldItemInstance = itemHolder.transform.GetChild(0).gameObject;
         //itemHolderMeshFilter = itemHolder.GetComponent<MeshFilter>();
+    }
+
+    private void Update()
+    {
+        if (mappingHandler && !mappingHandler.IsInventoryGuideActive() && !mappingHandler.IsInteractionGuideActive() && inventorySystem.GetItems().Count > 0)
+            mappingHandler.ToggleInventoryGuide();
     }
 
     public void ChangeItem(int iteration)

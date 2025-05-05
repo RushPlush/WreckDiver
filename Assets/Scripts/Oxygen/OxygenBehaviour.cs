@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OxygenBehaviour : MonoBehaviour
 {
@@ -12,6 +13,11 @@ public class OxygenBehaviour : MonoBehaviour
     [SerializeField][Tooltip("Multiplier for how fast oxygen runs out, Default/neutral = 1")] private double oxygenDepletionRate = 1f;
     // ReSharper restore ConvertToConstant.Local
     // ReSharper restore FieldCanBeMadeReadOnly.Local
+
+    [SerializeField] private Image oxygenBar;
+    [SerializeField] private RectTransform oxygenBarParent;
+    private float maxSize = 0;
+
     [SerializeField] private float timeToDie = 10f;
     private float timeToDieCounter = 0f;
     SaveAndLoad saveAndLoad;
@@ -24,6 +30,7 @@ public class OxygenBehaviour : MonoBehaviour
     private void Start()
     {
         oxygen = maxOxygen;
+        maxSize = oxygenBar.rectTransform.sizeDelta.x;
     }
 
     private void FixedUpdate()
@@ -57,7 +64,10 @@ public class OxygenBehaviour : MonoBehaviour
         {
             timeToDieCounter = 0f;
         }
-        // Debug.Log($"Oxygen: {oxygen}");
+
+        var barSize = (float)(oxygen / maxOxygen * maxSize);
+        oxygenBar.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, barSize);
+        oxygenBar.rectTransform.SetLocalPositionAndRotation(new Vector3(barSize / 2 - maxSize / 2, 0, 0), Quaternion.identity);
     }
     public void LoseOxygen(double amount) 
     {
