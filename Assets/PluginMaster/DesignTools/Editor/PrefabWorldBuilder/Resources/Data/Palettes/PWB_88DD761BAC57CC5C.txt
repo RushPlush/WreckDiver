@@ -37,8 +37,8 @@
                     "_max": 0.0
                 },
                 "y": {
-                    "_v1": 360.0,
-                    "_v2": 0.0,
+                    "_v1": 0.0,
+                    "_v2": 360.0,
                     "_min": 0.0,
                     "_max": 360.0
                 },
@@ -145,8 +145,8 @@
                             "_max": 0.0
                         },
                         "y": {
-                            "_v1": 360.0,
-                            "_v2": 0.0,
+                            "_v1": 0.0,
+                            "_v2": 360.0,
                             "_min": 0.0,
                             "_max": 360.0
                         },
@@ -260,8 +260,8 @@
                             "_max": 0.0
                         },
                         "y": {
-                            "_v1": 360.0,
-                            "_v2": 0.0,
+                            "_v1": 0.0,
+                            "_v2": 360.0,
                             "_min": 0.0,
                             "_max": 360.0
                         },
@@ -2768,7 +2768,7 @@
                 "y": 0.0,
                 "z": 0.0
             },
-            "_addRandomRotation": false,
+            "_addRandomRotation": true,
             "_rotationFactor": 90.0,
             "_rotateInMultiples": false,
             "_randomEulerOffset": {
@@ -2779,10 +2779,10 @@
                     "_max": 0.0
                 },
                 "y": {
-                    "_v1": 0.0,
+                    "_v1": 360.0,
                     "_v2": 0.0,
                     "_min": 0.0,
-                    "_max": 0.0
+                    "_max": 360.0
                 },
                 "z": {
                     "_v1": 0.0,
@@ -2798,25 +2798,25 @@
                 "y": 1.0,
                 "z": 1.0
             },
-            "_randomScaleMultiplier": false,
+            "_randomScaleMultiplier": true,
             "_randomScaleMultiplierRange": {
                 "x": {
                     "_v1": 1.0,
-                    "_v2": 1.0,
+                    "_v2": 50.0,
                     "_min": 1.0,
-                    "_max": 1.0
+                    "_max": 50.0
                 },
                 "y": {
                     "_v1": 1.0,
-                    "_v2": 1.0,
+                    "_v2": 50.0,
                     "_min": 1.0,
-                    "_max": 1.0
+                    "_max": 50.0
                 },
                 "z": {
                     "_v1": 1.0,
-                    "_v2": 1.0,
+                    "_v2": 50.0,
                     "_min": 1.0,
-                    "_max": 1.0
+                    "_max": 50.0
                 }
             },
             "_flipX": 0,
@@ -2856,14 +2856,14 @@
                 {
                     "_id": 638796666841121276,
                     "_surfaceDistance": 0.0,
-                    "_randomSurfaceDistance": false,
+                    "_randomSurfaceDistance": true,
                     "_randomSurfaceDistanceRange": {
                         "_v1": -0.004999999888241291,
                         "_v2": 0.004999999888241291,
                         "_min": -0.004999999888241291,
                         "_max": 0.004999999888241291
                     },
-                    "_embedInSurface": false,
+                    "_embedInSurface": true,
                     "_embedAtPivotHeight": true,
                     "_localPositionOffset": {
                         "x": 0.0,
@@ -2876,7 +2876,7 @@
                         "y": 0.0,
                         "z": 0.0
                     },
-                    "_addRandomRotation": false,
+                    "_addRandomRotation": true,
                     "_rotationFactor": 90.0,
                     "_rotateInMultiples": false,
                     "_randomEulerOffset": {
@@ -2887,10 +2887,10 @@
                             "_max": 0.0
                         },
                         "y": {
-                            "_v1": 0.0,
+                            "_v1": 360.0,
                             "_v2": 0.0,
                             "_min": 0.0,
-                            "_max": 0.0
+                            "_max": 360.0
                         },
                         "z": {
                             "_v1": 0.0,
@@ -2906,25 +2906,25 @@
                         "y": 1.0,
                         "z": 1.0
                     },
-                    "_randomScaleMultiplier": false,
+                    "_randomScaleMultiplier": true,
                     "_randomScaleMultiplierRange": {
                         "x": {
                             "_v1": 1.0,
-                            "_v2": 1.0,
+                            "_v2": 50.0,
                             "_min": 1.0,
-                            "_max": 1.0
+                            "_max": 50.0
                         },
                         "y": {
                             "_v1": 1.0,
-                            "_v2": 1.0,
+                            "_v2": 50.0,
                             "_min": 1.0,
-                            "_max": 1.0
+                            "_max": 50.0
                         },
                         "z": {
                             "_v1": 1.0,
-                            "_v2": 1.0,
+                            "_v2": 50.0,
                             "_min": 1.0,
-                            "_max": 1.0
+                            "_max": 50.0
                         }
                     },
                     "_flipX": 0,
