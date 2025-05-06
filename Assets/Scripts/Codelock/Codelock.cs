@@ -248,6 +248,7 @@ public class Codelock : MonoBehaviour, IInteractableWithPlayer
     }
 }
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(Codelock))]
 public class CodelockEditor : Editor
 {
@@ -257,3 +258,4 @@ public class CodelockEditor : Editor
         if (GUILayout.Button("Open Codelock")) (target as Codelock).Unlock();
     }
 }
+#endif
