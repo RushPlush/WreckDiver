@@ -70,6 +70,9 @@ public class Harpoon : MonoBehaviour
         rb.isKinematic = true;
         rb.collisionDetectionMode = CollisionDetectionMode.Discrete;
         rb.interpolation = RigidbodyInterpolation.None;
+        
+        particleSystem.emissionRate = 4f;
+
         MonoBehaviour[] allScripts = transform.parent.GetComponents<MonoBehaviour>();
         if (allScripts.Length == 0) return;
         for (int i = 0; i < allScripts.Length; i++)
@@ -99,4 +102,5 @@ public class Harpoon : MonoBehaviour
         
         this.canPull = canPull;
     }
+    
 }

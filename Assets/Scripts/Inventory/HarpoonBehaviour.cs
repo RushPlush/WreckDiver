@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Inventory;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class HarpoonBehaviour : MonoBehaviour, IItem
     [SerializeField] private ParticleSystem[] harpoonParticles;
     private GameObject[] harpoonInstances = new GameObject[numberOfHarpoons];
     private bool[] harpoonsReady = new bool[numberOfHarpoons];
+    private bool[] harpoonsExists = new bool[numberOfHarpoons];
     private Harpoon[] harpoonScripts = new Harpoon[numberOfHarpoons];
     private Pullable[] pullableScripts = new Pullable[numberOfHarpoons];
     [SerializeField] LineRenderer[] lineRenderers;
@@ -83,12 +85,11 @@ public class HarpoonBehaviour : MonoBehaviour, IItem
         {
             if (harpoonInstances[0] == null && harpoonInstances[1] == null) return; //todo what happens when it can't pull (when neither harpoon is instanced)
 
-            if (harpoonsReady[0] != false && harpoonsReady[1] != false && harpoonInstances[0] != null && harpoonInstances[1] != null)
-            {
-                DoublePull();
-            }
-            else if (!harpoonsReady[1] && harpoonInstances[1] != null ||
-                     !harpoonsReady[0] && harpoonInstances[0] != null)
+            //if (harpoonsReady[0] != false && harpoonsReady[1] != false && harpoonInstances[0] != null && harpoonInstances[1] != null)
+            //{
+            //    DoublePull();
+            //}
+            if (!harpoonsReady[lastShotIndex] && harpoonInstances[lastShotIndex] != null)
             {
                 print("SinglePull");
                 SinglePull();
@@ -114,23 +115,34 @@ public class HarpoonBehaviour : MonoBehaviour, IItem
 
     public void SinglePull()
     {
-        for (int i = 0; i < numberOfHarpoons; i++)
+        if (harpoonInstances[lastShotIndex] == null) return; //todo what happens when it can't pull (when harpoon is not instanced)
+        if (pullableScripts[lastShotIndex] != null)
         {
-            if (!harpoonsReady[i] && harpoonInstances[i] != null)
-            {
-                if (pullableScripts[i] != null)
-                {
-                    pullableScripts[i].Pull(playerPullable);
-                    playerPullable.Pull(pullableScripts[i]);
-                }
-                else
-                {
-                    if(!harpoonScripts[i].canPull) return;
-                    playerPullable.Pull(harpoonInstances[i].transform);
-                }
-            }
-            // todo what happens when it can't pull
+            pullableScripts[lastShotIndex].Pull(playerPullable);
+            playerPullable.Pull(pullableScripts[lastShotIndex]);
         }
+        else
+        {
+            
+            playerPullable.Pull(harpoonInstances[lastShotIndex].transform);
+        }
+        //for (int i = 0; i < numberOfHarpoons; i++)
+        //{
+        //    if (!harpoonsReady[i] && harpoonInstances[i] != null)
+        //    {
+        //        if (pullableScripts[i] != null)
+        //        {
+        //            pullableScripts[i].Pull(playerPullable);
+        //            playerPullable.Pull(pullableScripts[i]);
+        //        }
+        //        else
+        //        {
+        //            if(!harpoonScripts[i].canPull) return;
+        //            playerPullable.Pull(harpoonInstances[i].transform);
+        //        }
+        //    }
+        //    // todo what happens when it can't pull
+        //}
     }
 
     void DoublePull()
@@ -179,7 +191,9 @@ public class HarpoonBehaviour : MonoBehaviour, IItem
                 harpoonScripts[i].SetIndexValue(i);
                 harpoonScripts[i].SetHarpoonBehaviour(this);
                 harpoonsReady[i] = true;
+                harpoonsExists[i] = true;
                 pullableScripts[i] = null;
+                //lastShotIndex = -1; 
                 return;
             }
             //todo what happens when it can't reload
@@ -190,12 +204,25 @@ public class HarpoonBehaviour : MonoBehaviour, IItem
     {
         pullableScripts[index] = pullable;
     }
-
+    private void LateUpdate()
+    {
+        foreach (var lineRender in lineRenderers)
+        {
+            lineRender.SetPosition(0, lineRender.transform.position);
+            lineRender.SetPosition(1, lineRender.transform.position);
+        }
+        if(lastShotIndex == -1) return;
+        if(harpoonsExists[lastShotIndex] == false) return;
+        //lineRenderers[lastShotIndex].SetPosition(0, lineRenderers[lastShotIndex].transform.position);
+        lineRenderers[lastShotIndex].SetPosition(1,harpoonInstances[lastShotIndex].transform.position);
+    }
     public void DestroyHarpoon(int index)
     {
         harpoonsReady[index] = false;
+        harpoonsExists[index] = false;
         harpoonScripts[index] = null;
         harpoonInstances[index] = null;
+        lineRenderers[index].SetPosition(5, lineRenderers[index].GetPosition(4));
         pullableScripts[index] = null;
         playerPullable.Release();
     }
