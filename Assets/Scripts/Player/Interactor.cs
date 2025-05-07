@@ -77,6 +77,7 @@ public class Interactor : MonoBehaviour
         //interactableSize = interactables.Count;
     }
 
+    // TODO: change this to update every frame and not every fixed update
     private void FixedUpdate()
     {
         interactionIndex = -1;
