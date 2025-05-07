@@ -14,10 +14,10 @@ public class OxygenBehaviour : MonoBehaviour
     // ReSharper restore ConvertToConstant.Local
     // ReSharper restore FieldCanBeMadeReadOnly.Local
 
-    [SerializeField] private Image oxygenBar;
-    [SerializeField] private RectTransform oxygenBarParent;
+    //[SerializeField] private Image oxygenBar;
+    //[SerializeField] private RectTransform oxygenBarParent;
     [SerializeField] private GameObject OxygenArrow;
-    private float maxSize = 0;
+    //private float maxSize = 0;
 
     [SerializeField] private float timeToDie = 10f;
     private float timeToDieCounter = 0f;
@@ -31,7 +31,7 @@ public class OxygenBehaviour : MonoBehaviour
     private void Start()
     {
         oxygen = maxOxygen;
-        maxSize = oxygenBar.rectTransform.sizeDelta.x;
+        //maxSize = oxygenBar.rectTransform.sizeDelta.x;
     }
 
     private void FixedUpdate()
@@ -67,9 +67,9 @@ public class OxygenBehaviour : MonoBehaviour
         }
         var progressOxygen = oxygen / maxOxygen;
         OxygenArrow.transform.localEulerAngles = new Vector3(-(float)(1 + progressOxygen * 358.5), 0, 0 );
-        var barSize = (float)(progressOxygen * maxSize);
-        oxygenBar.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, barSize);
-        oxygenBar.rectTransform.SetLocalPositionAndRotation(new Vector3(barSize / 2 - maxSize / 2, 0, 0), Quaternion.identity);
+        //var barSize = (float)(progressOxygen * maxSize);
+        //oxygenBar.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, barSize);
+        //oxygenBar.rectTransform.SetLocalPositionAndRotation(new Vector3(barSize / 2 - maxSize / 2, 0, 0), Quaternion.identity);
     }
     public void LoseOxygen(double amount) 
     {
