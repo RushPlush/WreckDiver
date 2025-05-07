@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8416598257426809109}
   - component: {fileID: 5972193273556110292}
   - component: {fileID: 8214896342937394063}
+  - component: {fileID: 1811737171060454700}
   m_Layer: 0
   m_Name: UnderwaterVolumeBox
   m_TagString: Untagged
@@ -40,7 +41,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5527948032536430277}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
@@ -71,3 +72,15 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 102.5, y: 51.64, z: 104.87}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1811737171060454700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5527948032536430277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec8f828c617d19e49899e364ba848c51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
