@@ -5,6 +5,7 @@ using UnityEngine.AI;
 public class RandomMovement : MonoBehaviour 
 {
     GameObject player;
+    OxygenBehaviour playerOxygenBehaviour;
     NavMeshAgent agent;
     Animator animator;
     BoxCollider boxCollider;
@@ -20,12 +21,14 @@ public class RandomMovement : MonoBehaviour
     [SerializeField] float sightRange, attackRange;
     bool playerInSight, playerInAttackRange;
 
-    void Start()
+    void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.Find("Player");
+        playerOxygenBehaviour= player.GetComponent<OxygenBehaviour>();
         animator = GetComponent<Animator>();
         boxCollider = GetComponentInChildren<BoxCollider>();
+
     }
 
 
@@ -84,8 +87,21 @@ public class RandomMovement : MonoBehaviour
             transform.position.y, 
             transform.position.z + z);
 
-        if (Physics.Raycast(destPoint, Vector3.down, groundLayer))
+        if (Physics.Raycast(destPoint, Vector3.down, out RaycastHit hit, groundLayer))
         {
+            destPoint.y = hit.point.y + agent.height / 2;
+            var navMeshPath = new NavMeshPath();
+            agent.CalculatePath(destPoint, navMeshPath);
+            switch (navMeshPath.status)
+            {
+                case NavMeshPathStatus.PathPartial:
+                    destPoint = navMeshPath.corners[^1];
+                    break;
+                case NavMeshPathStatus.PathInvalid:
+                    return;
+                default:
+                    break;
+            }
             swimPointSet = true;
         }
     }
@@ -104,9 +120,12 @@ public class RandomMovement : MonoBehaviour
     {
         var player = other.GetComponent<Movement>();
 
+        double biteDamage = 30;
+
         if (player != null)
         {
             print("Hit!");
+            playerOxygenBehaviour.LoseOxygen(biteDamage);
         }
     }
 }

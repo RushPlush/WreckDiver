@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1132068124390181255}
   - component: {fileID: 4559163105151546538}
   - component: {fileID: 7765716995162058616}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain_(0.00, 0.00, 1000.00)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ Terrain:
   m_GameObject: {fileID: 2392030186514183113}
   m_Enabled: 1
   serializedVersion: 6
-  m_TerrainData: {fileID: 15600000, guid: 803575d1f0c4b8c46be560a939e92f0f, type: 2}
+  m_TerrainData: {fileID: 0}
   m_TreeDistance: 5000
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 2700195851446279164}
   - component: {fileID: 3224310175368955338}
   - component: {fileID: 1527151952285765245}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain_(1000.00, 0.00, 0.00)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ Terrain:
   m_GameObject: {fileID: 3576151626631316853}
   m_Enabled: 1
   serializedVersion: 6
-  m_TerrainData: {fileID: 15600000, guid: 213efb3025dd83f4d95da2649d165281, type: 2}
+  m_TerrainData: {fileID: 0}
   m_TreeDistance: 5000
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 606201265866049567}
   - component: {fileID: 1410809960153230062}
   - component: {fileID: 6768380481552937954}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,7 +325,7 @@ GameObject:
   - component: {fileID: 7917844261001090240}
   - component: {fileID: 2790743282489837865}
   - component: {fileID: 6896410846634333634}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain_(1000.00, 0.00, 1000.00)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -356,7 +356,7 @@ Terrain:
   m_GameObject: {fileID: 6199904300832773634}
   m_Enabled: 1
   serializedVersion: 6
-  m_TerrainData: {fileID: 15600000, guid: eaee70d34bf4e8f42979ad2082887d17, type: 2}
+  m_TerrainData: {fileID: 0}
   m_TreeDistance: 5000
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
