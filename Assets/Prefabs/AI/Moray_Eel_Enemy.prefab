@@ -1,5 +1,58 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1656921700413921806
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4864012565826817298}
+  - component: {fileID: 7562001236028016618}
+  m_Layer: 0
+  m_Name: Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4864012565826817298
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656921700413921806}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8506866920549101536}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7562001236028016618
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656921700413921806}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 0.019841809, y: 0.026591742, z: 0.015452191}
+  m_Center: {x: -0.0000041300227, y: -0.003948718, z: -0.00077161536}
 --- !u!1001 &8513355810236487555
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58,7 +111,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d262cafeab81b83448e0b0b299216b2c, type: 3}
       propertyPath: m_Name
-      value: Moray_Enemy_swimming animation
+      value: Moray_Eel_Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 5643775579120064896, guid: d262cafeab81b83448e0b0b299216b2c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -66,7 +119,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8879528566716807029, guid: d262cafeab81b83448e0b0b299216b2c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.05
+      value: 1.93
       objectReference: {fileID: 0}
     - target: {fileID: 8879528566716807029, guid: d262cafeab81b83448e0b0b299216b2c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -74,7 +127,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 12369937012029539, guid: d262cafeab81b83448e0b0b299216b2c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4864012565826817298}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d262cafeab81b83448e0b0b299216b2c, type: 3}
       insertIndex: -1
@@ -111,9 +167,9 @@ Animation:
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 0
---- !u!4 &8191833856657731688 stripped
+--- !u!4 &8506866920549101536 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d262cafeab81b83448e0b0b299216b2c, type: 3}
+  m_CorrespondingSourceObject: {fileID: 12369937012029539, guid: d262cafeab81b83448e0b0b299216b2c, type: 3}
   m_PrefabInstance: {fileID: 8513355810236487555}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &8855464249618229970 stripped
@@ -151,7 +207,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8855464249618229970}
   m_Enabled: 1
-  m_AgentTypeID: -334000983
+  m_AgentTypeID: 1479372276
   m_Radius: 0.5
   m_Speed: 3.5
   m_Acceleration: 8
@@ -162,7 +218,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 1.5
+  m_BaseOffset: 2
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &2205809968234933276
@@ -177,6 +233,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c924d9c0e6b425e48b1e4694ceebefe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 1685721870027613753}
-  range: 20
-  centrePoint: {fileID: 8191833856657731688}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  SwimRange: 0
+  sightRange: 0
+  attackRange: 0
