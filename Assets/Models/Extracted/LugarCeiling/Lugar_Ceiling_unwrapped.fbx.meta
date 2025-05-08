@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: 9f9cb849b36a75a489d3ad4b4beab964
+guid: e08f3aa4def8b054c9e973e556624703
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Beam_varnished
+    second: {fileID: 2100000, guid: ec9561a502271534a9b0599758a1de79, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PaintedCeiling
+    second: {fileID: 2100000, guid: f9271fbecc3ec5542a21150d8669e00f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

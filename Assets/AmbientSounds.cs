@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using NUnit.Framework;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -55,6 +56,14 @@ public class AmbientSounds : MonoBehaviour
         ambientSoundsCooldownTimer[soundIndex] = ambientSoundsCooldown[soundIndex] + ambientOverlaySounds[soundIndex].length;
         timerBetweenSounds = UnityEngine.Random.Range(ambientMinTimeBetweenSounds.x, ambientMinTimeBetweenSounds.y);
     }
+    private void PlayBackgroundSound()
+    {
+        if (ambientBackgroundSounds.Count == 0) return;
+        int randomIndex = UnityEngine.Random.Range(0, ambientBackgroundSounds.Count);
+        ambientBackgroundAudioSource.clip = ambientBackgroundSounds[randomIndex];
+        ambientBackgroundAudioSource.pitch = UnityEngine.Random.Range(ambientSoundsPitch.x, ambientSoundsPitch.y);
+        ambientBackgroundAudioSource.Play();
+    }
     private void Update()
     {
         timerBetweenSounds -= Time.deltaTime;
@@ -71,6 +80,8 @@ public class AmbientSounds : MonoBehaviour
                 PlayOverlayAmbientSound(i);
             }
         }
+        if (ambientBackgroundAudioSource.isPlaying) return;
+        PlayBackgroundSound();
         
     }
 }

@@ -49,6 +49,7 @@ MonoBehaviour:
   ambientBackgroundSounds:
   - {fileID: 8300000, guid: ba76e50984665654a988e4c016e59f75, type: 3}
   - {fileID: 8300000, guid: bac0e29c7c8d7e541b3718231c9d7a6a, type: 3}
+  - {fileID: 8300000, guid: 82f8bbbfeedbd194e92156afd09d3c50, type: 3}
   ambientOverlaySounds:
   - {fileID: 8300000, guid: cee9b5637741f3c4d9075c142f457da1, type: 3}
   - {fileID: 8300000, guid: 124cbfb78c004b64888ccb57752209f1, type: 3}
@@ -56,14 +57,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a6bcff3e960133e49bc539a9587d0e1b, type: 3}
   - {fileID: 8300000, guid: 140d56d545b3de84bbfe3a36f44c749e, type: 3}
   - {fileID: 8300000, guid: 7651fdcc8ff92ba428135eb3edf4a7bc, type: 3}
-  - {fileID: 8300000, guid: 82f8bbbfeedbd194e92156afd09d3c50, type: 3}
   - {fileID: 8300000, guid: b4ed16e6953dd654cbf6983fd63bdff6, type: 3}
   - {fileID: 8300000, guid: b4ed16e6953dd654cbf6983fd63bdff6, type: 3}
   ambientSoundsVolume:
   - 0.8
   - 0.8
   - 0.3
-  - 0.4
   - 0.4
   - 0.4
   - 0.4
@@ -80,7 +79,7 @@ MonoBehaviour:
   - 8
   - 8
   ambientSoundsPitch: {x: 0.8, y: 1.2}
-  ambientMinTimeBetweenSounds: {x: 10, y: 30}
+  ambientMinTimeBetweenSounds: {x: 45, y: 60}
   ambientOverlayAudioSource: {fileID: 6551653384653228486}
   ambientBackgroundAudioSource: {fileID: 2872090592027689049}
 --- !u!82 &6551653384653228486
@@ -195,7 +194,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 1
   SpatializePostEffects: 0
