@@ -62,6 +62,7 @@ public class MappingHandler : MonoBehaviour
     // ReSharper restore MemberCanBePrivate.Global
 }
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(MappingHandler))]
 public class MappingHandlerEditor : Editor
 {
@@ -72,6 +73,7 @@ public class MappingHandlerEditor : Editor
         if (GUILayout.Button("Toggle Interaction Guide")) ((MappingHandler)target).ToggleInteractionGuide();
     }
 }
+#endif
 
 #region Serializable Classes
 

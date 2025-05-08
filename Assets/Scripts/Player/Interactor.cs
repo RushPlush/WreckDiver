@@ -77,6 +77,7 @@ public class Interactor : MonoBehaviour
         //interactableSize = interactables.Count;
     }
 
+    // TODO: change this to update every frame and not every fixed update
     private void FixedUpdate()
     {
         interactionIndex = -1;
@@ -108,6 +109,7 @@ public class Interactor : MonoBehaviour
             //Get the dot product of the direction and the forward vector of the player, then keep the interactable that is most in front of the player
 
             if (hit.collider != interactableColliders[i]) continue;
+            // TODO: Convert this to use the lowest angle between the ray forward vector and the hit point direction from ray source
             distances.Add(hit.distance);
             // hitPoints.Add(hit.point);
             dots.Add(Vector3.Dot(hit.point - raySource.position, raySource.forward));
@@ -160,7 +162,7 @@ public class Interactor : MonoBehaviour
     public bool Select()
     {
         if (interactionIndex == -1) return false;
-        if (interactables.Count == 0) return false;
+        if (interactables.Count == 0) return false; 
         var interacted = false;
         var interactable = interactables[interactionIndex];
         if (interactable is IInteractableWithPlayerAndItem interactableWithPlayerAndItem)
