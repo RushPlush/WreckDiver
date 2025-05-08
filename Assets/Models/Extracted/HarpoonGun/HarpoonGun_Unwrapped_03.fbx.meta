@@ -1,9 +1,69 @@
 fileFormatVersion: 2
-guid: e08f3aa4def8b054c9e973e556624703
+guid: 9f9cb849b36a75a489d3ad4b4beab964
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BigScrews
+    second: {fileID: 2100000, guid: db64b43d98421494999e15842f8f529b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Brass
+    second: {fileID: 2100000, guid: d779da7f4120232439170f2cfe66b6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Canister
+    second: {fileID: 2100000, guid: d346b58473d30c44a9faeff2e4ccac18, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GunMetal
+    second: {fileID: 2100000, guid: 1292efdbb71c7564ba8556c4edf009b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Indicator
+    second: {fileID: 2100000, guid: 6de73a063eb0127449656b382da11479, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Line
+    second: {fileID: 2100000, guid: cd068978646021445a9379028986763d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PressureGauge
+    second: {fileID: 2100000, guid: c14cc83c4963117498eeee3087021275, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rifle_stock
+    second: {fileID: 2100000, guid: e7f0c957c8ff80a4d865305a8fea55d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ShoulderPad
+    second: {fileID: 2100000, guid: a0ec47ff3a32e4b4188ee572145b21a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SmallScrews
+    second: {fileID: 2100000, guid: 75d9e38dcaef3e5499403efa5127f6b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tubes
+    second: {fileID: 2100000, guid: 3e57aed9ae1db65468b5c675cb2f8446, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: UI
+    second: {fileID: 2100000, guid: 7a2875ff9708c224e8cc6d26c4599e33, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

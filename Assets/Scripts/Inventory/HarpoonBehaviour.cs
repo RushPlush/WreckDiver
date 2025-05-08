@@ -1,6 +1,7 @@
 using System.Linq;
 using Inventory;
 using UnityEngine;
+using UnityEngine.Android;
 using UnityEngine.InputSystem;
 
 public class HarpoonBehaviour : MonoBehaviour, IItem
@@ -21,6 +22,8 @@ public class HarpoonBehaviour : MonoBehaviour, IItem
     private ItemManager itemManager;
     int lastShotIndex = -1;
     bool skippedLastShot = false;
+    private bool tethered = false;
+    [SerializeField] private float maxTetherLength = 30f;
 
     private void Awake()
     {
@@ -72,6 +75,7 @@ public class HarpoonBehaviour : MonoBehaviour, IItem
                 lastShotIndex = i;
                 harpoonParticles[i].Play();
                 skippedLastShot = false;
+                tethered = true;
                 return;
             }
             // todo what happens when it can't shoot
@@ -115,6 +119,9 @@ public class HarpoonBehaviour : MonoBehaviour, IItem
     public void SinglePull()
     {
         if (harpoonInstances[lastShotIndex] == null) return; //todo what happens when it can't pull (when harpoon is not instanced)
+        if (harpoonScripts[lastShotIndex] == null) return;
+        if (!tethered) return;
+        if (harpoonScripts[lastShotIndex].isHarpoonActive) return;
         if (pullableScripts[lastShotIndex] != null)
         {
             pullableScripts[lastShotIndex].Pull(playerPullable);
@@ -210,10 +217,21 @@ public class HarpoonBehaviour : MonoBehaviour, IItem
             lineRender.SetPosition(0, lineRender.transform.position);
             lineRender.SetPosition(1, lineRender.transform.position);
         }
+        if (!tethered) return;
         if(lastShotIndex == -1) return;
         if(harpoonsExists[lastShotIndex] == false) return;
         //lineRenderers[lastShotIndex].SetPosition(0, lineRenderers[lastShotIndex].transform.position);
-        lineRenderers[lastShotIndex].SetPosition(1,harpoonInstances[lastShotIndex].transform.position);
+        var connectionPoint = harpoonScripts[lastShotIndex].connectionPoint.transform.position;
+        var distance = Vector3.Distance(connectionPoint, lineRenderers[lastShotIndex].transform.position);
+        if(distance > maxTetherLength)
+        {
+            tethered = false;
+            //todo snap sound effect
+        }
+        else
+        {
+            lineRenderers[lastShotIndex].SetPosition(1, connectionPoint);
+        }
     }
     public void DestroyHarpoon(int index)
     {
