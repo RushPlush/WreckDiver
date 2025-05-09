@@ -16,6 +16,8 @@ public class FloatCapsule : MonoBehaviour
     [SerializeField] private float rideSpringDampener = 10f;
     [SerializeField] private float rideSpringStrength = 5f;
 
+    [SerializeField] private float maxWalkAngle = 45f;
+    
     [Header("Gravity")]
     [SerializeField] private float extraGravity = 20f;
 
@@ -36,14 +38,14 @@ public class FloatCapsule : MonoBehaviour
     private float sustainJumpTime = .3f;
     private float sustainJumpTimer = 0;
     private bool canSustain;
-
+    
+    
     [SerializeField]
     [Tooltip("The delay wherein the player can't jump again. This prevents the player from being able to get multiple jumps in a row before leaving the grounded state. (Jumping higher than they're supposed to)")]
     private float jumpDelay = 0.3f;
     private float jumpTimer;
     [FormerlySerializedAs("jumpAble")] public bool canJump = true;
-
-    [FormerlySerializedAs("grounded")]
+    
     [Header("Ground Check")]
     public bool isGrounded = true;
 
@@ -52,6 +54,12 @@ public class FloatCapsule : MonoBehaviour
     public bool coyoteTime = true;
     [SerializeField] private float coyoteDelay = 0.2f;
     private float coyoteTimer;
+    
+    [Header("Misc")]
+    [SerializeField] private bool debug = false;
+    [SerializeField] private ParticleSystem walkParticles;
+    [SerializeField] private ParticleSystem jumpParticles;
+    [SerializeField] private ParticleSystem landParticles;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -98,6 +106,26 @@ public class FloatCapsule : MonoBehaviour
                 springForce = 0; // Here to avoid the spring from stopping the jump. resulting in inconsistent jumps.
             }
             rb.AddForce(rayDir * springForce);
+            
+            walkParticles.transform.position = hit.point;
+            if(isGrounded)
+            {
+                walkParticles.Play();
+                walkParticles.emission.SetBurst(0, new ParticleSystem.Burst(0, rb.linearVelocity.magnitude * 10f));
+            }
+            else
+            {
+                walkParticles.Stop();
+            }
+            
+            var normal = hit.normal;
+            var angle = Vector3.Angle(normal, Vector3.up);
+            if (angle > maxWalkAngle)
+            {
+                rb.AddForce(Vector3.down * extraGravity, ForceMode.Acceleration);
+                isGrounded = false;
+            }
+            
         }
         else
         {

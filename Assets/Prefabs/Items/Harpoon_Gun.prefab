@@ -2762,6 +2762,7 @@ MonoBehaviour:
   lineRenderers:
   - {fileID: 3523239392233688428}
   - {fileID: 9145286255804273743}
+  maxTetherLength: 75
 --- !u!1 &9202561765140549857
 GameObject:
   m_ObjectHideFlags: 0
@@ -2902,7 +2903,6 @@ MonoBehaviour:
     m_Bits: 0
   speed: 10
   initialScale: {x: 0, y: 0, z: 0}
-  maxTetherLength: 30
 --- !u!1001 &1402450402356592464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3133,7 +3133,6 @@ MonoBehaviour:
     m_Bits: 0
   speed: 10
   initialScale: {x: 0, y: 0, z: 0}
-  maxTetherLength: 30
 --- !u!1001 &6650169336811670712
 PrefabInstance:
   m_ObjectHideFlags: 0

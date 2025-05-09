@@ -3,7 +3,32 @@ guid: aedefdcbffeeda94892be9b15eb1cf99
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Big screw
+    second: {fileID: 2100000, guid: 8e3021ad73e5a6c40a26453052345546, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GOLDEN
+    second: {fileID: 2100000, guid: f1c4658749282084a86ba4cd00fef67e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: 4d1d108c7764f9d49b1ea80c7d0c1214, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: small screws
+    second: {fileID: 2100000, guid: f0d0505ce25a7f547924fd52b0b0c531, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wood
+    second: {fileID: 2100000, guid: 5f17a0698813c4545956563d74064c7f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

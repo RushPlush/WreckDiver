@@ -1,13 +1,14 @@
+using System;
 using UnityEngine;
 
 public class Harpoon : MonoBehaviour
 {
     private int indexValue;
-    private bool isHarpoonActive = false;
+    public bool isHarpoonActive { get; private set; } = false;
     [SerializeField] private LayerMask afterImpactLayer;
     [SerializeField] private float speed = 10f;
     [SerializeField] private Vector3 initialScale;
-    [SerializeField] private float maxTetherLength = 30f;
+    public GameObject connectionPoint { get; private set; }
     public bool canPull { get; private set; } = true;
     Rigidbody rb;
     HarpoonBehaviour harpoonBehaviour;
@@ -20,6 +21,11 @@ public class Harpoon : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         particleSystem = GetComponentInChildren<ParticleSystem>();
         transform.localScale = initialScale;
+    }
+
+    private void Start()
+    {
+        connectionPoint = transform.GetChild(1).gameObject;
     }
 
     public void SetHarpoonBehaviour(HarpoonBehaviour harpoonBehaviour)
