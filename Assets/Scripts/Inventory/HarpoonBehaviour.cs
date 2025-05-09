@@ -203,6 +203,7 @@ public class HarpoonBehaviour : MonoBehaviour, IItem
                 return;
             }
             //todo what happens when it can't reload
+            itemManager.inventorySystem.AddItem(harpoonItem, 1);
         }
     }
 
