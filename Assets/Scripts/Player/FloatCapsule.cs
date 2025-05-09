@@ -36,7 +36,8 @@ public class FloatCapsule : MonoBehaviour
     private float sustainJumpTime = .3f;
     private float sustainJumpTimer = 0;
     private bool canSustain;
-
+    
+    [SerializeField] private float maxWalkAngle = 45f;
     [SerializeField]
     [Tooltip("The delay wherein the player can't jump again. This prevents the player from being able to get multiple jumps in a row before leaving the grounded state. (Jumping higher than they're supposed to)")]
     private float jumpDelay = 0.3f;
@@ -98,6 +99,15 @@ public class FloatCapsule : MonoBehaviour
                 springForce = 0; // Here to avoid the spring from stopping the jump. resulting in inconsistent jumps.
             }
             rb.AddForce(rayDir * springForce);
+            
+            var normal = hit.normal;
+            var angle = Vector3.Angle(normal, Vector3.up);
+            if (angle > maxWalkAngle)
+            {
+                rb.AddForce(Vector3.down * extraGravity, ForceMode.Acceleration);
+                isGrounded = false;
+            }
+            
         }
         else
         {

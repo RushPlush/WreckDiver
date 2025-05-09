@@ -223,7 +223,7 @@ public class HarpoonBehaviour : MonoBehaviour, IItem
         //lineRenderers[lastShotIndex].SetPosition(0, lineRenderers[lastShotIndex].transform.position);
         var connectionPoint = harpoonScripts[lastShotIndex].connectionPoint.transform.position;
         var distance = Vector3.Distance(connectionPoint, lineRenderers[lastShotIndex].transform.position);
-        if(distance > maxTetherLength)
+        if(distance > maxTetherLength || !harpoonScripts[lastShotIndex].canPull)
         {
             tethered = false;
             //todo snap sound effect
