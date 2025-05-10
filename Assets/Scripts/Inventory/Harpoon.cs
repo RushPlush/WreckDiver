@@ -46,6 +46,7 @@ public class Harpoon : MonoBehaviour
         rb.AddForce(-transform.up * speed, ForceMode.Impulse);
         rb.interpolation = RigidbodyInterpolation.Interpolate;
         particleSystem.Play();
+        transform.SetParent(null);
     }
 
     private void FixedUpdate()
