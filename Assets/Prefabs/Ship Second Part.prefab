@@ -41060,6 +41060,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7432962434334565631}
     m_Modifications:
+    - target: {fileID: 855918006770671205, guid: b12d388ee154d094683e6b889ad6bdb0, type: 3}
+      propertyPath: m_SelectedEditorRenderState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 953599256849621233, guid: b12d388ee154d094683e6b889ad6bdb0, type: 3}
+      propertyPath: m_SelectedEditorRenderState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2132821909791835141, guid: b12d388ee154d094683e6b889ad6bdb0, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 2544328909849790088, guid: 16b529dfbba5a16488891798a8f6acf9, type: 3}
+    - target: {fileID: 3233668833961161854, guid: b12d388ee154d094683e6b889ad6bdb0, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 2544328909849790088, guid: 16b529dfbba5a16488891798a8f6acf9, type: 3}
+    - target: {fileID: 4342279183452901514, guid: b12d388ee154d094683e6b889ad6bdb0, type: 3}
+      propertyPath: m_SelectedEditorRenderState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5010086923083034546, guid: b12d388ee154d094683e6b889ad6bdb0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.925
+      objectReference: {fileID: 0}
+    - target: {fileID: 5010086923083034546, guid: b12d388ee154d094683e6b889ad6bdb0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.253
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810064415609346672, guid: b12d388ee154d094683e6b889ad6bdb0, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -9080707191253835533, guid: ac48ce920097be344a6650655dcc9ed9, type: 3}
     - target: {fileID: 6908495877044075620, guid: 2649a6618045dc74490a3c778b0d0588, type: 3}
       propertyPath: m_Name
       value: stair case middle (3)
@@ -41116,38 +41148,6 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 855918006770671205, guid: b12d388ee154d094683e6b889ad6bdb0, type: 3}
-      propertyPath: m_SelectedEditorRenderState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 953599256849621233, guid: b12d388ee154d094683e6b889ad6bdb0, type: 3}
-      propertyPath: m_SelectedEditorRenderState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2132821909791835141, guid: b12d388ee154d094683e6b889ad6bdb0, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 2544328909849790088, guid: 16b529dfbba5a16488891798a8f6acf9, type: 3}
-    - target: {fileID: 3233668833961161854, guid: b12d388ee154d094683e6b889ad6bdb0, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 2544328909849790088, guid: 16b529dfbba5a16488891798a8f6acf9, type: 3}
-    - target: {fileID: 4342279183452901514, guid: b12d388ee154d094683e6b889ad6bdb0, type: 3}
-      propertyPath: m_SelectedEditorRenderState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5010086923083034546, guid: b12d388ee154d094683e6b889ad6bdb0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 6.925
-      objectReference: {fileID: 0}
-    - target: {fileID: 5010086923083034546, guid: b12d388ee154d094683e6b889ad6bdb0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.253
-      objectReference: {fileID: 0}
-    - target: {fileID: 8810064415609346672, guid: b12d388ee154d094683e6b889ad6bdb0, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: -9080707191253835533, guid: ac48ce920097be344a6650655dcc9ed9, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
