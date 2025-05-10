@@ -1522,6 +1522,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3136859569213516485, guid: 38a554c7960ad4f4587558013c0704f8, type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3136859569213516485, guid: 38a554c7960ad4f4587558013c0704f8, type: 3}
       propertyPath: ShapeModule.m_Scale.x
       value: 2.92
       objectReference: {fileID: 0}
@@ -1682,6 +1686,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3136859569213516485, guid: 38a554c7960ad4f4587558013c0704f8, type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9209352985413649809, guid: 38a554c7960ad4f4587558013c0704f8, type: 3}
       propertyPath: m_Name
       value: BubbleOrigin
@@ -1834,6 +1842,10 @@ PrefabInstance:
     - target: {fileID: 539748819886527478, guid: 38a554c7960ad4f4587558013c0704f8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3136859569213516485, guid: 38a554c7960ad4f4587558013c0704f8, type: 3}
+      propertyPath: moveWithTransform
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3136859569213516485, guid: 38a554c7960ad4f4587558013c0704f8, type: 3}
       propertyPath: ShapeModule.m_Scale.x
