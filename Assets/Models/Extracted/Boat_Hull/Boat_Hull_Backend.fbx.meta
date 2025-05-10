@@ -1,9 +1,24 @@
 fileFormatVersion: 2
-guid: 4099630843162fc4aaf4a116f413bbf1
+guid: 34c47575fc7d3e64994ae1add44c4b9a
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boat
+    second: {fileID: 2100000, guid: 51fe65dfda80dcf4984d0854da8fd51f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: skorstein
+    second: {fileID: 2100000, guid: 2e4671ee97eb7b849a42ae3eea52b78d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wood
+    second: {fileID: 2100000, guid: 7d467ea10d0949a4c8758fca54779af9, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

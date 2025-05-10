@@ -1,9 +1,29 @@
 fileFormatVersion: 2
-guid: 08db25017efc6be468e54e8e049a80eb
+guid: 4099630843162fc4aaf4a116f413bbf1
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 82f6dd2bf941c6341af15252ff269c63, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: helm desk
+    second: {fileID: 2100000, guid: db985548d679c524fada9bc379487463, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: helm_wood_TXT
+    second: {fileID: 2100000, guid: 9775ec98132dc1148869d39111e2544a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: screws
+    second: {fileID: 2100000, guid: 9d3f1f2d9d33e5e45b04a58122c7f02c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
