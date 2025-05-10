@@ -1,9 +1,24 @@
 fileFormatVersion: 2
-guid: f369231c42e16a74f9070fd4089cc4b3
+guid: 08db25017efc6be468e54e8e049a80eb
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Forward_Backwards_disk
+    second: {fileID: 2100000, guid: 4c63d5c36bb7b174f93f096b60e66d6e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Throttle_TXT
+    second: {fileID: 2100000, guid: 2321c1dbae7eff94f89b5ee913ea6e34, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: screws
+    second: {fileID: 2100000, guid: 334320c7715f5f044bf57905cebfcfac, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: 08db25017efc6be468e54e8e049a80eb
+guid: f369231c42e16a74f9070fd4089cc4b3
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Industriel_vegg_plates
+    second: {fileID: 2100000, guid: 6dbc2a0d8d476374790df5ed93fa119c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: standardSurface1
+    second: {fileID: 2100000, guid: 1187540fdacf5974f8b58099748a8405, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
