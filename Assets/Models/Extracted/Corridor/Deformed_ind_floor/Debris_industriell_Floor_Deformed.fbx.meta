@@ -3,7 +3,22 @@ guid: 85bb425e91024f94092bf0bbe944fe26
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Industriel_gulv_list
+    second: {fileID: 2100000, guid: 20300f9e29ce2804aacade5fd03527a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Industriel_gulv_main
+    second: {fileID: 2100000, guid: 081a9152e3463ea40a85e1d43d7f89a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Industrielt_gulv_bolts
+    second: {fileID: 2100000, guid: 0fe40f7f66b396d4084c56d56046b697, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
