@@ -32,6 +32,7 @@ public class Helmet : MonoBehaviour
     private void LateUpdate()
     {
         float angle = Mathf.Abs(Quaternion.Angle(cameraTrans.rotation, transform.rotation));
+        transform.localPosition = playerTrans.localPosition + offset * playerTrans.localScale.x;
         if (angle > deadZoneSize || Movement.magnitude > movementMagnitudeDeadZone)
         {
             var curRotation = new Vector4(transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);
@@ -43,8 +44,7 @@ public class Helmet : MonoBehaviour
             //transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(lookPoint.position - transform.position, transform.up), springForce *
             //    (angle - innerDeadZoneSize) * Time.deltaTime);
         }
-
-        if (angle < innerDeadZoneSize)
+        else if (angle < innerDeadZoneSize)
         {
 
         }
@@ -54,6 +54,6 @@ public class Helmet : MonoBehaviour
                 (angle - innerDeadZoneSize) / 4 * Time.deltaTime);
         }
 
-        transform.localPosition = playerTrans.localPosition + offset * playerTrans.localScale.x;
+        
     }
 }
