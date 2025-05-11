@@ -21309,26 +21309,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2153625303741158512}
     m_Modifications:
-    - target: {fileID: 611608900133430739, guid: 7991e71f77d83bf4cb8890745295d335, type: 3}
-      propertyPath: m_SelectedEditorRenderState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3082224328466751379, guid: 7991e71f77d83bf4cb8890745295d335, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3082224328466751379, guid: 7991e71f77d83bf4cb8890745295d335, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5611606100413608947, guid: 7991e71f77d83bf4cb8890745295d335, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: -9080707191253835533, guid: ac48ce920097be344a6650655dcc9ed9, type: 3}
-    - target: {fileID: 7374620435304491936, guid: 7991e71f77d83bf4cb8890745295d335, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: -7083175907161430995, guid: 69a231ae0d020b649be8fe08e28f91c0, type: 3}
     - target: {fileID: 3704728290266238819, guid: 2c43d0c033d9eec42a08008fb6cc3049, type: 3}
       propertyPath: m_Name
       value: stair case top
@@ -21389,6 +21369,26 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 611608900133430739, guid: 7991e71f77d83bf4cb8890745295d335, type: 3}
+      propertyPath: m_SelectedEditorRenderState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3082224328466751379, guid: 7991e71f77d83bf4cb8890745295d335, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3082224328466751379, guid: 7991e71f77d83bf4cb8890745295d335, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5611606100413608947, guid: 7991e71f77d83bf4cb8890745295d335, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -9080707191253835533, guid: ac48ce920097be344a6650655dcc9ed9, type: 3}
+    - target: {fileID: 7374620435304491936, guid: 7991e71f77d83bf4cb8890745295d335, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -7083175907161430995, guid: 69a231ae0d020b649be8fe08e28f91c0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 3146818389429887639, guid: 7991e71f77d83bf4cb8890745295d335, type: 3}
@@ -25257,6 +25257,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2153625303741158512}
     m_Modifications:
+    - target: {fileID: 3544459483788150567, guid: 2649a6618045dc74490a3c778b0d0588, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544459483788150567, guid: 2649a6618045dc74490a3c778b0d0588, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544459483788150567, guid: 2649a6618045dc74490a3c778b0d0588, type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4833195011094854635, guid: 2649a6618045dc74490a3c778b0d0588, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4833195011094854635, guid: 2649a6618045dc74490a3c778b0d0588, type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5199778095354367476, guid: 2649a6618045dc74490a3c778b0d0588, type: 3}
       propertyPath: m_Convex
       value: 1
@@ -25264,6 +25284,10 @@ PrefabInstance:
     - target: {fileID: 6908495877044075620, guid: 2649a6618045dc74490a3c778b0d0588, type: 3}
       propertyPath: m_Name
       value: stair case middle (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8145419700536426887, guid: 2649a6618045dc74490a3c778b0d0588, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8226121565447099680, guid: 2649a6618045dc74490a3c778b0d0588, type: 3}
       propertyPath: m_LocalScale.x
@@ -25341,7 +25365,9 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: -7083175907161430995, guid: 69a231ae0d020b649be8fe08e28f91c0, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3712316864678996229, guid: 2649a6618045dc74490a3c778b0d0588, type: 3}
+    - {fileID: 8145419700536426887, guid: 2649a6618045dc74490a3c778b0d0588, type: 3}
     m_RemovedGameObjects:
     - {fileID: 3146818389429887639, guid: 7991e71f77d83bf4cb8890745295d335, type: 3}
     - {fileID: 7878576608611731034, guid: 7991e71f77d83bf4cb8890745295d335, type: 3}
@@ -26102,26 +26128,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2153625303741158512}
     m_Modifications:
-    - target: {fileID: 611608900133430739, guid: 7991e71f77d83bf4cb8890745295d335, type: 3}
-      propertyPath: m_SelectedEditorRenderState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3082224328466751379, guid: 7991e71f77d83bf4cb8890745295d335, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3082224328466751379, guid: 7991e71f77d83bf4cb8890745295d335, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5611606100413608947, guid: 7991e71f77d83bf4cb8890745295d335, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: -9080707191253835533, guid: ac48ce920097be344a6650655dcc9ed9, type: 3}
-    - target: {fileID: 7374620435304491936, guid: 7991e71f77d83bf4cb8890745295d335, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: -7083175907161430995, guid: 69a231ae0d020b649be8fe08e28f91c0, type: 3}
     - target: {fileID: 3704728290266238819, guid: 2c43d0c033d9eec42a08008fb6cc3049, type: 3}
       propertyPath: m_Name
       value: stair case top (1)
@@ -26182,6 +26188,26 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 611608900133430739, guid: 7991e71f77d83bf4cb8890745295d335, type: 3}
+      propertyPath: m_SelectedEditorRenderState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3082224328466751379, guid: 7991e71f77d83bf4cb8890745295d335, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3082224328466751379, guid: 7991e71f77d83bf4cb8890745295d335, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5611606100413608947, guid: 7991e71f77d83bf4cb8890745295d335, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -9080707191253835533, guid: ac48ce920097be344a6650655dcc9ed9, type: 3}
+    - target: {fileID: 7374620435304491936, guid: 7991e71f77d83bf4cb8890745295d335, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -7083175907161430995, guid: 69a231ae0d020b649be8fe08e28f91c0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 3146818389429887639, guid: 7991e71f77d83bf4cb8890745295d335, type: 3}
