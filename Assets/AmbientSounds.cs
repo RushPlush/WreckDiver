@@ -33,7 +33,8 @@ public class AmbientSounds : MonoBehaviour
             Debug.LogWarning("No ambient sounds set in the inspector");
             return;
         }
-        PlayRandomAmbientOverlaySound();
+        timerBetweenSounds = UnityEngine.Random.Range(ambientMinTimeBetweenSounds.x, ambientMinTimeBetweenSounds.y);
+        //PlayRandomAmbientOverlaySound();
     }
     void PlayRandomAmbientOverlaySound()
     {
@@ -67,11 +68,14 @@ public class AmbientSounds : MonoBehaviour
     private void Update()
     {
         timerBetweenSounds -= Time.deltaTime;
+        for (int i = 0; i < ambientSoundsCooldownTimer.Count; i++)
+        {
+            ambientSoundsCooldownTimer[i] -= Time.deltaTime;
+        }
         for (int i = UnityEngine.Random.Range(0,ambientSoundsCooldown.Count-1); i < ambientSoundsCooldownTimer.Count; i++)
         {
             if (ambientSoundsCooldownTimer[i] > 0)
             {
-                ambientSoundsCooldownTimer[i] -= Time.deltaTime;
             }
             else
             {

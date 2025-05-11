@@ -76,7 +76,7 @@ public class HarpoonBehaviour : MonoBehaviour, IItem
                 harpoonParticles[i].Play();
                 skippedLastShot = false;
                 tethered = true;
-                return;
+                break;
             }
             // todo what happens when it can't shoot
         }
