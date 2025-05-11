@@ -51,8 +51,9 @@ public class Movement : MonoBehaviour
         Vector3 velocity = transform.InverseTransformDirection(rb.linearVelocity);
         float forceX = -drag * velocity.x;
         float forceZ = -drag * velocity.z;
+        float forceY = -drag * velocity.y;
 
-        rb.AddRelativeForce(new Vector3(forceX, 0, forceZ));
+        rb.AddRelativeForce(new Vector3(forceX, forceY, forceZ));
     }
 
     public void Move(Vector2 moveVector, bool run)

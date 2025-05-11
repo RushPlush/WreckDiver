@@ -41,6 +41,7 @@ public class FlareGunBehaviour : MonoBehaviour, IItem
         if(!reloaded) return;
         flareParticles.Play();
         reloaded = false;
+        itemManager.inventorySystem.RemoveItem(flareItem); //incase player swaps items without firing first, it stops item from being used regardless
     }
 
     public void SecondaryUse(InputAction.CallbackContext context)
@@ -52,7 +53,6 @@ public class FlareGunBehaviour : MonoBehaviour, IItem
     {
         if (!itemManager.inventorySystem.HasItem(flareItem) || !context.started) return; //todo what happens when it can't reload
         if (reloaded) return;
-        itemManager.inventorySystem.RemoveItem(flareItem);
         Reload();
     }
     public void Reload()
