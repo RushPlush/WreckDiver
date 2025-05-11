@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: 4099630843162fc4aaf4a116f413bbf1
+guid: 25e8829db1041144095f3ca7d4044504
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Koridor_vegg_main
+    second: {fileID: 2100000, guid: 51767617bb4150749b081e073f49f3a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Koridor_vegg_plates
+    second: {fileID: 2100000, guid: 4be33cab9a03849449855b1511e0acf8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

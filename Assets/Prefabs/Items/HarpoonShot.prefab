@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 2472583666266422194}
   - component: {fileID: 6202150551631455001}
   - component: {fileID: -1049033148363940382}
+  - component: {fileID: 212172007322535586}
   m_Layer: 8
   m_Name: HarpoonShot
   m_TagString: Harpoon
@@ -223,6 +224,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &212172007322535586
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8301924901511962824}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0005, y: 0.004015136, z: 0.0005}
+  m_Center: {x: 0, y: -0.0003770066, z: 2.552787e-19}
 --- !u!1001 &4540360423907334896
 PrefabInstance:
   m_ObjectHideFlags: 0
