@@ -3556,6 +3556,7 @@ GameObject:
   - component: {fileID: 1123732188470349868}
   - component: {fileID: 8070593285787706554}
   - component: {fileID: 3148332309311789348}
+  - component: {fileID: 3741079900763610825}
   m_Layer: 0
   m_Name: industriel_vegg (10)
   m_TagString: Untagged
@@ -3633,6 +3634,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3741079900763610825
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772579332400173717}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3153368050252774009, guid: 62b4355e20ff2104da0361dec37b44fe, type: 3}
 --- !u!1 &788241381990154318
 GameObject:
   m_ObjectHideFlags: 0
@@ -4577,6 +4600,7 @@ GameObject:
   - component: {fileID: 832838741949108072}
   - component: {fileID: 6753957948204993507}
   - component: {fileID: 381467933017616727}
+  - component: {fileID: 1174711485046104720}
   m_Layer: 0
   m_Name: industriel_vegg
   m_TagString: Untagged
@@ -4654,6 +4678,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1174711485046104720
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007819346677705271}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3153368050252774009, guid: 62b4355e20ff2104da0361dec37b44fe, type: 3}
 --- !u!1 &1023707913291196200
 GameObject:
   m_ObjectHideFlags: 0
@@ -7046,6 +7092,7 @@ GameObject:
   - component: {fileID: 5301689887023032621}
   - component: {fileID: 8158817928873494145}
   - component: {fileID: 558687617430215225}
+  - component: {fileID: 1713924753845944079}
   m_Layer: 0
   m_Name: industriel_vegg (16)
   m_TagString: Untagged
@@ -7123,6 +7170,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1713924753845944079
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587461636524336040}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3153368050252774009, guid: 62b4355e20ff2104da0361dec37b44fe, type: 3}
 --- !u!1 &1596090725343516183
 GameObject:
   m_ObjectHideFlags: 0
@@ -7134,6 +7203,7 @@ GameObject:
   - component: {fileID: 6941875247758817040}
   - component: {fileID: 4367988257637014087}
   - component: {fileID: 3241425263015951522}
+  - component: {fileID: 1530848458483547662}
   m_Layer: 0
   m_Name: industriel_vegg (1)
   m_TagString: Untagged
@@ -7211,6 +7281,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1530848458483547662
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596090725343516183}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3153368050252774009, guid: 62b4355e20ff2104da0361dec37b44fe, type: 3}
 --- !u!1 &1630975028305220551
 GameObject:
   m_ObjectHideFlags: 0
@@ -15824,6 +15916,7 @@ GameObject:
   - component: {fileID: 7606660364072360256}
   - component: {fileID: 929788609925359757}
   - component: {fileID: 7602018661022635591}
+  - component: {fileID: 1609425697660929131}
   m_Layer: 0
   m_Name: industriel_vegg (4)
   m_TagString: Untagged
@@ -15901,6 +15994,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1609425697660929131
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4045772101406137098}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3153368050252774009, guid: 62b4355e20ff2104da0361dec37b44fe, type: 3}
 --- !u!1 &4069824910215330316
 GameObject:
   m_ObjectHideFlags: 0
@@ -17129,6 +17244,7 @@ GameObject:
   - component: {fileID: 187495734614862973}
   - component: {fileID: 3534451633477596242}
   - component: {fileID: 1981682841416294466}
+  - component: {fileID: 282961556994768401}
   m_Layer: 0
   m_Name: industriel_vegg (11)
   m_TagString: Untagged
@@ -17206,6 +17322,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &282961556994768401
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4279275395029401699}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3153368050252774009, guid: 62b4355e20ff2104da0361dec37b44fe, type: 3}
 --- !u!1 &4318082555009241760
 GameObject:
   m_ObjectHideFlags: 0
@@ -21815,6 +21953,7 @@ GameObject:
   - component: {fileID: 6584804530800486587}
   - component: {fileID: 8823697329512137647}
   - component: {fileID: 8606682740688994623}
+  - component: {fileID: 8204925760364351853}
   m_Layer: 0
   m_Name: industriel_vegg (3)
   m_TagString: Untagged
@@ -21892,6 +22031,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8204925760364351853
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5607346054612224715}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3153368050252774009, guid: 62b4355e20ff2104da0361dec37b44fe, type: 3}
 --- !u!1 &5623298362908126833
 GameObject:
   m_ObjectHideFlags: 0
@@ -22898,6 +23059,7 @@ GameObject:
   - component: {fileID: 7558248400471512039}
   - component: {fileID: 4772523152736304806}
   - component: {fileID: 5464184585532442520}
+  - component: {fileID: 5925023072400469838}
   m_Layer: 0
   m_Name: industriel_vegg (18)
   m_TagString: Untagged
@@ -22914,7 +23076,7 @@ Transform:
   m_GameObject: {fileID: 5880904285109582446}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.0508, y: -0.092621356, z: -0.1041}
+  m_LocalPosition: {x: 0.0508, y: -0.092621356, z: -0.1043}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22975,6 +23137,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5925023072400469838
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5880904285109582446}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3153368050252774009, guid: 62b4355e20ff2104da0361dec37b44fe, type: 3}
 --- !u!1 &5892046116412555589
 GameObject:
   m_ObjectHideFlags: 0
@@ -23804,6 +23988,7 @@ GameObject:
   - component: {fileID: 3175493062351162100}
   - component: {fileID: 7356922117435401287}
   - component: {fileID: 5274328769214636778}
+  - component: {fileID: 5699280624163502368}
   m_Layer: 0
   m_Name: industriel_vegg (14)
   m_TagString: Untagged
@@ -23881,6 +24066,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5699280624163502368
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6265088440837516415}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3153368050252774009, guid: 62b4355e20ff2104da0361dec37b44fe, type: 3}
 --- !u!1 &6278300557074693123
 GameObject:
   m_ObjectHideFlags: 0
@@ -25584,6 +25791,7 @@ GameObject:
   - component: {fileID: 6467744393313767022}
   - component: {fileID: 8810765660400171762}
   - component: {fileID: 183839170835808321}
+  - component: {fileID: 791952556209541098}
   m_Layer: 0
   m_Name: industriel_vegg (19)
   m_TagString: Untagged
@@ -25661,6 +25869,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &791952556209541098
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6599612210171770555}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3153368050252774009, guid: 62b4355e20ff2104da0361dec37b44fe, type: 3}
 --- !u!1 &6624626895659726225
 GameObject:
   m_ObjectHideFlags: 0
@@ -27641,6 +27871,7 @@ GameObject:
   - component: {fileID: 3373602389442765430}
   - component: {fileID: 3551636163472630815}
   - component: {fileID: 5965133222803392434}
+  - component: {fileID: 5764971343965689443}
   m_Layer: 0
   m_Name: industriel_vegg (5)
   m_TagString: Untagged
@@ -27718,6 +27949,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5764971343965689443
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7066958595769245707}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3153368050252774009, guid: 62b4355e20ff2104da0361dec37b44fe, type: 3}
 --- !u!1 &7075534714836619223
 GameObject:
   m_ObjectHideFlags: 0
@@ -28894,6 +29147,7 @@ GameObject:
   - component: {fileID: 5883477541148411372}
   - component: {fileID: 5174313819457810617}
   - component: {fileID: 7968510160544166238}
+  - component: {fileID: 2275638805548253883}
   m_Layer: 0
   m_Name: industriel_vegg (13)
   m_TagString: Untagged
@@ -28971,6 +29225,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2275638805548253883
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7236970224883028555}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3153368050252774009, guid: 62b4355e20ff2104da0361dec37b44fe, type: 3}
 --- !u!1 &7238238889734517138
 GameObject:
   m_ObjectHideFlags: 0
@@ -31532,6 +31808,7 @@ GameObject:
   - component: {fileID: 4560240472703099553}
   - component: {fileID: 4340504814760322515}
   - component: {fileID: 4270181762856026259}
+  - component: {fileID: 3078972873191390767}
   m_Layer: 0
   m_Name: industriel_vegg (12)
   m_TagString: Untagged
@@ -31609,6 +31886,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3078972873191390767
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7801692435310414961}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3153368050252774009, guid: 62b4355e20ff2104da0361dec37b44fe, type: 3}
 --- !u!1 &7827933924243443032
 GameObject:
   m_ObjectHideFlags: 0
@@ -34039,6 +34338,7 @@ GameObject:
   - component: {fileID: 1644755198541377205}
   - component: {fileID: 6829331421143895512}
   - component: {fileID: 1021279098055308315}
+  - component: {fileID: 8067426888037201680}
   m_Layer: 0
   m_Name: industriel_vegg (15)
   m_TagString: Untagged
@@ -34116,6 +34416,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8067426888037201680
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8328651573267387944}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3153368050252774009, guid: 62b4355e20ff2104da0361dec37b44fe, type: 3}
 --- !u!1 &8328692949855428997
 GameObject:
   m_ObjectHideFlags: 0
@@ -34728,6 +35050,7 @@ GameObject:
   - component: {fileID: 763833196943227334}
   - component: {fileID: 4907482313796799123}
   - component: {fileID: 1220869231255633993}
+  - component: {fileID: 5978779154352075991}
   m_Layer: 0
   m_Name: industriel_vegg (17)
   m_TagString: Untagged
@@ -34805,6 +35128,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5978779154352075991
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8492190807522380893}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3153368050252774009, guid: 62b4355e20ff2104da0361dec37b44fe, type: 3}
 --- !u!1 &8516704326777539935
 GameObject:
   m_ObjectHideFlags: 0
@@ -36748,6 +37093,7 @@ GameObject:
   - component: {fileID: 3084594945583535819}
   - component: {fileID: 8281511409548565245}
   - component: {fileID: 3934881287638406968}
+  - component: {fileID: 6981259518527389596}
   m_Layer: 0
   m_Name: industriel_vegg (2)
   m_TagString: Untagged
@@ -36825,6 +37171,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6981259518527389596
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8981068783175917767}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3153368050252774009, guid: 62b4355e20ff2104da0361dec37b44fe, type: 3}
 --- !u!1 &8993221438804442472
 GameObject:
   m_ObjectHideFlags: 0
