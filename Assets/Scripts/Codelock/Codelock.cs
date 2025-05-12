@@ -22,6 +22,7 @@ public class Codelock : MonoBehaviour, IInteractableWithPlayer
     private WreckDiverInputActions.InteractActions interact;
     private Outline outline;
     private (Vector3 position, Vector3 eulerAngle) oldCameraOffsets;
+    private (Vector3 localPosition, Vector3 eulerAngle) oldCameraOffsetsLocal;
     private (Vector3 position, Vector3 eulerAngle) cameraOffset = (new(-0.175f, 0, -0.5f), new (0, 15, 0));
 
     private MappingHandler mappingHandler;
@@ -157,6 +158,7 @@ public class Codelock : MonoBehaviour, IInteractableWithPlayer
     {
         currentInteractor = player;
         player.GetComponent<PlayerController>().DisableMovement();
+        oldCameraOffsetsLocal.localPosition = Camera.main.transform.localPosition;
         oldCameraOffsets.position = Camera.main.transform.position;
         oldCameraOffsets.eulerAngle = Camera.main.transform.eulerAngles;
         Camera.main.GetComponentInChildren<Light>().enabled = false;
@@ -213,12 +215,12 @@ public class Codelock : MonoBehaviour, IInteractableWithPlayer
         while (elapsedTime < 0.5f)
         {
             elapsedTime += Time.deltaTime;
-            Camera.main.transform.position = Vector3.Lerp(cameraOffset.position, oldCameraOffsets.position, elapsedTime / 0.5f);
+            Camera.main.transform.localPosition = Vector3.Lerp(oldCameraOffsets.position - cameraOffset.position, oldCameraOffsetsLocal.localPosition, elapsedTime / 0.5f);
             Camera.main.transform.rotation = Quaternion.Lerp(Quaternion.Euler(cameraOffset.eulerAngle), Quaternion.Euler(oldCameraOffsets.eulerAngle), elapsedTime / 0.5f);
             yield return new WaitForFixedUpdate();
         }
         elapsedTime = 0;
-        Camera.main.transform.position = oldCameraOffsets.position;
+        Camera.main.transform.localPosition = oldCameraOffsetsLocal.localPosition;
         Camera.main.transform.rotation = Quaternion.Euler(oldCameraOffsets.eulerAngle);
         interact.Disable();
         outline.enabled = true;
