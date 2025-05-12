@@ -10,7 +10,9 @@ public class DialogTrigger : MonoBehaviour
     private DialogSystem dialogSystem;
     [SerializeField] private DialogTrigger[] dependentTriggers;
     [SerializeField][Tooltip("If true, will only play if ANY dependent triggers have been played")]
-    private bool onlyPlayIfDependentPlayed = false;
+    private bool onlyPlayIfDependentPlayed = true;
+    [SerializeField][Tooltip("If true, will only play if ALL dependent triggers have been played")]
+    private bool onlyPlayIfAllDependentPlayed = false;
     [SerializeField][Tooltip("If true, will NOT play, only if ALL dependent triggers have been played")] 
     private bool onlyPlayIfDependentNotPlayed = false;
     private void Awake()
@@ -48,6 +50,10 @@ public class DialogTrigger : MonoBehaviour
                         return;
                     }
                     if (onlyPlayIfDependentNotPlayed && allPlayed)
+                    {
+                        return;
+                    }
+                    if(onlyPlayIfAllDependentPlayed && !allPlayed)
                     {
                         return;
                     }
