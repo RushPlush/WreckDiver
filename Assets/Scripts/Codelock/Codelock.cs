@@ -217,7 +217,7 @@ public class Codelock : MonoBehaviour, IInteractableWithPlayer
         while (elapsedTime < 0.5f)
         {
             elapsedTime += Time.deltaTime;
-            Camera.main.transform.localPosition = Vector3.Lerp(oldCameraOffsets.position - cameraOffset.position, oldCameraOffsetsLocal.localPosition, elapsedTime / 0.5f);
+            Camera.main.transform.localPosition = Vector3.Lerp(Camera.main.transform.localPosition, oldCameraOffsetsLocal.localPosition, elapsedTime / 0.5f);
             Camera.main.transform.rotation = Quaternion.Lerp(Quaternion.Euler(cameraOffset.eulerAngle), Quaternion.Euler(oldCameraOffsets.eulerAngle), elapsedTime / 0.5f);
             yield return new WaitForFixedUpdate();
         }
