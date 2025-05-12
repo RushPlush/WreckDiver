@@ -20,6 +20,7 @@ public class Movement : MonoBehaviour
     private float lastMoveTime;
     [SerializeField] private float hintDelay = 1;
 
+    public bool isActive = true;
     private void Awake()
     {
         cam = GetComponentInChildren<Camera>();
@@ -82,11 +83,15 @@ public class Movement : MonoBehaviour
 
     public void StopMoving()
     {
-        rb.isKinematic = true;
+        rb.constraints = RigidbodyConstraints.FreezeAll;
+        rb.linearVelocity = Vector3.zero;
+        isActive = true;
     }
 
     public void StartMoving()
     {
-        rb.isKinematic = false;
+        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+        rb.linearVelocity = Vector3.zero;
+        isActive = false;
     }
 }
