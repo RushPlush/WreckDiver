@@ -2740,6 +2740,50 @@ Transform:
   - {fileID: 7672645632622532139}
   m_Father: {fileID: 5819574374741147314}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &489779701081061488
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7588073018549657368}
+  - component: {fileID: 266902526609632992}
+  m_Layer: 30
+  m_Name: LookObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7588073018549657368
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489779701081061488}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0.7071068, w: 0}
+  m_LocalPosition: {x: 0.013296583, y: -0.11840112, z: 0.0000000011641533}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3012049510056035436}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 180}
+--- !u!114 &266902526609632992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489779701081061488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6165f094224c8fd439c53e2d36d9382c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &502064873467467146
 GameObject:
   m_ObjectHideFlags: 0
@@ -38793,6 +38837,7 @@ Transform:
   - {fileID: 4036950111092867046}
   - {fileID: 6822283533598163172}
   - {fileID: 1214170870990257780}
+  - {fileID: 7588073018549657368}
   m_Father: {fileID: 8287384988122952105}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!33 &3519158186798119044
@@ -38889,6 +38934,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   currentInteractor: {fileID: 0}
+  lookObject: {fileID: 489779701081061488}
 --- !u!114 &999294645734315534
 MonoBehaviour:
   m_ObjectHideFlags: 0
