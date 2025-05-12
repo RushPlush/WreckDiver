@@ -3,7 +3,37 @@ guid: c56f68e88de512748a4450c5df5aa70f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Back
+    second: {fileID: 2100000, guid: c4587aa2b0494b04095e1a71256bc09c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FootRest
+    second: {fileID: 2100000, guid: 97e4f9a9ddcd0ef4d9bb00e1393fb701, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leg
+    second: {fileID: 2100000, guid: a5f77fc3911a5ca47a135f84b8f5afd1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pillow
+    second: {fileID: 2100000, guid: 9f11f3d1c0f16974a9a148c99469bcc2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Seat
+    second: {fileID: 2100000, guid: fa02fe79f8458df45b2865b3ccc46195, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: foot
+    second: {fileID: 2100000, guid: 8477da6a4f8262f499ebbc83df2cc562, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
