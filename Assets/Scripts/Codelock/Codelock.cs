@@ -17,6 +17,7 @@ public class Codelock : MonoBehaviour, IInteractableWithPlayer
     [SerializeField] private GameObject[] codeObjects;
 
     [SerializeField] private GameObject currentInteractor;
+    [SerializeField] private GameObject lookObject;
 
     private WreckDiverInputActions diverInputActions;
     private WreckDiverInputActions.InteractActions interact;
@@ -37,7 +38,8 @@ public class Codelock : MonoBehaviour, IInteractableWithPlayer
 
         outline = GetComponent<Outline>();
         outline.enabled = false;
-        cameraOffset.position += transform.position;
+        cameraOffset.position = lookObject.transform.position;
+        cameraOffset.eulerAngle = lookObject.transform.rotation.eulerAngles;
     }
 
     private void InteractOnLeft(InputAction.CallbackContext obj)

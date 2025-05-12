@@ -83,7 +83,8 @@ public class RandomMovement : MonoBehaviour
     void Chase()
     {
         var reach = flee ? destPoint : player.transform.position;
-        reach.y /= 2;
+        Physics.Raycast(reach, Vector3.down, out var hit, 100, groundLayer);
+        reach.y = agent.height / 2 + hit.point.y;
         var navMeshPath = new NavMeshPath();
         agent.CalculatePath(reach, navMeshPath);
         if (navMeshPath.status is NavMeshPathStatus.PathInvalid or NavMeshPathStatus.PathPartial)
