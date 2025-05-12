@@ -5,6 +5,7 @@ public class DialogTrigger : MonoBehaviour
 {
     [SerializeField] private string dialogText;
     [SerializeField] bool onlyPlayOnce = true;
+    [SerializeField][Tooltip("If true, the dialog box will not open, but this trigger will register as played. Useful as dependency triggers")] private bool dontOpenDialogBox = false;
     private bool hasPlayed = false;
     private DialogSystem dialogSystem;
     [SerializeField] private DialogTrigger[] dependentTriggers;
@@ -51,8 +52,13 @@ public class DialogTrigger : MonoBehaviour
                         return;
                     }
                 }
-                dialogSystem.SetDialog(dialogText);
                 hasPlayed = true;
+                if (dontOpenDialogBox)
+                {
+                    return;
+                }
+                dialogSystem.SetDialog(dialogText);
+                
 
             }
             else
