@@ -1361,6 +1361,72 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 532f4a8f9747a1f41b24427cdd8443b8, type: 3}
+--- !u!1001 &1147511772
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1811737171060454700, guid: ddf8680d085368c4e9386601c09143e7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5527948032536430277, guid: ddf8680d085368c4e9386601c09143e7, type: 3}
+      propertyPath: m_Name
+      value: UnderwaterVolumeBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972193273556110292, guid: ddf8680d085368c4e9386601c09143e7, type: 3}
+      propertyPath: sharedProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: 8ecb57d61ed9d9f42a09888806061687, type: 2}
+    - target: {fileID: 8416598257426809109, guid: ddf8680d085368c4e9386601c09143e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 51.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416598257426809109, guid: ddf8680d085368c4e9386601c09143e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.543408
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416598257426809109, guid: ddf8680d085368c4e9386601c09143e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 52.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416598257426809109, guid: ddf8680d085368c4e9386601c09143e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416598257426809109, guid: ddf8680d085368c4e9386601c09143e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416598257426809109, guid: ddf8680d085368c4e9386601c09143e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416598257426809109, guid: ddf8680d085368c4e9386601c09143e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416598257426809109, guid: ddf8680d085368c4e9386601c09143e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416598257426809109, guid: ddf8680d085368c4e9386601c09143e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416598257426809109, guid: ddf8680d085368c4e9386601c09143e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1811737171060454700, guid: ddf8680d085368c4e9386601c09143e7, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ddf8680d085368c4e9386601c09143e7, type: 3}
 --- !u!1 &1358744687
 GameObject:
   m_ObjectHideFlags: 0
@@ -1610,7 +1676,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -1921,8 +1987,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 30ae1e53f4aec134d8a3e917290b8687, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2028,3 +2094,4 @@ SceneRoots:
   - {fileID: 1993063256}
   - {fileID: 579281208}
   - {fileID: 1064028503}
+  - {fileID: 1147511772}

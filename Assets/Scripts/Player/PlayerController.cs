@@ -237,7 +237,7 @@ public class PlayerController : MonoBehaviour
         diverInputActions.Movement.Disable();
         diverInputActions.Inventory.Disable();
         movement.StopMoving();
-        //movement.enabled = false;
+        movement.enabled = false;
     }
 
     public void EnableMovement()
@@ -245,6 +245,6 @@ public class PlayerController : MonoBehaviour
         diverInputActions.Movement.Enable();
         diverInputActions.Inventory.Enable();
         movement.StartMoving();
-        //movement.enabled = true;
+        movement.enabled = true;
     }
 }
