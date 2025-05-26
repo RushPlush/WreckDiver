@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 
 public class StartAnimatic : MonoBehaviour
@@ -15,7 +16,17 @@ public class StartAnimatic : MonoBehaviour
 
     private void Start()
     {
-        //videoPlayer.Play();
+        var scene = SceneManager.GetActiveScene();
+        if (scene == SceneManager.GetSceneByBuildIndex(0))
+        {
+            var menuInstructions = FindFirstObjectByType<MenuInstructions>();
+            if (!menuInstructions.PlayMenuAnimaticOnAwake)
+            {
+                player.SetActive(true);
+                animaticCamera.SetActive(false);
+                videoPlayer.Stop();
+            }
+        }
     }
 
     private void Update()

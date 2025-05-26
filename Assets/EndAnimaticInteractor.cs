@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 
 public class EndAnimaticInteractor : MonoBehaviour, IInteractable
@@ -9,7 +10,7 @@ public class EndAnimaticInteractor : MonoBehaviour, IInteractable
     private Helmet helmet;
     private Outline outline;
     private MappingHandler mappingHandler;
-
+    private MenuInstructions menuInstructions; 
     [SerializeField]private Vector3 targetRotation;
 
     [SerializeField]private float rotationSpeed = 50f;
@@ -25,6 +26,7 @@ public class EndAnimaticInteractor : MonoBehaviour, IInteractable
         mappingHandler = FindFirstObjectByType<MappingHandler>();
         videoPlayer = playerMovement.gameObject.GetComponent<VideoPlayer>();
         outline = GetComponent<Outline>();
+        menuInstructions = FindFirstObjectByType<MenuInstructions>();
     }
 
     // Update is called once per frame
@@ -49,6 +51,12 @@ public class EndAnimaticInteractor : MonoBehaviour, IInteractable
             mappingHandler.gameObject.SetActive(false);
             videoPlayer.Play();
             hasStarted = false; // Reset the state
+            
+            // Optionally, you can load a new scene or perform other actions here
+            
+            menuInstructions.PlayMenuAnimaticOnAwake = false; // Ensure the menu animatic doesn't play again
+            menuInstructions.StartOnCreditScreen = true; // opens the credits first
+            SceneManager.LoadScene(0);
         }
     }
 
