@@ -1,16 +1,30 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class MainMenuHandler : MonoBehaviour
 {
+    private GameObject mainMenuPanel;
+    private GameObject creditsPanel;
+    private bool isCreditsPanelActive = false;
+
+    private void Start()
+    {
+        mainMenuPanel = transform.GetChild(0).gameObject;
+        creditsPanel  = transform.GetChild(1).gameObject;
+    }
+
     public void StartGame()
     {
         SceneManager.LoadScene(1);
     }
 
-    public void Credits()
+    public void ToggleCredits()
     {
-        // TODO: Create Credits Screen UI and switch to it when button is pressed
+        isCreditsPanelActive = !isCreditsPanelActive;
+        mainMenuPanel.SetActive(!isCreditsPanelActive);
+        creditsPanel.SetActive(isCreditsPanelActive);
     }
 
     public void Quit()

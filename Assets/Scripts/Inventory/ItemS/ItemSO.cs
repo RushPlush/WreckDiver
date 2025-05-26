@@ -12,5 +12,6 @@ public class Item : ScriptableObject
     public Sprite Icon;
     public int Value;
     public bool HasBehaviour;
+    public bool canBeHeld;
     [CanBeNull] public IItem ItemBehaviour;
 }

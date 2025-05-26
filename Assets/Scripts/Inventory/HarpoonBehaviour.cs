@@ -1,5 +1,6 @@
 using System.Linq;
 using Inventory;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Android;
 using UnityEngine.InputSystem;
@@ -24,6 +25,7 @@ public class HarpoonBehaviour : MonoBehaviour, IItem
     bool skippedLastShot = false;
     private bool tethered = false;
     [SerializeField] private float maxTetherLength = 30f;
+    [SerializeField] private TextMeshProUGUI harpoonCountText;
 
     private void Awake()
     {
@@ -172,6 +174,7 @@ public class HarpoonBehaviour : MonoBehaviour, IItem
     public void TertiaryUse(InputAction.CallbackContext context) //Reload
     {
         if (!itemManager.inventorySystem.HasItem(harpoonItem) || !context.started) return; //todo what happens when it can't reload
+        if((harpoonsReady[0] && harpoonsReady[1])) return; //todo what happens when it can't reload
         itemManager.inventorySystem.RemoveItem(harpoonItem);
         Reload();
     }
@@ -203,7 +206,7 @@ public class HarpoonBehaviour : MonoBehaviour, IItem
                 return;
             }
             //todo what happens when it can't reload
-            itemManager.inventorySystem.AddItem(harpoonItem, 1);
+            //itemManager.inventorySystem.AddItem(harpoonItem, 1);
         }
     }
 
@@ -213,6 +216,13 @@ public class HarpoonBehaviour : MonoBehaviour, IItem
     }
     private void LateUpdate()
     {
+        var harpoonCount = itemManager.inventorySystem.GetQuantity(harpoonItem);
+        if (harpoonCount == -1)
+        {
+            harpoonCount = 0;
+        }
+        harpoonCountText.text = harpoonCount.ToString();
+        
         foreach (var lineRender in lineRenderers)
         {
             lineRender.SetPosition(0, lineRender.transform.position);
