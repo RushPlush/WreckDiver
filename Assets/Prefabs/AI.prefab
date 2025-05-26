@@ -53,6 +53,59 @@ MonoBehaviour:
   maxSpeed: 4.24
   neighbourDistance: 10
   rotationSpeed: 2.83
+--- !u!1 &110116186935780838
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2974721889190978048}
+  - component: {fileID: 2180049299860925874}
+  m_Layer: 0
+  m_Name: Pink Flock (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2974721889190978048
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110116186935780838}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5, y: 9.5, z: 0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5348569633161456707}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2180049299860925874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110116186935780838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a304f93a265a646b30f08c894cec0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishPrefab: {fileID: 7387792186118469060, guid: 91ebf7a4be367bf4c91a1f7947dca5d9, type: 3}
+  numFish: 30
+  allFish: []
+  swimLimits: {x: 8, y: 8, z: 8}
+  goalPos: {x: 0, y: 0, z: 0}
+  minSpeed: 1.87
+  maxSpeed: 4.24
+  neighbourDistance: 10
+  rotationSpeed: 2.83
 --- !u!1 &957514484645516466
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,6 +168,59 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5077656661770374487}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1549274737260353088
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2723829622064558564}
+  - component: {fileID: 1100508628538838202}
+  m_Layer: 0
+  m_Name: Green Flock (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2723829622064558564
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549274737260353088}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 268.52, y: 29.48, z: 275.03}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5348569633161456707}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1100508628538838202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549274737260353088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a304f93a265a646b30f08c894cec0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishPrefab: {fileID: 7387792186118469060, guid: b612c7f513144fb4bbb5f530432f0705, type: 3}
+  numFish: 40
+  allFish: []
+  swimLimits: {x: 10, y: 10, z: 10}
+  goalPos: {x: 0, y: 0, z: 0}
+  minSpeed: 1.87
+  maxSpeed: 4.24
+  neighbourDistance: 10
+  rotationSpeed: 2.83
 --- !u!1 &1940009610466100064
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,6 +285,59 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5077656661770374487}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2272582771788832354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 584061760752885728}
+  - component: {fileID: 7054768085963118114}
+  m_Layer: 0
+  m_Name: Gold Flock (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &584061760752885728
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2272582771788832354}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 79.6, y: 28.4, z: 219}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5348569633161456707}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7054768085963118114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2272582771788832354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a304f93a265a646b30f08c894cec0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishPrefab: {fileID: 7387792186118469060, guid: 83d6e10bb6ae99f469ca36014633b5ad, type: 3}
+  numFish: 12
+  allFish: []
+  swimLimits: {x: 12, y: 12, z: 12}
+  goalPos: {x: 0, y: 0, z: 0}
+  minSpeed: 1.13
+  maxSpeed: 2.36
+  neighbourDistance: 10
+  rotationSpeed: 1.03
 --- !u!1 &2368935143899156533
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,6 +433,59 @@ MonoBehaviour:
   - {fileID: 6805154453452380406}
   speed: 15
   rotSpeed: 5
+--- !u!1 &2717391353632536950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2931677743980564477}
+  - component: {fileID: 588360893437372647}
+  m_Layer: 0
+  m_Name: Green Flock (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2931677743980564477
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2717391353632536950}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 34.8, y: 13.8, z: 99.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5348569633161456707}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &588360893437372647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2717391353632536950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a304f93a265a646b30f08c894cec0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishPrefab: {fileID: 7387792186118469060, guid: b612c7f513144fb4bbb5f530432f0705, type: 3}
+  numFish: 40
+  allFish: []
+  swimLimits: {x: 10, y: 10, z: 10}
+  goalPos: {x: 0, y: 0, z: 0}
+  minSpeed: 1.87
+  maxSpeed: 4.24
+  neighbourDistance: 10
+  rotationSpeed: 2.83
 --- !u!1 &2722317241101985132
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,6 +768,112 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5077656661770374487}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4359410179176105249
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4808789200242229579}
+  - component: {fileID: 8174560194122970797}
+  m_Layer: 0
+  m_Name: Gold Flock (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4808789200242229579
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4359410179176105249}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 267.96, y: -12.8, z: -21.92}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5348569633161456707}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8174560194122970797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4359410179176105249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a304f93a265a646b30f08c894cec0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishPrefab: {fileID: 7387792186118469060, guid: 83d6e10bb6ae99f469ca36014633b5ad, type: 3}
+  numFish: 12
+  allFish: []
+  swimLimits: {x: 12, y: 12, z: 12}
+  goalPos: {x: 0, y: 0, z: 0}
+  minSpeed: 1.13
+  maxSpeed: 2.36
+  neighbourDistance: 10
+  rotationSpeed: 1.03
+--- !u!1 &4663040083681355751
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3778015145284703337}
+  - component: {fileID: 8208586629797499081}
+  m_Layer: 0
+  m_Name: Green Flock (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3778015145284703337
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4663040083681355751}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 295.16, y: -23.6, z: -56}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5348569633161456707}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8208586629797499081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4663040083681355751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a304f93a265a646b30f08c894cec0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishPrefab: {fileID: 7387792186118469060, guid: b612c7f513144fb4bbb5f530432f0705, type: 3}
+  numFish: 40
+  allFish: []
+  swimLimits: {x: 10, y: 10, z: 10}
+  goalPos: {x: 0, y: 0, z: 0}
+  minSpeed: 1.87
+  maxSpeed: 4.24
+  neighbourDistance: 10
+  rotationSpeed: 2.83
 --- !u!1 &4980679062387303263
 GameObject:
   m_ObjectHideFlags: 0
@@ -670,12 +988,78 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 847032034935836457}
+  - {fileID: 2589357998244975992}
   - {fileID: 7050132966587419563}
+  - {fileID: 3444627647435981144}
+  - {fileID: 2974721889190978048}
   - {fileID: 5587418953739016084}
+  - {fileID: 2931677743980564477}
   - {fileID: 3470536380948699163}
+  - {fileID: 3905878673964821383}
+  - {fileID: 584061760752885728}
   - {fileID: 578888723278689819}
+  - {fileID: 3945019068564175479}
+  - {fileID: 8647703670614734356}
+  - {fileID: 8447583661862988702}
+  - {fileID: 3778015145284703337}
+  - {fileID: 2723829622064558564}
+  - {fileID: 4808789200242229579}
+  - {fileID: 8466898183133487732}
   m_Father: {fileID: 1785126248793676148}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5478106393591427643
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2589357998244975992}
+  - component: {fileID: 2047930839453666915}
+  m_Layer: 0
+  m_Name: Pink Flock (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2589357998244975992
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5478106393591427643}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 294.1, y: -13, z: 42.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5348569633161456707}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2047930839453666915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5478106393591427643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a304f93a265a646b30f08c894cec0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishPrefab: {fileID: 7387792186118469060, guid: 91ebf7a4be367bf4c91a1f7947dca5d9, type: 3}
+  numFish: 30
+  allFish: []
+  swimLimits: {x: 8, y: 8, z: 8}
+  goalPos: {x: 0, y: 0, z: 0}
+  minSpeed: 1.87
+  maxSpeed: 4.24
+  neighbourDistance: 10
+  rotationSpeed: 2.83
 --- !u!1 &5652111482717470843
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,6 +1153,112 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5077656661770374487}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6211026273699636169
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3905878673964821383}
+  - component: {fileID: 7521469614344938605}
+  m_Layer: 0
+  m_Name: Gold Flock (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3905878673964821383
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6211026273699636169}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -203.4, y: 94.6, z: 100.09}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5348569633161456707}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7521469614344938605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6211026273699636169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a304f93a265a646b30f08c894cec0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishPrefab: {fileID: 7387792186118469060, guid: 83d6e10bb6ae99f469ca36014633b5ad, type: 3}
+  numFish: 12
+  allFish: []
+  swimLimits: {x: 12, y: 12, z: 12}
+  goalPos: {x: 0, y: 0, z: 0}
+  minSpeed: 1.13
+  maxSpeed: 2.36
+  neighbourDistance: 10
+  rotationSpeed: 1.03
+--- !u!1 &6291670024223051542
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3945019068564175479}
+  - component: {fileID: 2769529804732862987}
+  m_Layer: 0
+  m_Name: Green Flock (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3945019068564175479
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6291670024223051542}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -192.83, y: 81.41, z: 47.85}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5348569633161456707}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2769529804732862987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6291670024223051542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a304f93a265a646b30f08c894cec0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishPrefab: {fileID: 7387792186118469060, guid: b612c7f513144fb4bbb5f530432f0705, type: 3}
+  numFish: 40
+  allFish: []
+  swimLimits: {x: 10, y: 10, z: 10}
+  goalPos: {x: 0, y: 0, z: 0}
+  minSpeed: 1.87
+  maxSpeed: 4.24
+  neighbourDistance: 10
+  rotationSpeed: 2.83
 --- !u!1 &6805154453452380406
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,6 +1385,59 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5077656661770374487}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7332482039228391019
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8447583661862988702}
+  - component: {fileID: 4262227466341202117}
+  m_Layer: 0
+  m_Name: Green Flock (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8447583661862988702
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7332482039228391019}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 333.74, y: -23.6, z: 20.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5348569633161456707}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4262227466341202117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7332482039228391019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a304f93a265a646b30f08c894cec0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishPrefab: {fileID: 7387792186118469060, guid: b612c7f513144fb4bbb5f530432f0705, type: 3}
+  numFish: 40
+  allFish: []
+  swimLimits: {x: 10, y: 10, z: 10}
+  goalPos: {x: 0, y: 0, z: 0}
+  minSpeed: 1.87
+  maxSpeed: 4.24
+  neighbourDistance: 10
+  rotationSpeed: 2.83
 --- !u!1 &7588940052870102959
 GameObject:
   m_ObjectHideFlags: 0
@@ -933,6 +1476,112 @@ Transform:
   - {fileID: 8244395272392916088}
   m_Father: {fileID: 1785126248793676148}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7777053476934524214
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8647703670614734356}
+  - component: {fileID: 5159207713613650556}
+  m_Layer: 0
+  m_Name: Green Flock (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8647703670614734356
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7777053476934524214}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 314.5, y: 4.3, z: 192.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5348569633161456707}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5159207713613650556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7777053476934524214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a304f93a265a646b30f08c894cec0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishPrefab: {fileID: 7387792186118469060, guid: b612c7f513144fb4bbb5f530432f0705, type: 3}
+  numFish: 40
+  allFish: []
+  swimLimits: {x: 10, y: 10, z: 10}
+  goalPos: {x: 0, y: 0, z: 0}
+  minSpeed: 1.87
+  maxSpeed: 4.24
+  neighbourDistance: 10
+  rotationSpeed: 2.83
+--- !u!1 &7906558235963572480
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3444627647435981144}
+  - component: {fileID: 7824497693054139361}
+  m_Layer: 0
+  m_Name: Pink Flock (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3444627647435981144
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7906558235963572480}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -105.16, y: 42.09, z: -42.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5348569633161456707}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7824497693054139361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7906558235963572480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a304f93a265a646b30f08c894cec0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishPrefab: {fileID: 7387792186118469060, guid: 91ebf7a4be367bf4c91a1f7947dca5d9, type: 3}
+  numFish: 30
+  allFish: []
+  swimLimits: {x: 8, y: 8, z: 8}
+  goalPos: {x: 0, y: 0, z: 0}
+  minSpeed: 1.87
+  maxSpeed: 4.24
+  neighbourDistance: 10
+  rotationSpeed: 2.83
 --- !u!1 &7968072679456577422
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,6 +1613,59 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5077656661770374487}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8137128689529054433
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8466898183133487732}
+  - component: {fileID: 3202641987307166568}
+  m_Layer: 0
+  m_Name: Gold Flock (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8466898183133487732
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8137128689529054433}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 230.9, y: -21.5, z: -85.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5348569633161456707}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3202641987307166568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8137128689529054433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a304f93a265a646b30f08c894cec0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishPrefab: {fileID: 7387792186118469060, guid: 83d6e10bb6ae99f469ca36014633b5ad, type: 3}
+  numFish: 12
+  allFish: []
+  swimLimits: {x: 12, y: 12, z: 12}
+  goalPos: {x: 0, y: 0, z: 0}
+  minSpeed: 1.13
+  maxSpeed: 2.36
+  neighbourDistance: 10
+  rotationSpeed: 1.03
 --- !u!1 &8200620206493932844
 GameObject:
   m_ObjectHideFlags: 0
